@@ -1,0 +1,348 @@
+import React, { useState, useEffect } from 'react';
+import { PageId } from '../types';
+import { getEducationData } from '../data/portfolioData';
+import { ArrowUpRight, X, ExternalLink, Download, FileText } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import { TRANSLATIONS } from '../data/translations';
+
+interface EducationPageProps {
+  onNavigate?: (page: PageId) => void;
+}
+
+interface CertificateModalData {
+  title: string;
+  test: string;
+  score: string;
+  date: string;
+  descriptor?: string;
+  pdfUrl: string;
+}
+
+export const EducationPage: React.FC<EducationPageProps> = ({ onNavigate }) => {
+  const { language, isVi } = useLanguage();
+  const t = TRANSLATIONS[language];
+  const educationData = getEducationData(language);
+
+  const [selectedCert, setSelectedCert] = useState<CertificateModalData | null>(null);
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (selectedCert) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedCert]);
+
+  return (
+    <section
+      id="education"
+      className="w-full min-h-[calc(100vh-3.5rem)] lg:min-h-screen bg-[#F2EBDD] text-[#292929] border-b border-[#292929]/10 flex flex-col justify-center px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-12 sm:py-16 md:py-20 select-none relative"
+    >
+      <div className="max-w-6xl xl:max-w-7xl mx-auto w-full">
+        {/* Split Editorial Layout (Desktop 2-column spread, Mobile stacked) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-10 items-start">
+          
+          {/* LEFT COLUMN: School Identity & Academic Context Block */}
+          <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-24">
+            <div className="bg-[#F8F6F1] border border-[#292929]/12 rounded-xs p-6 sm:p-8 space-y-6 shadow-[0_2px_12px_rgba(0,0,0,0.025)]">
+              <div className="space-y-3">
+                <span className="text-xs font-mono text-[#676749] uppercase tracking-widest block font-medium">
+                  {t.education.sectionNum}
+                </span>
+
+                <h1 className="text-2xl sm:text-3xl lg:text-[1.85rem] xl:text-[2.1rem] font-bold text-[#292929] tracking-tight leading-[1.2]">
+                  {educationData.institution}
+                </h1>
+              </div>
+
+              {/* Academic Context Metadata */}
+              <div className="pt-4 border-t border-[#292929]/10 space-y-2 text-sm sm:text-[14.5px]">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs font-mono uppercase tracking-wider text-[#676749]">{t.education.focus}</span>
+                  <span className="font-semibold text-[#292929]">{educationData.specialization}</span>
+                </div>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs font-mono uppercase tracking-wider text-[#676749]">{t.education.location}</span>
+                  <span className="text-[#292929]">{educationData.location}</span>
+                </div>
+                <div className="flex items-center justify-between gap-2 pt-1 border-t border-[#292929]/8">
+                  <span className="text-xs font-mono uppercase tracking-wider text-[#676749]">{t.education.period}</span>
+                  <span className="font-mono text-xs text-[#676749] font-medium">{educationData.period}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* RIGHT COLUMN: 3 Layered Off-White Editorial Cards */}
+          <div className="lg:col-span-7 space-y-4 sm:space-y-5">
+            
+            {/* Card 1: Academic Performance (GPA) */}
+            <div className="bg-[#F8F6F1] border border-[#292929]/12 rounded-xs p-5 sm:p-7 space-y-4 shadow-[0_2px_12px_rgba(0,0,0,0.025)]">
+              <div className="flex items-baseline justify-between border-b border-[#292929]/10 pb-3">
+                <span className="text-xs font-mono uppercase tracking-widest text-[#676749] font-medium">
+                  {t.education.academicPerformance}
+                </span>
+                <span className="text-[11px] font-mono text-[#676749]/80">
+                  {t.education.scale}
+                </span>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4 sm:gap-8 pt-1">
+                {educationData.gpa.map((item, idx) => (
+                  <div key={idx} className="space-y-1">
+                    <div className="text-xs font-mono text-[#676749] uppercase tracking-wider">
+                      {item.grade}
+                    </div>
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="text-3xl sm:text-4xl font-bold font-mono text-[#292929] tracking-tight">
+                        {item.score}
+                      </span>
+                      <span className="text-xs font-mono text-[#676749]">
+                        / {item.scale}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Card 2: Standardized Tests & Credentials */}
+            <div className="bg-[#F8F6F1] border border-[#292929]/12 rounded-xs p-5 sm:p-7 space-y-4 shadow-[0_2px_12px_rgba(0,0,0,0.025)]">
+              <div className="border-b border-[#292929]/10 pb-3">
+                <span className="text-xs font-mono uppercase tracking-widest text-[#676749] font-medium block">
+                  {t.education.standardizedTests}
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-4 lg:gap-5 pt-1">
+                {educationData.standardizedTests.map((test) => (
+                  <div
+                    key={test.id}
+                    className="space-y-2 flex flex-col justify-between"
+                  >
+                    <div className="space-y-1">
+                      <h2 className="text-sm font-semibold text-[#292929] tracking-tight">
+                        {test.test}
+                      </h2>
+                      <div className="text-2xl sm:text-3xl font-bold font-mono text-[#292929] tracking-tight">
+                        {test.score}
+                      </div>
+                      <p className="text-[11.5px] text-[#292929]/70 leading-relaxed font-normal">
+                        {test.descriptor}
+                      </p>
+                    </div>
+
+                    <div className="pt-2 space-y-1 border-t border-[#292929]/10">
+                      <div className="font-mono text-[11px] text-[#676749]">
+                        {test.date}
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setSelectedCert({
+                            title: `${test.test} ${isVi ? 'Báo cáo điểm số' : 'Score Report'}`,
+                            test: test.test,
+                            score: test.score,
+                            date: test.date,
+                            descriptor: test.descriptor,
+                            pdfUrl: test.pdfUrl,
+                          })
+                        }
+                        className="inline-flex items-center gap-1 text-[11px] font-mono text-[#676749] hover:text-[#292929] cursor-pointer transition-colors pt-0.5"
+                        id={`view-cert-${test.id}`}
+                      >
+                        <span>{t.education.viewCert}</span>
+                        <ArrowUpRight className="w-3 h-3" />
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Card 3: Verified Credentials Preview */}
+            <div className="bg-[#F8F6F1] border border-[#292929]/12 rounded-xs p-5 sm:p-7 space-y-4 shadow-[0_2px_12px_rgba(0,0,0,0.025)]">
+              <div className="border-b border-[#292929]/10 pb-3">
+                <span className="text-xs font-mono uppercase tracking-widest text-[#676749] font-medium block">
+                  {t.education.credentialsPreview}
+                </span>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-1">
+                {educationData.standardizedTests.map((test) => (
+                  <button
+                    key={`preview-${test.id}`}
+                    type="button"
+                    onClick={() =>
+                      setSelectedCert({
+                        title: `${test.test} ${isVi ? 'Báo cáo điểm số' : 'Score Report'}`,
+                        test: test.test,
+                        score: test.score,
+                        date: test.date,
+                        descriptor: test.descriptor,
+                        pdfUrl: test.pdfUrl,
+                      })
+                    }
+                    className="group relative text-left bg-[#FCFBF9] border border-[#292929]/12 hover:border-[#676749]/50 hover:shadow-xs transition-all duration-200 rounded-xs overflow-hidden cursor-pointer flex flex-col"
+                    title={`Click to view ${test.test} Certificate`}
+                  >
+                    {/* Thumbnail Image Frame */}
+                    <div className="w-full aspect-[1/1.34] bg-[#ECE5D5] overflow-hidden relative">
+                      {test.previewImage ? (
+                        <img
+                          src={test.previewImage}
+                          alt={`${test.test} Document Preview`}
+                          className="w-full h-full object-cover object-top transition-transform duration-200 group-hover:scale-[1.02]"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center p-2 text-center text-[#676749] text-[10px] font-mono">
+                          Document Ready
+                        </div>
+                      )}
+                      
+                      {/* Subtle hover overlay */}
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/8 transition-colors duration-200 flex items-center justify-center">
+                        <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-[#292929]/90 text-[#F2EBDD] text-[9px] font-mono px-1.5 py-0.5 rounded-xs flex items-center gap-0.5 shadow-xs">
+                          <span>{isVi ? 'Xem' : 'View'}</span>
+                          <ArrowUpRight className="w-2.5 h-2.5" />
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Compact Caption Bar */}
+                    <div className="px-2 py-1.5 bg-[#F8F6F1] border-t border-[#292929]/10 flex items-center justify-between text-[10px] font-mono text-[#676749]">
+                      <span className="truncate font-medium text-[#292929]">{test.test}</span>
+                      <span className="shrink-0 text-[#676749]">({test.score})</span>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Section Navigation */}
+        {onNavigate && (
+          <div className="mt-10 sm:mt-12 pt-6 border-t border-[#292929]/12 flex justify-between items-center text-xs sm:text-sm font-mono">
+            <button
+              onClick={() => onNavigate('honors')}
+              className="group inline-flex items-center gap-2 text-[#676749] hover:text-[#292929] cursor-pointer transition-colors"
+            >
+              <span className="transition-transform duration-200 group-hover:-translate-x-0.5">←</span>
+              <span>{t.education.prevSection}</span>
+            </button>
+
+            <button
+              onClick={() => onNavigate('projects')}
+              className="group inline-flex items-center gap-2 text-[#292929] hover:text-[#676749] cursor-pointer transition-colors font-medium"
+            >
+              <span>{t.education.nextSection}</span>
+              <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* Clean Document Viewer Modal */}
+      {selectedCert && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8 bg-black/70 backdrop-blur-xs"
+          onClick={() => setSelectedCert(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="relative w-full max-w-4xl max-h-[92vh] bg-[#F8F6F1] text-[#292929] border border-[#292929]/20 shadow-2xl rounded-xs flex flex-col overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="px-6 py-4 bg-[#181816] text-[#F2EBDD] flex items-center justify-between border-b border-white/10 shrink-0">
+              <div className="space-y-0.5">
+                <span className="text-[10px] font-mono text-[#989A6C] uppercase tracking-wider">
+                  {isVi ? 'Chứng nhận học thuật' : 'Academic Credential'}
+                </span>
+                <h3 className="text-base sm:text-lg font-bold text-[#F2EBDD] tracking-tight">
+                  {selectedCert.title}
+                </h3>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <a
+                  href={selectedCert.pdfUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-3 py-1.5 bg-white/10 hover:bg-white/20 text-[#F2EBDD] text-xs font-mono rounded-xs transition-colors flex items-center gap-1.5"
+                  title="Open in new tab"
+                >
+                  <ExternalLink className="w-3.5 h-3.5 text-[#989A6C]" />
+                  <span className="hidden sm:inline">{t.education.openFull}</span>
+                </a>
+
+                <a
+                  href={selectedCert.pdfUrl}
+                  download
+                  className="px-3 py-1.5 bg-[#676749] hover:bg-[#7e8354] text-[#F2EBDD] text-xs font-mono font-medium rounded-xs transition-colors flex items-center gap-1.5"
+                  title="Download PDF"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  <span className="hidden sm:inline">{t.education.downloadPdf}</span>
+                </a>
+
+                <button
+                  onClick={() => setSelectedCert(null)}
+                  className="p-1.5 text-[#F2EBDD]/60 hover:text-[#F2EBDD] hover:bg-white/10 rounded-xs transition-colors cursor-pointer ml-1"
+                  aria-label="Close modal"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Score & Detail Bar */}
+            <div className="px-6 py-2.5 bg-[#EAE2D2] border-b border-[#292929]/10 flex flex-wrap items-center justify-between gap-3 text-xs font-mono shrink-0">
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-[#292929]">{selectedCert.test}:</span>
+                <span className="text-[#676749] font-bold">{isVi ? 'Điểm số ' : 'Score '}{selectedCert.score}</span>
+              </div>
+              <span className="text-[#676749]">{selectedCert.date}</span>
+            </div>
+
+            {/* PDF Viewer */}
+            <div className="flex-1 w-full min-h-[500px] max-h-[calc(90vh-140px)] bg-[#292929] relative overflow-hidden flex items-center justify-center">
+              <object
+                data={selectedCert.pdfUrl}
+                type="application/pdf"
+                className="w-full h-full min-h-[500px] border-none"
+              >
+                <div className="p-8 text-center text-white space-y-4 max-w-md">
+                  <FileText className="w-10 h-10 text-[#989A6C] mx-auto" />
+                  <h4 className="text-base font-bold">{isVi ? 'Tài liệu PDF sẵn sàng' : 'PDF Document Ready'}</h4>
+                  <p className="text-xs text-white/70">
+                    {isVi ? 'Trình duyệt của bạn không hỗ trợ nhúng trực tiếp file PDF. Bạn có thể mở xem hoặc tải tài liệu bên dưới:' : 'Your browser does not support embedded PDF viewing. You can view or download the verified document directly:'}
+                  </p>
+                  <div className="pt-2 flex justify-center gap-3">
+                    <a
+                      href={selectedCert.pdfUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-4 py-2 bg-[#676749] text-white text-xs font-mono rounded-xs font-medium inline-flex items-center gap-2"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      {t.education.openFull}
+                    </a>
+                  </div>
+                </div>
+              </object>
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+};

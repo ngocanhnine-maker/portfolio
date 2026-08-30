@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-cream: #F2EBDD;
+    --bg-secondary: #E7DFCF;
+    --text-charcoal: #292929;
+    --accent-olive: #676749;
+    --olive-light: #7E7E5A;
+    --olive-dark: #52523A;
+    --border-subtle: rgba(41, 41, 41, 0.10);
+  }
+
+  body {
+    background-color: #F2EBDD;
+    color: #292929;
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: normal;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-serif-editorial {
+    font-family: Georgia, serif;
+  }
+
+  .font-mono-tag {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E7DFCF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #676749;
+  border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #52523A;
+}
+
+/* Typography Theme rules */
+.editorial-title {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.bold-theme-card {
+  border: 1px solid rgba(41, 41, 41, 0.10);
+  background-color: rgba(255, 255, 255, 0.30);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bold-theme-card:hover {
+  background-color: rgba(255, 255, 255, 0.65);
+}
+
+.tag-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+
