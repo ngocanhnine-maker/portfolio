@@ -31,7 +31,8 @@ export const EDUCATION_DATA_EN = {
   period: 'Sep 2024 — June 2027',
   gpa: [
     { grade: 'Grade 10', score: '9.6', scale: '10' },
-    { grade: 'Grade 11', score: '9.8', scale: '10' }
+    { grade: 'Grade 11', score: '9.8', scale: '10' },
+    { grade: 'Cumulative GPA', score: '9.7', scale: '10' }
   ],
   standardizedTests: [
     {
@@ -71,7 +72,8 @@ export const EDUCATION_DATA_VI = {
   period: '09/2024 — 06/2027',
   gpa: [
     { grade: 'Lớp 10', score: '9.6', scale: '10' },
-    { grade: 'Lớp 11', score: '9.8', scale: '10' }
+    { grade: 'Lớp 11', score: '9.8', scale: '10' },
+    { grade: 'Điểm TBM', score: '9.7', scale: '10' }
   ],
   standardizedTests: [
     {
@@ -634,6 +636,7 @@ export const ACHIEVEMENTS_EN: AchievementItem[] = [
     level: 'national_international',
     categoryLabel: 'International',
     imageUrl: '/certificates/wico-2026.jpg',
+    imageAspect: 'portrait',
     pdfUrl: '/certificates/wico-2026.pdf',
     aboutCompetition: 'WICO is an international invention and innovation competition held annually in Seoul, bringing together participants from around the world to present projects in science, technology, and entrepreneurship.',
     levelScope: 'International · Seoul, South Korea',
@@ -844,6 +847,7 @@ export const ACHIEVEMENTS_VI: AchievementItem[] = [
     level: 'national_international',
     categoryLabel: 'Quốc tế',
     imageUrl: '/certificates/wico-2026.jpg',
+    imageAspect: 'portrait',
     pdfUrl: '/certificates/wico-2026.pdf',
     aboutCompetition: 'WICO là cuộc thi sáng chế và đổi mới sáng tạo quốc tế được tổ chức thường niên tại Seoul, quy tụ các nhà sáng tạo trẻ toàn cầu trình bày các dự án khoa học, công nghệ và khởi nghiệp.',
     levelScope: 'Quốc tế · Seoul, Hàn Quốc',
@@ -1340,62 +1344,74 @@ export const SECONDARY_ACTIVITIES = SECONDARY_ACTIVITIES_EN;
 export const INTERESTS_EN: InterestItem[] = [
   {
     id: 'int-01',
-    title: 'Quantitative Finance & Econometrics',
-    category: 'Analytical Systems',
-    description: 'Empirical modeling, time-series analysis, statistical inference, and macroeconomic panel data forecasting.',
-    details: ['Econometric Modeling', 'Risk Analytics', 'Time-Series']
+    number: '01',
+    category: 'MUSIC',
+    title: 'Piano, Guitar & Music',
+    quote: 'A space for focus, expression, and learning something slowly.',
+    description: 'A space for focus, expression, and learning something slowly.',
+    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80',
+    isFeatured: true
   },
   {
     id: 'int-02',
-    title: 'Human-Centered AI & Minimal Software',
-    category: 'Design & Engineering',
-    description: 'Designing intuitive software with zero cognitive overhead, sub-second latency, and interpretable decision systems.',
-    details: ['Interpretable AI', 'Calm Interfaces', 'Design Systems']
+    number: '02',
+    category: 'READING',
+    title: 'Long-form Reading',
+    quote: 'Economics, science, psychology, and the occasional novel.',
+    description: 'Economics, science, psychology, and the occasional novel.'
   },
   {
     id: 'int-03',
-    title: 'Architectural Photography & Publication Design',
-    category: 'Visual & Cultural',
-    description: 'Studying spatial composition, geometric precision, Swiss typography, and print-editorial aesthetics in modern web layouts.',
-    details: ['Spatial Composition', 'Editorial Layout', 'Typography']
+    number: '03',
+    category: 'VISUAL',
+    title: 'Drawing & Editorial Design',
+    quote: 'Illustration, typography, composition, and visual storytelling.',
+    description: 'Illustration, typography, composition, and visual storytelling.'
   },
   {
     id: 'int-04',
-    title: 'Endurance Training & Long-Form Reading',
-    category: 'Personal Practice',
-    description: 'Cultivating sustained focus, physical discipline, and exploring economic history and the philosophy of science.',
-    details: ['Endurance Training', 'Economic History', 'Philosophy of Science']
+    number: '04',
+    category: 'CURIOSITY',
+    title: 'Markets & Quantitative Thinking',
+    quote: 'Patterns, incentives, and the stories hidden behind numbers.',
+    description: 'Patterns, incentives, and the stories hidden behind numbers.'
   }
 ];
 
 export const INTERESTS_VI: InterestItem[] = [
   {
     id: 'int-01',
-    title: 'Tài chính Định lượng & Kinh tế lượng',
-    category: 'Hệ thống Phân tích',
-    description: 'Mô hình hóa thực nghiệm, phân tích chuỗi thời gian, suy luận thống kê và dự báo dữ liệu bảng kinh tế vĩ mô.',
-    details: ['Mô hình Kinh tế lượng', 'Phân tích Rủi ro', 'Chuỗi Thời gian']
+    number: '01',
+    category: 'ÂM NHẠC',
+    title: 'Piano, Guitar & Âm nhạc',
+    quote: 'Không gian của sự tập trung, biểu đạt cảm xúc và học hỏi một cách chậm rãi.',
+    description: 'Không gian của sự tập trung, biểu đạt cảm xúc và học hỏi một cách chậm rãi.',
+    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80',
+    isFeatured: true
   },
   {
     id: 'int-02',
-    title: 'AI Hướng tới Con người & Phần mềm Tối giản',
-    category: 'Thiết kế & Kỹ thuật',
-    description: 'Thiết kế phần mềm trực quan không gây quá tải nhận thức, độ trễ tức thời và các hệ thống ra quyết định có tính giải thích cao.',
-    details: ['AI Có tính Giải thích', 'Giao diện Tĩnh tại', 'Hệ thống Thiết kế']
+    number: '02',
+    category: 'ĐỌC SÁCH',
+    title: 'Đọc sách Chuyên sâu',
+    quote: 'Kinh tế học, khoa học, tâm lý học và những cuốn tiểu thuyết chọn lọc.',
+    description: 'Kinh tế học, khoa học, tâm lý học và những cuốn tiểu thuyết chọn lọc.'
   },
   {
     id: 'int-03',
-    title: 'Nhiếp ảnh Kiến trúc & Thiết kế Ấn bản',
-    category: 'Thị giác & Văn hóa',
-    description: 'Nghiên cứu bố cục không gian, hình học chính xác, kiểu chữ phong cách Thụy Sĩ và thẩm mỹ báo chí in ấn trong giao diện số.',
-    details: ['Bố cục Không gian', 'Layout Báo chí', 'Nghệ thuật Kiểu chữ']
+    number: '03',
+    category: 'THỊ GIÁC & THIẾT KẾ',
+    title: 'Hội họa & Thiết kế Ấn bản',
+    quote: 'Minh họa, nghệ thuật sắp đặt chữ, bố cục và kể chuyện bằng thị giác.',
+    description: 'Minh họa, nghệ thuật sắp đặt chữ, bố cục và kể chuyện bằng thị giác.'
   },
   {
     id: 'int-04',
-    title: 'Rèn luyện Thể lực Bền bỉ & Đọc Tài liệu Học thuật',
-    category: 'Rèn luyện Cá nhân',
-    description: 'Nuôi dưỡng sự tập trung bền bỉ, kỷ luật thể chất và khám phá lịch sử kinh tế cùng triết học khoa học.',
-    details: ['Rèn luyện Thể lực', 'Lịch sử Kinh tế', 'Triết học Khoa học']
+    number: '04',
+    category: 'TƯ DUY & KHÁM PHÁ',
+    title: 'Thị trường & Tư duy Định lượng',
+    quote: 'Những quy luật, động lực kinh tế và câu chuyện ẩn sau các con số.',
+    description: 'Những quy luật, động lực kinh tế và câu chuyện ẩn sau các con số.'
   }
 ];
 

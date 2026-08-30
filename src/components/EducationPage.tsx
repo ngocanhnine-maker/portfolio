@@ -46,8 +46,8 @@ export const EducationPage: React.FC<EducationPageProps> = ({ onNavigate }) => {
         {/* Split Editorial Layout (Desktop 2-column spread, Mobile stacked) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-10 items-start">
           
-          {/* LEFT COLUMN: School Identity & Academic Context Block */}
-          <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-24">
+          {/* LEFT COLUMN: School Identity & Academic Context Block (Sticky on desktop, static on mobile/tablet) */}
+          <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-20 xl:top-24">
             <div className="bg-[#F8F6F1] border border-[#292929]/12 rounded-xs p-6 sm:p-8 space-y-6 shadow-[0_2px_12px_rgba(0,0,0,0.025)]">
               <div className="space-y-3">
                 <span className="text-xs font-mono text-[#676749] uppercase tracking-widest block font-medium">
@@ -71,7 +71,7 @@ export const EducationPage: React.FC<EducationPageProps> = ({ onNavigate }) => {
                 </div>
                 <div className="flex items-center justify-between gap-2 pt-1 border-t border-[#292929]/8">
                   <span className="text-xs font-mono uppercase tracking-wider text-[#676749]">{t.education.period}</span>
-                  <span className="font-mono text-xs text-[#676749] font-medium">{educationData.period}</span>
+                  <span className="font-mono text-xs text-[#292929] font-medium">{educationData.period}</span>
                 </div>
               </div>
             </div>
@@ -80,7 +80,7 @@ export const EducationPage: React.FC<EducationPageProps> = ({ onNavigate }) => {
           {/* RIGHT COLUMN: 3 Layered Off-White Editorial Cards */}
           <div className="lg:col-span-7 space-y-4 sm:space-y-5">
             
-            {/* Card 1: Academic Performance (GPA) */}
+            {/* Card 1: Academic Performance (GPA) - Tightened stat cluster */}
             <div className="bg-[#F8F6F1] border border-[#292929]/12 rounded-xs p-5 sm:p-7 space-y-4 shadow-[0_2px_12px_rgba(0,0,0,0.025)]">
               <div className="flex items-baseline justify-between border-b border-[#292929]/10 pb-3">
                 <span className="text-xs font-mono uppercase tracking-widest text-[#676749] font-medium">
@@ -91,18 +91,19 @@ export const EducationPage: React.FC<EducationPageProps> = ({ onNavigate }) => {
                 </span>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 sm:gap-8 pt-1">
+              {/* Tightened 3-column stats cluster with max-width */}
+              <div className="max-w-[460px] grid grid-cols-3 gap-3 sm:gap-6 pt-1">
                 {educationData.gpa.map((item, idx) => (
                   <div key={idx} className="space-y-1">
-                    <div className="text-xs font-mono text-[#676749] uppercase tracking-wider">
+                    <div className="text-xs font-mono text-[#676749] uppercase tracking-wider truncate">
                       {item.grade}
                     </div>
-                    <div className="flex items-baseline gap-1.5">
-                      <span className="text-3xl sm:text-4xl font-bold font-mono text-[#292929] tracking-tight">
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-2xl sm:text-3xl font-bold font-mono text-[#292929] tracking-tight">
                         {item.score}
                       </span>
                       <span className="text-xs font-mono text-[#676749]">
-                        / {item.scale}
+                        /{item.scale}
                       </span>
                     </div>
                   </div>
@@ -124,19 +125,25 @@ export const EducationPage: React.FC<EducationPageProps> = ({ onNavigate }) => {
                     key={test.id}
                     className="space-y-2 flex flex-col justify-between"
                   >
-                    <div className="space-y-1">
-                      <h2 className="text-sm font-semibold text-[#292929] tracking-tight">
+                    <div className="space-y-1.5">
+                      <h2
+                        className="text-sm font-semibold text-[#292929] tracking-tight"
+                        style={{ textWrap: 'balance' }}
+                      >
                         {test.test}
                       </h2>
                       <div className="text-2xl sm:text-3xl font-bold font-mono text-[#292929] tracking-tight">
                         {test.score}
                       </div>
-                      <p className="text-[11.5px] text-[#292929]/70 leading-relaxed font-normal">
+                      <p
+                        className="text-[11.5px] text-[#292929]/70 leading-relaxed font-normal"
+                        style={{ textWrap: 'balance' }}
+                      >
                         {test.descriptor}
                       </p>
                     </div>
 
-                    <div className="pt-2 space-y-1 border-t border-[#292929]/10">
+                    <div className="pt-2 space-y-1 border-t border-[#292929]/10 mt-auto">
                       <div className="font-mono text-[11px] text-[#676749]">
                         {test.date}
                       </div>

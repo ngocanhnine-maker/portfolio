@@ -161,6 +161,19 @@ export const KNOWLEDGE_BASE: KnowledgeEntry[] = [
     ]
   },
   {
+    triggers: ['interest', 'hobby', 'music', 'piano', 'guitar', 'reading', 'drawing', 'design', 'personal', 'free time'],
+    response: 'Outside of quantitative modeling and research, Tran Ngoc Anh focuses on music (piano & guitar), long-form reading across economics and psychology, visual and editorial design, and market dynamics.',
+    cards: [
+      {
+        type: 'page',
+        pageId: 'interests',
+        title: 'Interests & Personal Pursuits',
+        subtitle: 'Piano, Guitar & Music, Long-form Reading, Editorial Design, and Market Thinking',
+        badge: 'Interests'
+      }
+    ]
+  },
+  {
     triggers: ['customize', 'edit', 'template', 'change', 'how to', 'modify'],
     response: 'You can easily customize this template by editing the data files (in src/data/portfolioData.ts) to insert your real project names, descriptions, images, publications, and credentials.',
     cards: [

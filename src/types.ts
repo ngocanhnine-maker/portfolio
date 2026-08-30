@@ -115,6 +115,7 @@ export interface AchievementItem {
   level: 'national_international' | 'city';
   categoryLabel: string;
   imageUrl?: string;
+  imageAspect?: 'portrait' | 'landscape';
   pdfUrl?: string;
   aboutCompetition?: string;
   levelScope?: string;
@@ -152,10 +153,14 @@ export interface ActivityItem {
 
 export interface InterestItem {
   id: string;
-  title: string;
+  number?: string;
   category: string;
+  title: string;
   description: string;
+  quote?: string;
+  image?: string;
   details?: string[];
+  isFeatured?: boolean;
 }
 
 export type PageId =

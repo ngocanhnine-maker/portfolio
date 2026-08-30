@@ -170,6 +170,8 @@ export interface TranslationDictionary {
     sectionNum: string;
     title: string;
     subtitle: string;
+    introLine: string;
+    currentlyText: string;
     prevSection: string;
     viewResume: string;
     backToTop: string;
@@ -289,7 +291,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       specialization: 'Major Specialization: Chemistry',
       focus: 'Academic Major',
       location: 'Location',
-      period: '2024 – 2027',
+      period: 'Duration',
       academicPerformance: 'Academic GPA Performance',
       scale: 'Standard 10.0 Scale',
       standardizedTests: 'Standardized Test Records',
@@ -385,6 +387,8 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       sectionNum: '08 / Interests',
       title: 'Interests.',
       subtitle: 'Interdisciplinary pursuits, analytical passions, and personal exploratory domains.',
+      introLine: 'The things I return to when I’m not building or analyzing.',
+      currentlyText: 'CURRENTLY → learning guitar · reading · exploring new ideas',
       prevSection: 'Activities',
       viewResume: 'View Resume',
       backToTop: 'Back to Top'
@@ -502,7 +506,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       specialization: 'Chuyên ban: Hóa học',
       focus: 'Chuyên ban Học tập',
       location: 'Địa điểm',
-      period: '2024 – 2027',
+      period: 'Thời gian học',
       academicPerformance: 'Điểm trung bình học tập (GPA)',
       scale: 'Thang điểm 10.0 tiêu chuẩn',
       standardizedTests: 'Chứng chỉ chuẩn hóa quốc tế',
@@ -598,6 +602,8 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       sectionNum: '08 / Sở thích',
       title: 'Sở thích.',
       subtitle: 'Các định hướng nghiên cứu liên ngành, đam mê phân tích và sở thích cá nhân.',
+      introLine: 'Những điều tôi tìm về khi không bận rộn với nghiên cứu hay mô hình hóa.',
+      currentlyText: 'HIỆN TẠI → học guitar · đọc sách · khám phá các ý tưởng mới',
       prevSection: 'Hoạt động',
       viewResume: 'Xem Hồ sơ (CV)',
       backToTop: 'Lên đầu trang'

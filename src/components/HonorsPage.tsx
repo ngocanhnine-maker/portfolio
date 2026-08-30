@@ -68,9 +68,6 @@ export const HonorsPage: React.FC<HonorsPageProps> = ({ onNavigate, initialAward
             <span className="text-xs font-mono text-[#DDD8C4] uppercase tracking-widest block font-medium">
               {t.honors.sectionNum}
             </span>
-            <span className="text-xs font-mono text-[#DDD8C4]/70 hidden sm:block">
-              {t.honors.archiveLabel}
-            </span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#F2EBDD] tracking-tight">
@@ -95,79 +92,110 @@ export const HonorsPage: React.FC<HonorsPageProps> = ({ onNavigate, initialAward
           </div>
         </div>
 
-        {/* Editorial Gallery: Masonry / Balanced Multi-Column Layout */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 md:gap-8 space-y-6 md:space-y-8">
+        {/* Editorial Gallery: Grid with Equal Row Tracks and Aligned Tops */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-start">
           {filteredAchievements.map((item, idx) => {
             const awardId = item.id || `${item.year}-${item.award}`;
+            const isPortrait = item.imageAspect === 'portrait' || item.id === 'wico-2026';
+
+            // Helper to clean redundant scope words from eyebrow award level (e.g. "National Third Prize" -> "Third Prize", "City-level Second Prize" -> "Second Prize")
+            const cleanAwardLevel = (rawAward: string) => {
+              if (!rawAward) return '';
+              return rawAward
+                .replace(/^National\s+/i, '')
+                .replace(/^City-level\s+/i, '')
+                .replace(/^Cấp Thành phố\s+/i, '')
+                .replace(/^Cấp Quốc gia\s+/i, '')
+                .replace(/^Cấp Thành Phố\s+/i, '')
+                .trim();
+            };
+
+            const eyebrowAward = cleanAwardLevel(item.award) || item.award;
 
             return (
-              <div
+              <article
                 key={awardId || idx}
-                className="break-inside-avoid group flex flex-col space-y-3.5 bg-black/15 border border-white/10 hover:border-white/30 rounded-xs p-4 sm:p-5 transition-all duration-300 hover:bg-black/25"
+                tabIndex={0}
+                role="button"
+                aria-label={`${item.competition} - ${item.award} (${item.year})`}
+                onClick={() => setDrawerAward(item)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setDrawerAward(item);
+                  }
+                }}
+                className="group relative flex flex-col h-full bg-[#464831] border border-white/[0.14] hover:border-white/30 focus-visible:border-white/45 focus-visible:ring-1 focus-visible:ring-white/45 rounded-xs p-4 sm:p-5 transition-[border-color,background-color] duration-300 ease-out cursor-pointer outline-none select-none"
               >
-                {/* Hero Visual Block (Preserves Natural Aspect Ratio - Portrait or Landscape) */}
-                <div
-                  onClick={() => setDrawerAward(item)}
-                  className="relative w-full overflow-hidden bg-black/30 border border-white/15 rounded-xs transition-all duration-300 group-hover:border-white/40 cursor-pointer min-h-[160px] flex items-center justify-center"
-                >
+                {/* 1 & 2: Framed Certificate Container (aspect-aware for portrait vs landscape) with object-contain & Warm Neutral Matting */}
+                <div className={`relative w-full ${isPortrait ? 'aspect-[4/5]' : 'aspect-[4/3]'} overflow-hidden rounded-xs bg-[#EAE5D9] p-3 flex items-center justify-center border border-black/10`}>
                   {item.imageUrl ? (
                     <>
                       <img
                         src={item.imageUrl}
                         alt={`${item.award} - ${item.competition}`}
                         referrerPolicy="no-referrer"
-                        className="w-full h-auto max-h-[380px] object-contain rounded-[2px] shadow-sm transition-transform duration-500 group-hover:scale-[1.02]"
+                        className="w-full h-full object-contain object-center transition-[filter] duration-300 ease-out motion-reduce:transition-none"
+                        style={{
+                          filter: 'grayscale(0.35) saturate(0.85) contrast(1.05)'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.filter = 'none';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.filter = 'grayscale(0.35) saturate(0.85) contrast(1.05)';
+                        }}
                       />
-                      {/* Subtle Hover Overlay */}
-                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span className="text-[10px] font-mono uppercase tracking-wider text-white bg-black/80 px-2.5 py-1 rounded-xs flex items-center gap-1.5 shadow-sm">
-                          <ZoomIn className="w-3 h-3" /> {t.honors.viewArchive}
-                        </span>
-                      </div>
+                      {/* Very light warm-cream tint unification layer */}
+                      <div
+                        aria-hidden="true"
+                        className="absolute inset-0 bg-[#EDE8D9]/[0.06] pointer-events-none opacity-100 group-hover:opacity-0 group-focus-visible:opacity-0 transition-opacity duration-300 ease-out motion-reduce:transition-none"
+                      />
                     </>
                   ) : (
-                    <div className="w-full h-full min-h-[190px] flex items-center justify-center p-6 text-center">
-                      <span className="text-xs font-mono text-white/40">{isVi ? 'Đang lưu trữ chứng nhận' : 'Certificate Archiving'}</span>
+                    <div className="w-full h-full flex items-center justify-center p-4 text-center">
+                      <span className="text-xs font-mono text-[#5E6044]/70">{isVi ? 'Đang lưu trữ chứng nhận' : 'Certificate Archiving'}</span>
                     </div>
                   )}
                 </div>
 
-                {/* Minimal Editorial Text Underneath */}
-                <div className="space-y-1.5 pt-1">
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="font-mono text-xs font-semibold text-[#DDD8C4] tracking-wider">
-                      {item.year}
-                    </span>
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-[9px] font-mono uppercase tracking-widest bg-black/35 border border-white/15 px-2 py-0.5 rounded-xs text-[#DDD8C4]">
-                        {item.categoryLabel}
-                      </span>
-                    </div>
-                  </div>
+                {/* 3 & 4: 3-Line Text Hierarchy (Eyebrow -> Heading -> Meta Row) with Pinned CTA */}
+                <div className="flex flex-col flex-1 pt-3 space-y-2">
+                  {/* Line 1 (Eyebrow): Award level only, small mono, uppercase, letter-spaced, no badge chrome */}
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-[#DDD8C4] font-medium leading-tight">
+                    {eyebrowAward}
+                  </span>
 
-                  <h2 className="font-bold text-base sm:text-lg text-[#F2EBDD] tracking-tight leading-snug">
-                    {item.award}
+                  {/* Line 2 (Heading): Competition Name as Large Bold Heading */}
+                  <h2
+                    className="font-bold text-lg sm:text-xl text-[#F2EBDD] tracking-tight leading-snug break-words"
+                    style={{ textWrap: 'balance' as any }}
+                  >
+                    {item.competition}
                   </h2>
 
-                  <p className="text-xs font-mono text-[#DDD8C4]/80 tracking-tight leading-relaxed">
-                    {item.competition}
-                  </p>
+                  {/* Line 3 (Meta Row): Year · [Scope Badge] (Never wraps awkwardly, uses gap for bullet) */}
+                  <div className="flex items-center gap-2 text-xs font-mono pt-0.5">
+                    <span className="font-semibold text-[#DDD8C4] tracking-wider shrink-0">
+                      {item.year}
+                    </span>
+                    <span className="text-[#DDD8C4]/40 select-none shrink-0" aria-hidden="true">·</span>
+                    <span className="text-[10px] font-mono uppercase tracking-wider bg-black/40 text-[#DDD8C4] px-1.5 py-0.5 rounded-xs shrink-0 whitespace-nowrap">
+                      {item.categoryLabel}
+                    </span>
+                  </div>
 
-                  {/* Subtle "See more →" Link */}
-                  <div className="pt-2">
-                    <button
-                      type="button"
-                      onClick={() => setDrawerAward(item)}
-                      className="text-xs font-mono text-[#DDD8C4]/90 hover:text-white inline-flex items-center gap-1 transition-colors cursor-pointer group/link"
-                    >
-                      <span className="underline decoration-white/30 underline-offset-4 group-hover/link:decoration-white">
+                  {/* 5: Pinned See More CTA affordance at bottom */}
+                  <div className="pt-3 mt-auto">
+                    <span className="text-xs font-mono text-[#DDD8C4]/90 group-hover:text-white group-focus-visible:text-white inline-flex items-center gap-1 transition-colors pointer-events-none">
+                      <span className="underline decoration-white/30 underline-offset-4 group-hover:decoration-white group-focus-visible:decoration-white">
                         {t.honors.seeMore}
                       </span>
-                      <span className="transition-transform group-hover/link:translate-x-0.5">→</span>
-                    </button>
+                      <span className="transition-transform group-hover:translate-x-1 group-focus-visible:translate-x-1 motion-reduce:transition-none">→</span>
+                    </span>
                   </div>
                 </div>
-              </div>
+              </article>
             );
           })}
         </div>
