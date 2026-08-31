@@ -23,14 +23,14 @@ export const ResumePage: React.FC<ResumePageProps> = () => {
 
   return (
     <section id="resume" className="w-full bg-[#F2EBDD] text-[#292929] border-b border-[#292929]/10">
-      <div className="max-w-4xl mx-auto py-12 md:py-20 px-5 sm:px-8 md:px-12 space-y-10">
+      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[1500px] mx-auto py-12 md:py-20 px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 space-y-10">
         {/* Title & Email CTA */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#292929]/10 pb-6">
-          <div className="space-y-1">
+          <div className="section-heading">
             <span className="text-xs font-mono text-[#676749] uppercase tracking-wider">
               {t.resume.sectionNum}
             </span>
-            <h1 className="text-4xl sm:text-5xl font-bold text-[#292929] tracking-tight">
+            <h1 className="section-h1 font-bold tracking-tight text-[#292929] lg:whitespace-nowrap">
               {t.resume.title}
             </h1>
           </div>

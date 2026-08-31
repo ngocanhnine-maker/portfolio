@@ -22,7 +22,6 @@ export interface TranslationDictionary {
   landing: {
     enter: string;
     portfolio: string;
-    subtitle: string;
   };
   about: {
     sectionNum: string;
@@ -238,14 +237,13 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     },
     landing: {
       enter: 'Enter Portfolio',
-      portfolio: 'Portfolio Archive',
-      subtitle: 'A refined editorial dossier bridging quantitative finance, chemical research, and social impact.'
+      portfolio: 'Portfolio Archive'
     },
     about: {
       sectionNum: '01 / About Me',
       name: 'Tran Ngoc Anh',
-      title: 'About Me.',
-      introSubtitle: 'A specialized dossier across quantitative economics, applied data science, and chemistry.',
+      title: 'About Me',
+      introSubtitle: 'Chemistry · Economics · Data',
       profileHeader: 'Tran Ngoc Anh',
       profileMeta: 'Hanoi–Amsterdam High School for the Gifted · Class of 2027',
       bioPlaceholder: '',
@@ -253,7 +251,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     },
     honors: {
       sectionNum: '02 / Honors & Awards',
-      title: 'Honors & Awards.',
+      title: 'Honors & Awards',
       subtitle: 'International, national, and regional recognitions in economics, chemistry, and research innovation.',
       viewCertificate: 'View Certificate & Official Score',
       viewProject: 'View Related Project & Research',
@@ -285,7 +283,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     },
     education: {
       sectionNum: '03 / Education',
-      title: 'Education.',
+      title: 'Education',
       subtitle: 'Academic background, standardized test scores, and scholastic milestones.',
       institution: 'Hanoi–Amsterdam High School for the Gifted',
       specialization: 'Major Specialization: Chemistry',
@@ -307,7 +305,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     },
     projects: {
       sectionNum: '04 / Projects',
-      title: 'Projects.',
+      title: 'Projects',
       subtitle: 'Selected technical builds, quantitative analytics platforms, and software architectures.',
       viewCaseStudy: 'View Case Study',
       viewCase: 'View Case',
@@ -319,7 +317,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     },
     research: {
       sectionNum: '05 / Research',
-      title: 'Research.',
+      title: 'Research',
       subtitle: 'Empirical inquiries, econometrics, and peer-reviewed scientific publications.',
       publishedPaper: 'Published Paper',
       researchProject: 'Research Project',
@@ -347,18 +345,18 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     },
     leadership: {
       sectionNum: '06 / Leadership',
-      title: 'Leadership.',
+      title: 'Leadership',
       subtitle: 'Strategic execution, team guidance, and organization management.',
       prevSection: 'Research',
       nextSection: 'Activities'
     },
     activities: {
       sectionNum: '07 / Activities',
-      title: 'Activities.',
+      title: 'Activities',
       subtitle: 'Professional internships, practical data analytics, and organizational contributions.',
       featuredSection: 'Featured Activities',
       secondarySection: 'Archive & Community Cohorts',
-      secondaryTitle: 'Secondary Activities.',
+      secondaryTitle: 'Other Activities',
       secondarySubtitle: 'Archive & Community Cohorts',
       mentoringRow: 'Mentoring & Education',
       volunteeringRow: 'Community & Volunteering',
@@ -385,17 +383,17 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     },
     interests: {
       sectionNum: '08 / Interests',
-      title: 'Interests.',
+      title: 'Interests',
       subtitle: 'Interdisciplinary pursuits, analytical passions, and personal exploratory domains.',
       introLine: 'The things I return to when I’m not building or analyzing.',
-      currentlyText: 'CURRENTLY → learning guitar · reading · exploring new ideas',
+      currentlyText: 'CURRENTLY → learning guitar',
       prevSection: 'Activities',
       viewResume: 'View Resume',
       backToTop: 'Back to Top'
     },
     resume: {
       sectionNum: 'Curriculum Vitae',
-      title: 'Resume.',
+      title: 'Resume',
       subtitle: 'Comprehensive overview of qualifications, experience, and competencies.',
       downloadCv: 'Download Resume (PDF)',
       copyEmail: 'Copy Email',
@@ -453,22 +451,21 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     },
     landing: {
       enter: 'Khám phá Portfolio',
-      portfolio: 'Lưu trữ Hồ sơ Năng lực',
-      subtitle: 'Hồ sơ năng lực học thuật và chuyên môn kết hợp giữa kinh tế lượng định lượng, nghiên cứu hóa học và tác động xã hội.'
+      portfolio: 'Lưu trữ Hồ sơ Năng lực'
     },
     about: {
       sectionNum: '01 / Giới thiệu',
-      name: 'Trần Ngọc Ánh',
-      title: 'Giới thiệu.',
-      introSubtitle: 'Hồ sơ chuyên môn kết hợp kinh tế học định lượng, khoa học dữ liệu ứng dụng và hóa học chuyên sâu.',
-      profileHeader: 'Trần Ngọc Ánh',
+      name: 'Trần Ngọc Anh',
+      title: 'Giới thiệu',
+      introSubtitle: 'Hóa học · Kinh tế · Dữ liệu',
+      profileHeader: 'Trần Ngọc Anh',
       profileMeta: 'THPT Chuyên Hà Nội – Amsterdam · Khóa 2024 – 2027',
       bioPlaceholder: '',
       nextSection: 'Giải thưởng & Thành tích'
     },
     honors: {
       sectionNum: '02 / Giải thưởng & Thành tích',
-      title: 'Giải thưởng.',
+      title: 'Giải thưởng',
       subtitle: 'Các danh hiệu và huy chương quốc tế, quốc gia và cấp thành phố về kinh tế, hóa học và nghiên cứu sáng chế.',
       viewCertificate: 'Xem chứng nhận & điểm số chính thức',
       viewProject: 'Xem dự án & nghiên cứu liên quan',
@@ -500,7 +497,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     },
     education: {
       sectionNum: '03 / Học vấn',
-      title: 'Học vấn.',
+      title: 'Học vấn',
       subtitle: 'Quá trình học tập, bảng điểm học tập GPA và các chứng chỉ chuẩn hóa quốc tế.',
       institution: 'THPT Chuyên Hà Nội – Amsterdam',
       specialization: 'Chuyên ban: Hóa học',
@@ -522,7 +519,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     },
     projects: {
       sectionNum: '04 / Dự án',
-      title: 'Dự án.',
+      title: 'Dự án',
       subtitle: 'Các sản phẩm kỹ thuật, nền tảng phân tích định lượng và kiến trúc phần mềm tiêu biểu.',
       viewCaseStudy: 'Xem Case Study chi tiết',
       viewCase: 'Xem dự án',
@@ -534,7 +531,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     },
     research: {
       sectionNum: '05 / Nghiên cứu',
-      title: 'Nghiên cứu.',
+      title: 'Nghiên cứu',
       subtitle: 'Các công trình nghiên cứu thực nghiệm, mô hình kinh tế lượng và bài báo khoa học đã xuất bản.',
       publishedPaper: 'Bài báo đã xuất bản',
       researchProject: 'Dự án nghiên cứu',
@@ -562,18 +559,18 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     },
     leadership: {
       sectionNum: '06 / Lãnh đạo',
-      title: 'Lãnh đạo.',
+      title: 'Lãnh đạo',
       subtitle: 'Năng lực điều hành chiến lược, dẫn dắt đội ngũ và quản lý tổ chức.',
       prevSection: 'Nghiên cứu',
       nextSection: 'Hoạt động'
     },
     activities: {
       sectionNum: '07 / Hoạt động',
-      title: 'Hoạt động.',
+      title: 'Hoạt động',
       subtitle: 'Quá trình thực tập chuyên môn, phân tích dữ liệu thực tế và đóng góp cho cộng đồng.',
       featuredSection: 'Hoạt động tiêu biểu',
       secondarySection: 'Lưu trữ & Hoạt động cộng đồng',
-      secondaryTitle: 'Hoạt động bổ trợ.',
+      secondaryTitle: 'Hoạt động khác',
       secondarySubtitle: 'Lưu trữ & Hoạt động cộng đồng',
       mentoringRow: 'Cố vấn & Giáo dục',
       volunteeringRow: 'Cộng đồng & Thiện nguyện',
@@ -600,17 +597,17 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     },
     interests: {
       sectionNum: '08 / Sở thích',
-      title: 'Sở thích.',
+      title: 'Sở thích',
       subtitle: 'Các định hướng nghiên cứu liên ngành, đam mê phân tích và sở thích cá nhân.',
       introLine: 'Những điều tôi tìm về khi không bận rộn với nghiên cứu hay mô hình hóa.',
-      currentlyText: 'HIỆN TẠI → học guitar · đọc sách · khám phá các ý tưởng mới',
+      currentlyText: 'HIỆN TẠI → học guitar',
       prevSection: 'Hoạt động',
       viewResume: 'Xem Hồ sơ (CV)',
       backToTop: 'Lên đầu trang'
     },
     resume: {
       sectionNum: 'Hồ sơ năng lực',
-      title: 'Hồ sơ.',
+      title: 'Hồ sơ',
       subtitle: 'Bản tóm tắt toàn diện về học vấn, kinh nghiệm, năng lực chuyên môn và kỹ năng.',
       downloadCv: 'Tải CV (PDF)',
       copyEmail: 'Sao chép Email',

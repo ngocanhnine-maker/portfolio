@@ -136,7 +136,7 @@ export const AskAIPage: React.FC<AskAIPageProps> = ({ onNavigate }) => {
     ) {
       return isVi
         ? {
-            text: 'Trần Ngọc Ánh theo học tại **THPT Chuyên Hà Nội – Amsterdam**, chuyên Hóa học (09/2024 – 06/2027). Thành tích học tập nổi bật bao gồm **ĐTB Lớp 10: 9.6**, **ĐTB Lớp 11: 9.8**, **SAT: 1520** (06/2026), **IELTS Academic: 7.5** (07/2025), và **A-Level Mathematics: A** (Cambridge AS Level). Bảng điểm và chứng chỉ gốc có thể xem trực tiếp trong mục Học vấn.',
+            text: 'Trần Ngọc Anh theo học tại **THPT Chuyên Hà Nội – Amsterdam**, chuyên Hóa học (09/2024 – 06/2027). Thành tích học tập nổi bật bao gồm **ĐTB Lớp 10: 9.6**, **ĐTB Lớp 11: 9.8**, **SAT: 1520** (06/2026), **IELTS Academic: 7.5** (07/2025), và **A-Level Mathematics: A** (Cambridge AS Level). Bảng điểm và chứng chỉ gốc có thể xem trực tiếp trong mục Học vấn.',
             actionLink: {
               label: 'Xem mục Học vấn →',
               targetPage: 'education'
@@ -251,7 +251,7 @@ export const AskAIPage: React.FC<AskAIPageProps> = ({ onNavigate }) => {
     ) {
       return isVi
         ? {
-            text: 'Trần Ngọc Ánh đã đạt nhiều giải thưởng xuất sắc: **Huy chương Vàng** Olympic Sáng tạo & Phát minh Thế giới (WICO 2026 tại Hàn Quốc), **Giải Nhất Quốc gia** Olympic Kinh tế Việt Nam (VEO 2026), **Giải Ba Quốc gia** Học sinh Giỏi môn Hóa học (2025–2026), **Huy chương Vàng** Olympic Toàn cầu AX (2026), cùng nhiều Giải Nhất & Nhì cấp Thành phố.',
+            text: 'Trần Ngọc Anh đã đạt nhiều giải thưởng xuất sắc: **Huy chương Vàng** Olympic Sáng tạo & Phát minh Thế giới (WICO 2026 tại Hàn Quốc), **Giải Nhất Quốc gia** Olympic Kinh tế Việt Nam (VEO 2026), **Giải Ba Quốc gia** Học sinh Giỏi môn Hóa học (2025–2026), **Huy chương Vàng** Olympic Toàn cầu AX (2026), cùng nhiều Giải Nhất & Nhì cấp Thành phố.',
             actionLink: {
               label: 'Xem Giải thưởng & Danh hiệu →',
               targetPage: 'honors'
@@ -277,7 +277,7 @@ export const AskAIPage: React.FC<AskAIPageProps> = ({ onNavigate }) => {
     ) {
       return isVi
         ? {
-            text: `Trần Ngọc Ánh theo đuổi sự giao thoa giữa kinh tế học định lượng, công nghệ dữ liệu và hóa học chuyên sâu, hướng tới các giải pháp có tác động xã hội bền vững. Email liên hệ: ${PERSONAL_INFO.email}.`,
+            text: `Trần Ngọc Anh theo đuổi sự giao thoa giữa kinh tế học định lượng, công nghệ dữ liệu và hóa học chuyên sâu, hướng tới các giải pháp có tác động xã hội bền vững. Email liên hệ: ${PERSONAL_INFO.email}.`,
             actionLink: {
               label: 'Về bản thân →',
               targetPage: 'about'
@@ -303,24 +303,24 @@ export const AskAIPage: React.FC<AskAIPageProps> = ({ onNavigate }) => {
     ) {
       return isVi
         ? {
-            text: `Bộ kỹ năng bao gồm TypeScript, React, Python, SQL, và mô hình hóa định lượng. Bạn có thể xem hồ sơ năng lực chi tiết tại trang Hồ sơ (Resume) hoặc liên hệ qua email ${PERSONAL_INFO.email}.`,
+            text: `Bộ kỹ năng bao gồm TypeScript, React, Python, SQL, và mô hình hóa định lượng. Bạn có thể xem phần giới thiệu hoặc liên hệ qua email ${PERSONAL_INFO.email}.`,
             actionLink: {
-              label: 'Xem Hồ sơ & Liên hệ →',
-              targetPage: 'resume'
+              label: 'Về bản thân & Liên hệ →',
+              targetPage: 'about'
             }
           }
         : {
-            text: `The skillset spans TypeScript, React, Python, SQL, and quantitative modeling. You can review full credentials on the Resume page or reach out directly at ${PERSONAL_INFO.email}.`,
+            text: `The skillset spans TypeScript, React, Python, SQL, and quantitative modeling. You can review the About section or reach out directly at ${PERSONAL_INFO.email}.`,
             actionLink: {
-              label: 'View Resume & Contact →',
-              targetPage: 'resume'
+              label: 'About & Contact →',
+              targetPage: 'about'
             }
           };
     }
 
     return isVi
       ? {
-          text: `Dựa trên hồ sơ của Trần Ngọc Ánh, câu hỏi của bạn liên quan đến các lĩnh vực học thuật, nghiên cứu định lượng, dự án công nghệ và hoạt động cộng đồng. Bạn có thể khám phá chi tiết tại các mục tương ứng trong danh mục hồ sơ.`,
+          text: `Dựa trên hồ sơ của Trần Ngọc Anh, câu hỏi của bạn liên quan đến các lĩnh vực học thuật, nghiên cứu định lượng, dự án công nghệ và hoạt động cộng đồng. Bạn có thể khám phá chi tiết tại các mục tương ứng trong danh mục hồ sơ.`,
           actionLink: {
             label: 'Khám phá Danh mục →',
             targetPage: 'about'
@@ -420,7 +420,7 @@ export const AskAIPage: React.FC<AskAIPageProps> = ({ onNavigate }) => {
             className="my-auto w-full flex flex-col items-center space-y-8 py-12"
           >
             <div className="text-center space-y-1">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-[#292929]">
+              <h1 className="text-2xl font-semibold tracking-tight text-[#292929] sm:text-3xl md:text-4xl">
                 {t.askAi.heroTitle}
               </h1>
             </div>

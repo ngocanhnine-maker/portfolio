@@ -12,7 +12,6 @@ import { ProjectsPage } from './components/ProjectsPage';
 import { LeadershipPage } from './components/LeadershipPage';
 import { ActivitiesPage } from './components/ActivitiesPage';
 import { InterestsPage } from './components/InterestsPage';
-import { ResumePage } from './components/ResumePage';
 import { CaseStudyModal } from './components/CaseStudyModal';
 
 export default function App() {
@@ -68,8 +67,7 @@ export default function App() {
       'research',
       'leadership',
       'activities',
-      'interests',
-      'resume'
+      'interests'
     ];
     
     const handleScroll = () => {
@@ -197,7 +195,6 @@ export default function App() {
              6. Leadership (Muted Olive)
              7. Activities (Beige)
              8. Interests (Muted Olive)
-             + Resume (Beige)
           */
           <div className="w-full">
             <AboutPage onNavigate={handleNavigate} />
@@ -218,10 +215,6 @@ export default function App() {
             <LeadershipPage onNavigate={handleNavigate} />
             <ActivitiesPage onNavigate={handleNavigate} />
             <InterestsPage onNavigate={handleNavigate} />
-            <ResumePage
-              onNavigate={handleNavigate}
-              onOpenCaseStudy={handleOpenCaseStudy}
-            />
           </div>
         )}
       </main>

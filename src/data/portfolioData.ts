@@ -3,13 +3,14 @@ import { Language } from '../context/LanguageContext';
 
 export const PERSONAL_INFO = {
   name: 'Tran Ngoc Anh',
-  nameVi: 'Trần Ngọc Ánh',
+  nameVi: 'Trần Ngọc Anh',
   shortName: 'Tran Ngoc Anh',
   title: 'Academic & Research Portfolio',
   titleVi: 'Hồ sơ Học thuật & Nghiên cứu',
   tagline: 'Empirical Research · Quantitative Strategy · Impact',
   taglineVi: 'Nghiên cứu Thực nghiệm · Chiến lược Định lượng · Tác động',
-  email: 'Ngocanh.nine@gmail.com',
+  email: 'ngocanh.nine@gmail.com',
+  cvUrl: '',
   github: 'https://github.com',
   linkedin: 'https://linkedin.com',
   location: 'Hanoi, Vietnam',
@@ -144,55 +145,9 @@ export const PROJECTS_EN: ProjectItem[] = [
         'Presented and awarded Gold at WICO 2026'
       ]
     }
-  },
-  {
-    id: 'project-02',
-    number: '02',
-    name: 'Green Lending Econometric Suite',
-    role: 'Quantitative Analyst',
-    tools: ['Stata', 'R', 'Panel Econometrics', 'LaTeX'],
-    year: '2026',
-    tag: 'Econometric Analytics',
-    metrics: [
-      { label: 'Sample', value: '8 Banks' },
-      { label: 'Panel Obs', value: '24 Bank-Years' },
-      { label: 'Significance', value: 'p < 0.05' }
-    ],
-    caseStudy: {
-      overview: 'Empirical estimation suite investigating green credit ratios versus bank profitability across Vietnamese commercial lenders.',
-      problem: 'Limited empirical evidence on whether ESG credit allocation enhances bank financial performance in Vietnam.',
-      solution: 'Pooled OLS model with robust standard errors evaluating return on assets against green credit intensity.',
-      results: [
-        'Demonstrated that green lending intensity significantly correlates with higher ROA',
-        'Published in Journal of Management Research (Vol. 18, No. 2, 2026)',
-        'Delivered actionable policy recommendations for commercial credit officers'
-      ]
-    }
-  },
-  {
-    id: 'project-03',
-    number: '03',
-    name: 'Telecommunications Financial Planning System',
-    role: 'Business Data Analyst Intern',
-    tools: ['SQL', 'Power BI', 'Excel VBA', 'Tableau'],
-    year: '2026',
-    tag: 'Operational Intelligence',
-    metrics: [
-      { label: 'Reporting', value: 'Automated' },
-      { label: 'Cycle Time', value: '-35%' },
-      { label: 'Data Points', value: '100k+' }
-    ],
-    caseStudy: {
-      overview: 'Automated financial tracking and cost-efficiency analytics dashboard for telecom operations at GTEL.',
-      problem: 'Disparate operational logs causing delays in quarterly budgetary forecasting and cost analysis.',
-      solution: 'Consolidated SQL pipeline feeding interactive Power BI dashboards for real-time cost-variance tracking.',
-      results: [
-        'Reduced manual financial reconciliation cycle time by 35%',
-        'Streamlined departmental budget visibility across key regional nodes',
-        'Commended by senior leadership in Financial Planning'
-      ]
-    }
   }
+  // NOTE: only one real project for now. Additional entries render as
+  // "Coming soon" placeholder slots in ProjectsPage (showComingSoonSlots).
 ];
 
 export const PROJECTS_VI: ProjectItem[] = [
@@ -219,54 +174,6 @@ export const PROJECTS_VI: ProjectItem[] = [
         'Thuyết trình và đạt Huy chương Vàng tại WICO 2026'
       ]
     }
-  },
-  {
-    id: 'project-02',
-    number: '02',
-    name: 'Bộ Phân tích Kinh tế lượng Tín dụng Xanh',
-    role: 'Nhà phân tích Định lượng',
-    tools: ['Stata', 'R', 'Kinh tế lượng', 'LaTeX'],
-    year: '2026',
-    tag: 'Phân tích Kinh tế lượng',
-    metrics: [
-      { label: 'Mẫu nghiên cứu', value: '8 Ngân hàng' },
-      { label: 'Quan sát', value: '24 Năm-Ngân hàng' },
-      { label: 'Mức ý nghĩa', value: 'p < 0.05' }
-    ],
-    caseStudy: {
-      overview: 'Bộ ước lượng thực nghiệm phân tích tác động của tỷ trọng tín dụng xanh lên tỷ suất sinh lời của các ngân hàng thương mại Việt Nam.',
-      problem: 'Thiếu hụt bằng chứng thực nghiệm rõ ràng về tác động của tín dụng ESG lên hiệu quả tài chính ngân hàng tại Việt Nam.',
-      solution: 'Mô hình hồi quy OLS dữ liệu bảng với sai số chuẩn vững đánh giá ROA theo cường độ cho vay xanh.',
-      results: [
-        'Chứng minh tỷ trọng tín dụng xanh có tương quan thuận và có ý nghĩa thống kê với ROA',
-        'Xuất bản trên Journal of Management Research (Tập 18, Số 2, 2026)',
-        'Đưa ra khuyến nghị chính sách cụ thể cho các tổ chức tín dụng'
-      ]
-    }
-  },
-  {
-    id: 'project-03',
-    number: '03',
-    name: 'Hệ thống Kế hoạch Tài chính Viễn thông GTEL',
-    role: 'Thực tập sinh Phân tích Dữ liệu',
-    tools: ['SQL', 'Power BI', 'Excel VBA', 'Tableau'],
-    year: '2026',
-    tag: 'Phân tích Vận hành',
-    metrics: [
-      { label: 'Báo cáo', value: 'Tự động hóa' },
-      { label: 'Thời gian xử lý', value: '-35%' },
-      { label: 'Dữ liệu', value: '100k+ bản ghi' }
-    ],
-    caseStudy: {
-      overview: 'Bảng điều khiển tự động theo dõi tài chính và phân tích hiệu quả chi phí vận hành viễn thông tại GTEL.',
-      problem: 'Dữ liệu vận hành phân tán làm chậm quá trình lập dự báo ngân sách quý và phân tích chi phí.',
-      solution: 'Xây dựng pipeline SQL tổng hợp cấp dữ liệu trực quan cho dashboard Power BI phục vụ theo dõi biến động chi phí.',
-      results: [
-        'Rút ngắn 35% chu kỳ đối soát và báo cáo tài chính định kỳ',
-        'Tăng cường khả năng theo dõi ngân sách minh bạch giữa các chi nhánh',
-        'Được ban lãnh đạo phòng Kế hoạch Tài chính đánh giá cao'
-      ]
-    }
   }
 ];
 
@@ -280,11 +187,13 @@ export const RESEARCH_PAPERS_EN: ResearchItem[] = [
     id: 'research-01',
     number: '01',
     year: '2026',
-    badge: 'PUBLISHED · JOURNAL OF MANAGEMENT RESEARCH',
+    badge: 'PUBLISHED',
     researchType: 'published_paper',
     title: 'Green Credit and Bank Financial Performance: Exploratory Evidence from Eight Vietnamese Commercial Banks, 2022–2024',
     mainTitle: 'Green Credit and Bank Financial Performance',
     subtitle: 'Exploratory Evidence from Eight Vietnamese Commercial Banks, 2022–2024',
+    // TODO(copy): 2–3 sentence abstract for the card body. Leave '' to hide the abstract slot.
+    abstract: '',
     tags: ['Green Finance', 'Banking', 'Panel Data', 'Vietnam'],
     shortDescription: 'Exploring how green lending intensity relates to the financial performance of Vietnamese commercial banks.',
     snapshot: [
@@ -334,11 +243,13 @@ export const RESEARCH_PAPERS_EN: ResearchItem[] = [
     id: 'research-02',
     number: '02',
     year: '2026',
-    badge: 'RESEARCH PROJECT · PRESENTED AT WICO 2026',
+    badge: 'RESEARCH PROJECT',
     researchType: 'research_project',
     title: 'AI-Powered Credit Risk Assessment for Vietnamese SMEs',
     mainTitle: 'Application of Artificial Intelligence to Mitigate Credit Barriers for Small and Medium Enterprises (SMEs) in Vietnam',
     subtitle: 'Investigating SME Credit Constraints and Proposing Machine Learning Risk Frameworks',
+    // TODO(copy): 2–3 sentence abstract for the card body. Leave '' to hide the abstract slot.
+    abstract: '',
     tags: ['Finance', 'Machine Learning', 'Credit Risk', 'SME'],
     paperUrl: '/papers/wico-research-paper.pdf',
     pdfUrl: '/papers/wico-research-paper.pdf',
@@ -424,11 +335,13 @@ export const RESEARCH_PAPERS_VI: ResearchItem[] = [
     id: 'research-01',
     number: '01',
     year: '2026',
-    badge: 'ĐÃ XUẤT BẢN · JOURNAL OF MANAGEMENT RESEARCH',
+    badge: 'ĐÃ XUẤT BẢN',
     researchType: 'published_paper',
     title: 'Tín dụng Xanh và Hiệu quả Tài chính Ngân hàng: Bằng chứng Thực nghiệm từ 8 Ngân hàng Thương mại Việt Nam, 2022–2024',
     mainTitle: 'Tín dụng Xanh và Hiệu quả Tài chính Ngân hàng',
     subtitle: 'Bằng chứng Thực nghiệm từ 8 Ngân hàng Thương mại Việt Nam, 2022–2024',
+    // TODO(copy): tóm tắt 2–3 câu cho thân thẻ. Để '' nếu chưa có nội dung.
+    abstract: '',
     tags: ['Tài chính Xanh', 'Ngân hàng', 'Dữ liệu Bảng', 'Việt Nam'],
     shortDescription: 'Nghiên cứu mối quan hệ giữa tỷ trọng tín dụng xanh và hiệu quả tài chính của các ngân hàng thương mại Việt Nam.',
     snapshot: [
@@ -478,11 +391,13 @@ export const RESEARCH_PAPERS_VI: ResearchItem[] = [
     id: 'research-02',
     number: '02',
     year: '2026',
-    badge: 'ĐỀ TÀI NGHIÊN CỨU · BÁO CÁO TẠI WICO 2026',
+    badge: 'ĐỀ TÀI NGHIÊN CỨU',
     researchType: 'research_project',
     title: 'Ứng dụng Trí tuệ Nhân tạo Đánh giá Rủi ro Tín dụng cho Doanh nghiệp Nhỏ và Vừa tại Việt Nam',
     mainTitle: 'Ứng dụng Trí tuệ Nhân tạo Nhằm Giảm thiểu Rào cản Tín dụng cho Doanh nghiệp Nhỏ và Vừa (DNNVV) tại Việt Nam',
     subtitle: 'Nghiên cứu các rào cản tín dụng của DNNVV và đề xuất khung đánh giá rủi ro ứng dụng Machine Learning',
+    // TODO(copy): tóm tắt 2–3 câu cho thân thẻ. Để '' nếu chưa có nội dung.
+    abstract: '',
     tags: ['Tài chính', 'Machine Learning', 'Rủi ro Tín dụng', 'DNNVV'],
     paperUrl: '/papers/wico-research-paper.pdf',
     pdfUrl: '/papers/wico-research-paper.pdf',
@@ -571,54 +486,122 @@ export const RESEARCH_PAPERS = RESEARCH_PAPERS_EN;
 export const LEADERSHIP_STORIES_EN: LeadershipStory[] = [
   {
     id: 'lead-01',
-    roleTitle: 'Project Lead',
+    roleTitle: 'Project Lead — WICO Delegation',
     organization: 'AI Credit Risk Research Delegation',
     period: '2026',
+    kind: 'International competition',
     metrics: ['Team of 6', 'Gold Medal', 'WICO 2026'],
-    highlight: 'Coordinated cross-functional research milestones, supervised financial data aggregation, and spearheaded team presentation rehearsals for the international jury in Seoul.'
+    summary:
+      'Led a six-person delegation from research question to jury submission; Gold at WICO 2026 in Seoul.',
+    stats: [
+      { value: '6', label: 'people on the team' },
+      { value: '~4', label: 'months' }
+    ]
   },
   {
     id: 'lead-02',
     roleTitle: 'Charity Organizing Chairperson',
-    organization: 'Peace Village - Thanh Xuan Volunteer Campaign',
+    organization: 'Peace Village · Thanh Xuan Volunteer Campaign',
     period: '2026',
-    metrics: ['100% Goal Met', 'Fundraising', 'Community Impact'],
-    highlight: 'Directed fundraising campaigns, coordinated logistics for Tet gift distribution, and organized cultural engagement activities supporting children with disabilities.'
+    kind: 'Community fundraising',
+    metrics: ['Fundraising drive', 'Tet gift programme', 'Peace Village'],
+    summary:
+      'Ran the fundraising and logistics for a Tet programme for children with disabilities; the drive met its target.',
+    // TODO: confirm the real figures
+    stats: [
+      { value: '40', label: 'children supported' },
+      { value: '~2', label: 'weeks' }
+    ]
   },
   {
     id: 'lead-03',
     roleTitle: 'Academic Mentor & Cohort Lead',
     organization: 'Ams Advisor Club · Hanoi-Amsterdam High School',
     period: '2025',
-    metrics: ['3 Mentees', '100% Admitted', 'Specialized High School'],
-    highlight: 'Designed tailored entrance examination study strategies, mentored Grade 9 students, and successfully guided all mentees into top specialized high schools in Hanoi.'
+    kind: 'Mentoring',
+    metrics: ['3 mentees', '3 admitted', 'Specialized HS'],
+    summary:
+      'Mentored three Grade 9 students through a six-month exam run-up — all three admitted to specialized schools.',
+    stats: [
+      { value: '3', label: 'mentees' },
+      { value: '~6', label: 'months' }
+    ]
+  },
+  {
+    id: 'lead-04',
+    roleTitle: 'Team Lead — Summer Camp',
+    // TODO: real programme name / organiser
+    organization: 'Student Leadership Summer Camp',
+    period: '2025',
+    kind: 'Summer camp',
+    metrics: ['Team of 4', '5-day camp', 'On-site logistics'],
+    summary:
+      'Coordinated a four-person team to plan and run a five-day camp programme end to end.',
+    stats: [
+      { value: '4', label: 'people on the team' },
+      { value: '5', label: 'days' }
+    ]
   }
 ];
 
 export const LEADERSHIP_STORIES_VI: LeadershipStory[] = [
   {
     id: 'lead-01',
-    roleTitle: 'Trưởng nhóm Đề tài Nghiên cứu',
+    roleTitle: 'Trưởng nhóm — Đoàn WICO',
     organization: 'Đoàn Nghiên cứu Đề tài AI & Rủi ro Tín dụng',
     period: '2026',
-    metrics: ['Đội ngũ 6 thành viên', 'Huy chương Vàng', 'WICO 2026'],
-    highlight: 'Điều phối các mốc tiến độ nghiên cứu liên chức năng, giám sát quá trình tổng hợp dữ liệu tài chính và chủ trì các buổi tập dượt thuyết trình trước hội đồng giám khảo quốc tế tại Seoul.'
+    kind: 'Cuộc thi quốc tế',
+    metrics: ['Đội 6 thành viên', 'Huy chương Vàng', 'WICO 2026'],
+    summary:
+      'Dẫn dắt đoàn sáu người từ câu hỏi nghiên cứu đến bài dự thi; giành Huy chương Vàng WICO 2026 tại Seoul.',
+    stats: [
+      { value: '6', label: 'thành viên trong đội' },
+      { value: '~4', label: 'tháng' }
+    ]
   },
   {
     id: 'lead-02',
     roleTitle: 'Trưởng Ban Tổ chức Chương trình Thiện nguyện',
-    organization: 'Chiến dịch Thiện nguyện Làng Hòa Bình - Thanh Xuân',
+    organization: 'Làng Hòa Bình · Chiến dịch Thiện nguyện Thanh Xuân',
     period: '2026',
-    metrics: ['Đạt 100% Mục tiêu', 'Gây quỹ thiện nguyện', 'Tác động Cộng đồng'],
-    highlight: 'Chỉ đạo các chiến dịch gây quỹ, điều phối công tác hậu cần trao quà Tết và tổ chức các hoạt động giao lưu văn hóa hỗ trợ các em nhỏ khuyết tật vận động.'
+    kind: 'Gây quỹ cộng đồng',
+    metrics: ['Chiến dịch gây quỹ', 'Chương trình quà Tết', 'Làng Hòa Bình'],
+    summary:
+      'Điều hành gây quỹ và hậu cần cho chương trình Tết dành cho trẻ em khuyết tật; chiến dịch đạt mục tiêu đề ra.',
+    // TODO: xác nhận con số thực
+    stats: [
+      { value: '40', label: 'trẻ em được hỗ trợ' },
+      { value: '~2', label: 'tuần' }
+    ]
   },
   {
     id: 'lead-03',
     roleTitle: 'Cố vấn Học tập & Trưởng nhóm Cố vấn',
     organization: 'CLB Ams Advisor · THPT Chuyên Hà Nội - Amsterdam',
     period: '2025',
-    metrics: ['3 Học sinh cố vấn', '100% Trúng tuyển', 'Trường Chuyên'],
-    highlight: 'Xây dựng chiến lược ôn luyện thi vào lớp 10 chuyên biệt, kèm cặp học sinh lớp 9 và hướng dẫn thành công 100% học sinh trúng tuyển vào các trường THPT chuyên hàng đầu tại Hà Nội.'
+    kind: 'Cố vấn',
+    metrics: ['3 học sinh', '3 trúng tuyển', 'Trường chuyên'],
+    summary:
+      'Kèm cặp ba học sinh lớp 9 suốt sáu tháng ôn thi — cả ba đều trúng tuyển trường chuyên.',
+    stats: [
+      { value: '3', label: 'học sinh cố vấn' },
+      { value: '~6', label: 'tháng' }
+    ]
+  },
+  {
+    id: 'lead-04',
+    roleTitle: 'Đội trưởng — Trại hè',
+    // TODO: tên chương trình / đơn vị tổ chức thực tế
+    organization: 'Trại hè Lãnh đạo Học sinh',
+    period: '2025',
+    kind: 'Trại hè',
+    metrics: ['Đội 4 người', 'Trại 5 ngày', 'Hậu cần tại chỗ'],
+    summary:
+      'Điều phối đội bốn người lên kế hoạch và vận hành trại hè năm ngày từ đầu đến cuối.',
+    stats: [
+      { value: '4', label: 'thành viên trong đội' },
+      { value: '5', label: 'ngày' }
+    ]
   }
 ];
 
@@ -859,7 +842,7 @@ export const ACHIEVEMENTS_VI: AchievementItem[] = [
       'Nguyễn Tùng Chi',
       'Tô Thanh Tùng',
       'Nguyễn Trần Mai Hương',
-      'Trần Ngọc Ánh',
+      'Trần Ngọc Anh',
       'Huỳnh Khánh Ngọc',
       'Nguyễn Ngọc Đan Linh'
     ],
@@ -1072,6 +1055,8 @@ export const ACTIVITIES_EN: ActivityItem[] = [
     heroCaption: 'GTEL Headquarters & Financial Planning Department',
     supportingImage: '',
     supportingCaption: 'Data Analytics & Operational Reporting Workspace',
+    documentUrl: '/certificates/gtel-internship-certificate.pdf',
+    documentTitle: 'Official GTEL Internship Certificate (PDF)',
     gallery: []
   },
   {
@@ -1150,6 +1135,8 @@ export const ACTIVITIES_VI: ActivityItem[] = [
     heroCaption: 'Trụ sở GTEL & Phòng Kế hoạch Tài chính',
     supportingImage: '',
     supportingCaption: 'Không gian làm việc & Báo cáo Dữ liệu Tài chính',
+    documentUrl: '/certificates/gtel-internship-certificate.pdf',
+    documentTitle: 'Giấy Chứng nhận Thực tập Chính thức tại GTEL (PDF)',
     gallery: []
   },
   {
@@ -1229,8 +1216,10 @@ export const SECONDARY_ACTIVITIES_EN: ActivityItem[] = [
     categoryGroup: 'mentoring',
     tags: ['Academic Mentorship', 'Specialized High School', 'Exam Strategy'],
     description: 'Mentored three students through high-school entrance exam preparation, helping them develop study strategies and successfully gain admission to specialized high schools in Hanoi.',
-    heroImage: '',
-    heroCaption: 'Ams Advisor Mentoring Session & Study Cohort',
+    heroImage: '/certificates/advisor image.jpg',
+    heroCaption: 'Ams Advisor Profile — Tran Ngoc Anh, Chemistry Cohort',
+    documentUrl: '/certificates/ams-advisor-certificate.pdf',
+    documentTitle: 'Official Ams Advisor Mentorship Certificate (PDF)',
     gallery: []
   },
   {
@@ -1243,8 +1232,10 @@ export const SECONDARY_ACTIVITIES_EN: ActivityItem[] = [
     categoryGroup: 'mentoring',
     tags: ['Curriculum Design', 'Exam Prep', 'Student Support'],
     description: 'Mentored students preparing for high-school entrance exams, developed study materials, and supported the organization of educational activities.',
-    heroImage: '',
-    heroCaption: 'HOLA Academy WITH Project Educational Workshop',
+    heroImage: '/gallery/with/with-project-season-v.jpg',
+    heroCaption: 'WITH Project Season V Cohort at Tran Duy Hung Secondary School',
+    documentUrl: '/certificates/with-project-season-v-certificate.pdf',
+    documentTitle: 'Official WITH Project Season V Certificate (PDF)',
     gallery: []
   },
   {
@@ -1257,9 +1248,26 @@ export const SECONDARY_ACTIVITIES_EN: ActivityItem[] = [
     categoryGroup: 'volunteering',
     tags: ['Patient Support', 'Community Service', 'Fundraising'],
     description: 'Supported a fundraising initiative for families facing financial difficulties related to medical treatment.',
-    heroImage: '',
-    heroCaption: 'Bach Mai Hospital Community Support Initiative',
-    gallery: []
+    heroImage: '/gallery/bach-mai/bach-mai-community-support-1.jpg',
+    heroCaption: 'Volunteer Team and Community Members at Bach Mai Hospital',
+    gallery: [
+      {
+        id: 'bach-mai-support-1',
+        url: '/gallery/bach-mai/bach-mai-community-support-1.jpg',
+        caption: 'Volunteer Team and Community Members at Bach Mai Hospital',
+        tag: 'Community Support',
+        aspect: 'landscape',
+        description: 'Group photo documenting the community support initiative at Bach Mai Hospital.'
+      },
+      {
+        id: 'bach-mai-support-2',
+        url: '/gallery/bach-mai/bach-mai-community-support-2.jpg',
+        caption: 'Volunteer Visit and Direct Community Engagement',
+        tag: 'Hospital Visit',
+        aspect: 'landscape',
+        description: 'Volunteers meeting community members during the support visit at Bach Mai Hospital.'
+      }
+    ]
   },
   {
     id: 'sec-act-04',
@@ -1271,9 +1279,20 @@ export const SECONDARY_ACTIVITIES_EN: ActivityItem[] = [
     categoryGroup: 'volunteering',
     tags: ['Child Welfare', 'Community Initiative', 'Youth Engagement'],
     description: 'Participated in a community fundraising initiative supporting underprivileged children and contributing to their welfare.',
-    heroImage: '',
-    heroCaption: 'SOS Children’s Village Community Engagement',
-    gallery: []
+    heroImage: '/gallery/sos-hai-phong/sos-hai-phong-visit.jpg',
+    heroCaption: 'Gift-giving Visit at SOS Children’s Village Hai Phong',
+    documentUrl: '/certificates/Từ thiện Hải Phòng.pdf',
+    documentTitle: 'Official SOS Children’s Village Hai Phong Certificate (PDF)',
+    gallery: [
+      {
+        id: 'sos-hai-phong-visit',
+        url: '/gallery/sos-hai-phong/sos-hai-phong-visit.jpg',
+        caption: 'Gift-giving Visit at SOS Children’s Village Hai Phong',
+        tag: 'Community Visit',
+        aspect: 'landscape',
+        description: 'A commemorative photo from the visit and gift-giving program for children at SOS Children’s Village Hai Phong.'
+      }
+    ]
   }
 ];
 
@@ -1288,8 +1307,10 @@ export const SECONDARY_ACTIVITIES_VI: ActivityItem[] = [
     categoryGroup: 'mentoring',
     tags: ['Cố vấn Học thuật', 'THPT Chuyên', 'Chiến lược Thi cử'],
     description: 'Kèm cặp và hướng dẫn trực tiếp 3 học sinh lớp 9 trong quá trình ôn thi vào lớp 10 chuyên, hỗ trợ xây dựng lộ trình học tập và giúp 100% học sinh trúng tuyển vào các trường THPT chuyên tại Hà Nội.',
-    heroImage: '',
-    heroCaption: 'Buổi Cố vấn Học tập & Kèm cặp Học sinh CLB Ams Advisor',
+    heroImage: '/certificates/advisor image.jpg',
+    heroCaption: 'Ảnh Hồ sơ Ams Advisor — Trần Ngọc Anh, Khối Chuyên Hóa',
+    documentUrl: '/certificates/ams-advisor-certificate.pdf',
+    documentTitle: 'Giấy Chứng nhận Cố vấn Học tập Ams Advisor (PDF)',
     gallery: []
   },
   {
@@ -1302,8 +1323,10 @@ export const SECONDARY_ACTIVITIES_VI: ActivityItem[] = [
     categoryGroup: 'mentoring',
     tags: ['Biên soạn Tài liệu', 'Luyện thi Chuyên', 'Hỗ trợ Học sinh'],
     description: 'Đồng hành cố vấn cho các học sinh chuẩn bị bước vào kỳ thi tuyển sinh THPT, tham gia xây dựng ngân hàng đề và tài liệu học tập, hỗ trợ tổ chức các hoạt động giáo dục định hướng.',
-    heroImage: '',
-    heroCaption: 'Hội thảo Học thuật & Phát triển Kỹ năng Dự án WITH',
+    heroImage: '/gallery/with/with-project-season-v.jpg',
+    heroCaption: 'Ảnh Tập thể WITH Project Season V tại Trường THCS Trần Duy Hưng',
+    documentUrl: '/certificates/with-project-season-v-certificate.pdf',
+    documentTitle: 'Giấy Chứng nhận WITH Project Season V (PDF)',
     gallery: []
   },
   {
@@ -1316,9 +1339,26 @@ export const SECONDARY_ACTIVITIES_VI: ActivityItem[] = [
     categoryGroup: 'volunteering',
     tags: ['Hỗ trợ Bệnh nhân', 'Hoạt động Xã hội', 'Gây quỹ Viện phí'],
     description: 'Tham gia hỗ trợ sáng kiến gây quỹ và chia sẻ cùng các gia đình bệnh nhân có hoàn cảnh khó khăn đang điều trị tại bệnh viện.',
-    heroImage: '',
-    heroCaption: 'Chương trình Hỗ trợ Bệnh nhân Bệnh viện Bạch Mai',
-    gallery: []
+    heroImage: '/gallery/bach-mai/bach-mai-community-support-1.jpg',
+    heroCaption: 'Đội Tình nguyện và Đại diện Cộng đồng tại Bệnh viện Bạch Mai',
+    gallery: [
+      {
+        id: 'bach-mai-support-1',
+        url: '/gallery/bach-mai/bach-mai-community-support-1.jpg',
+        caption: 'Đội Tình nguyện và Đại diện Cộng đồng tại Bệnh viện Bạch Mai',
+        tag: 'Hỗ trợ Cộng đồng',
+        aspect: 'landscape',
+        description: 'Ảnh tập thể ghi lại chương trình hỗ trợ cộng đồng tại Bệnh viện Bạch Mai.'
+      },
+      {
+        id: 'bach-mai-support-2',
+        url: '/gallery/bach-mai/bach-mai-community-support-2.jpg',
+        caption: 'Hoạt động Thăm hỏi và Gắn kết Trực tiếp',
+        tag: 'Thăm hỏi Bệnh viện',
+        aspect: 'landscape',
+        description: 'Các tình nguyện viên gặp gỡ và thăm hỏi đại diện cộng đồng trong chương trình tại Bệnh viện Bạch Mai.'
+      }
+    ]
   },
   {
     id: 'sec-act-04',
@@ -1330,9 +1370,20 @@ export const SECONDARY_ACTIVITIES_VI: ActivityItem[] = [
     categoryGroup: 'volunteering',
     tags: ['Phúc lợi Trẻ em', 'Sáng kiến Xã hội', 'Gắn kết Thanh thiếu niên'],
     description: 'Tham gia sáng kiến gây quỹ cộng đồng nhằm hỗ trợ chăm sóc các trẻ em có hoàn cảnh khó khăn và đóng góp vào các chương trình phúc lợi của làng trẻ.',
-    heroImage: '',
-    heroCaption: 'Hoạt động Gắn kết & Thiện nguyện Làng Trẻ em SOS',
-    gallery: []
+    heroImage: '/gallery/sos-hai-phong/sos-hai-phong-visit.jpg',
+    heroCaption: 'Ảnh thăm hỏi và trao quà tại Làng Trẻ em SOS Hải Phòng',
+    documentUrl: '/certificates/Từ thiện Hải Phòng.pdf',
+    documentTitle: 'Giấy Chứng nhận Từ thiện Làng Trẻ em SOS Hải Phòng (PDF)',
+    gallery: [
+      {
+        id: 'sos-hai-phong-visit',
+        url: '/gallery/sos-hai-phong/sos-hai-phong-visit.jpg',
+        caption: 'Chương trình thăm hỏi và trao quà tại Làng Trẻ em SOS Hải Phòng',
+        tag: 'Hoạt động Cộng đồng',
+        aspect: 'landscape',
+        description: 'Ảnh lưu niệm trong chương trình thăm hỏi và trao quà cho các em nhỏ tại Làng Trẻ em SOS Hải Phòng.'
+      }
+    ]
   }
 ];
 
@@ -1344,74 +1395,74 @@ export const SECONDARY_ACTIVITIES = SECONDARY_ACTIVITIES_EN;
 export const INTERESTS_EN: InterestItem[] = [
   {
     id: 'int-01',
-    number: '01',
     category: 'MUSIC',
     title: 'Piano, Guitar & Music',
-    quote: 'A space for focus, expression, and learning something slowly.',
-    description: 'A space for focus, expression, and learning something slowly.',
-    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80',
-    isFeatured: true
+    description: 'A space for focus, expression, and learning something slowly. I play classical piano and perform when the chance comes up.',
+    isFeatured: true,
+    image: '/gallery/piano/zhongsin-performance.jpg',
+    imageCaption: 'Vietnam Regional Round — 19th ZhongSin International Music Competition, Hanoi · 2024',
+    awardResult: 'Outstanding Silver Award',
+    awardCategory: 'Piano V · Amateur Level Category',
+    awardEvent: '19th ZhongSin International Music Competition · Vietnam Regional Round 2024',
+    certificates: [
+      {
+        title: 'ZhongSin Piano Certificate',
+        pdfUrl: '/certificates/zhongsin-piano-certificate.pdf'
+      },
+      {
+        title: 'Le Rythme Piano Certificate',
+        pdfUrl: '/certificates/le-rythme-piano-certificate.pdf'
+      }
+    ]
   },
   {
     id: 'int-02',
-    number: '02',
-    category: 'READING',
-    title: 'Long-form Reading',
-    quote: 'Economics, science, psychology, and the occasional novel.',
-    description: 'Economics, science, psychology, and the occasional novel.'
+    category: 'TO BE DEFINED',
+    title: '[TBD]',
+    description: 'Coming soon.'
   },
   {
     id: 'int-03',
-    number: '03',
-    category: 'VISUAL',
-    title: 'Drawing & Editorial Design',
-    quote: 'Illustration, typography, composition, and visual storytelling.',
-    description: 'Illustration, typography, composition, and visual storytelling.'
-  },
-  {
-    id: 'int-04',
-    number: '04',
-    category: 'CURIOSITY',
-    title: 'Markets & Quantitative Thinking',
-    quote: 'Patterns, incentives, and the stories hidden behind numbers.',
-    description: 'Patterns, incentives, and the stories hidden behind numbers.'
+    category: 'TO BE DEFINED',
+    title: '[TBD]',
+    description: 'Coming soon.'
   }
 ];
 
 export const INTERESTS_VI: InterestItem[] = [
   {
     id: 'int-01',
-    number: '01',
     category: 'ÂM NHẠC',
     title: 'Piano, Guitar & Âm nhạc',
-    quote: 'Không gian của sự tập trung, biểu đạt cảm xúc và học hỏi một cách chậm rãi.',
-    description: 'Không gian của sự tập trung, biểu đạt cảm xúc và học hỏi một cách chậm rãi.',
-    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80',
-    isFeatured: true
+    description: 'Không gian của sự tập trung, biểu đạt cảm xúc và học hỏi một cách chậm rãi. Mình chơi piano cổ điển và biểu diễn khi có dịp.',
+    isFeatured: true,
+    image: '/gallery/piano/zhongsin-performance.jpg',
+    imageCaption: 'Vòng Chung kết Khu vực Việt Nam — ZhongSin International Music Competition lần thứ 19, Hà Nội · 2024',
+    awardResult: 'Outstanding Silver Award (Giải Bạc Xuất sắc)',
+    awardCategory: 'Bảng Piano V · Trình độ Không chuyên',
+    awardEvent: 'ZhongSin International Music Competition lần thứ 19 · Vòng Khu vực Việt Nam 2024',
+    certificates: [
+      {
+        title: 'Chứng nhận Piano ZhongSin',
+        pdfUrl: '/certificates/zhongsin-piano-certificate.pdf'
+      },
+      {
+        title: 'Chứng nhận Piano Le Rythme',
+        pdfUrl: '/certificates/le-rythme-piano-certificate.pdf'
+      }
+    ]
   },
   {
     id: 'int-02',
-    number: '02',
-    category: 'ĐỌC SÁCH',
-    title: 'Đọc sách Chuyên sâu',
-    quote: 'Kinh tế học, khoa học, tâm lý học và những cuốn tiểu thuyết chọn lọc.',
-    description: 'Kinh tế học, khoa học, tâm lý học và những cuốn tiểu thuyết chọn lọc.'
+    category: 'SẼ CẬP NHẬT',
+    title: '[TBD]',
+    description: 'Sắp cập nhật.'
   },
   {
     id: 'int-03',
-    number: '03',
-    category: 'THỊ GIÁC & THIẾT KẾ',
-    title: 'Hội họa & Thiết kế Ấn bản',
-    quote: 'Minh họa, nghệ thuật sắp đặt chữ, bố cục và kể chuyện bằng thị giác.',
-    description: 'Minh họa, nghệ thuật sắp đặt chữ, bố cục và kể chuyện bằng thị giác.'
-  },
-  {
-    id: 'int-04',
-    number: '04',
-    category: 'TƯ DUY & KHÁM PHÁ',
-    title: 'Thị trường & Tư duy Định lượng',
-    quote: 'Những quy luật, động lực kinh tế và câu chuyện ẩn sau các con số.',
-    description: 'Những quy luật, động lực kinh tế và câu chuyện ẩn sau các con số.'
+    category: 'SẼ CẬP NHẬT',
+    title: '[TBD]',
+    description: 'Sắp cập nhật.'
   }
 ];
 

@@ -3,11 +3,23 @@ export interface ProjectMetric {
   value: string;
 }
 
+export interface CaseStudyDecision {
+  decision: string;
+  reason: string;
+}
+
 export interface CaseStudyData {
   overview: string;
   problem: string;
   solution: string;
   results: string[];
+  // Optional long-form case-study blocks (Projects template). When absent the
+  // template renders sized placeholder copy so the layout stays testable.
+  dataInput?: string;
+  whatItDoes?: string;
+  validation?: string;
+  decisions?: CaseStudyDecision[];
+  limits?: string[];
 }
 
 export interface ProjectItem {
@@ -20,6 +32,14 @@ export interface ProjectItem {
   tag: string;
   metrics: ProjectMetric[];
   caseStudy: CaseStudyData;
+  // Optional case-study meta / media (Projects template)
+  summary?: string;
+  status?: string;
+  timeline?: string;
+  liveUrl?: string;
+  sourceUrl?: string;
+  heroImage?: string;
+  detailImages?: string[];
 }
 
 export interface ResearchSnapshotItem {
@@ -44,6 +64,8 @@ export interface ResearchItem {
   title: string;
   mainTitle?: string;
   subtitle?: string;
+  /** 2–3 sentence abstract shown in the card body. Rendered only when non-empty. */
+  abstract?: string;
   tags: string[];
   shortDescription: string;
   snapshot: ResearchSnapshotItem[];
@@ -94,8 +116,19 @@ export interface LeadershipStory {
   roleTitle: string;
   organization: string;
   period: string;
-  metrics: string[];
-  highlight: string;
+  /** mono type label shown in the drawer meta row */
+  kind?: string;
+  metrics: string[]; // tags — at most 3 are rendered
+  /** short card description — 2 sentences max */
+  summary: string;
+  /** horizontal stat row (2–3 items) shown on the card and in the drawer */
+  stats?: { value: string; label: string }[];
+  /** drawer image area — [main, ...thumbnails]; empty renders a placeholder */
+  images?: string[];
+  /** "See more" drawer body — real copy optional, sized lorem shows otherwise */
+  challenge?: string;
+  contributions?: string[];
+  outcome?: string;
 }
 
 export interface GalleryPhoto {
@@ -159,8 +192,19 @@ export interface InterestItem {
   description: string;
   quote?: string;
   image?: string;
+  imageCaption?: string;
   details?: string[];
   isFeatured?: boolean;
+  // Optional award/credential tied to this interest (e.g. a competition result)
+  awardResult?: string;
+  awardCategory?: string;
+  awardEvent?: string;
+  certificatePdf?: string;
+  certificateImage?: string;
+  certificates?: Array<{
+    title: string;
+    pdfUrl: string;
+  }>;
 }
 
 export type PageId =

@@ -9,6 +9,9 @@
     --olive-light: #7E7E5A;
     --olive-dark: #52523A;
     --border-subtle: rgba(41, 41, 41, 0.10);
+    --h1-size: clamp(2.25rem, 3.9vw, 3.5rem);
+    --h1-line-height: 1.06;
+    --h1-subtitle-gap: clamp(0.5rem, 0.7vw, 0.625rem);
   }
 
   body {
@@ -29,6 +32,18 @@
 
   .font-mono-tag {
     font-family: 'JetBrains Mono', monospace;
+  }
+
+  .section-h1 {
+    margin: 0;
+    font-size: var(--h1-size);
+    line-height: var(--h1-line-height);
+  }
+
+  .section-heading {
+    display: flex;
+    flex-direction: column;
+    gap: var(--h1-subtitle-gap);
   }
 }
 
@@ -79,4 +94,17 @@
   white-space: nowrap;
 }
 
+/* Side drawer transitions (SideDrawer.tsx) */
+@keyframes drawer-overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes drawer-slide-right {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+@keyframes drawer-slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
 

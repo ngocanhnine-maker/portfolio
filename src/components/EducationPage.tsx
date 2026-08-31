@@ -42,12 +42,12 @@ export const EducationPage: React.FC<EducationPageProps> = ({ onNavigate }) => {
       id="education"
       className="w-full min-h-[calc(100vh-3.5rem)] lg:min-h-screen bg-[#F2EBDD] text-[#292929] border-b border-[#292929]/10 flex flex-col justify-center px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-12 sm:py-16 md:py-20 select-none relative"
     >
-      <div className="max-w-6xl xl:max-w-7xl mx-auto w-full">
+      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[1500px] mx-auto w-full">
         {/* Split Editorial Layout (Desktop 2-column spread, Mobile stacked) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-10 items-start">
           
-          {/* LEFT COLUMN: School Identity & Academic Context Block (Sticky on desktop, static on mobile/tablet) */}
-          <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-20 xl:top-24">
+          {/* LEFT COLUMN: sticky rail — school identity + headline results */}
+          <div className="lg:col-span-5 space-y-5 lg:sticky lg:top-20 xl:top-24 lg:self-start">
             <div className="bg-[#F8F6F1] border border-[#292929]/12 rounded-xs p-6 sm:p-8 space-y-6 shadow-[0_2px_12px_rgba(0,0,0,0.025)]">
               <div className="space-y-3">
                 <span className="text-xs font-mono text-[#676749] uppercase tracking-widest block font-medium">
@@ -75,64 +75,76 @@ export const EducationPage: React.FC<EducationPageProps> = ({ onNavigate }) => {
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* RIGHT COLUMN: 3 Layered Off-White Editorial Cards */}
-          <div className="lg:col-span-7 space-y-4 sm:space-y-5">
-            
-            {/* Card 1: Academic Performance (GPA) - Tightened stat cluster */}
-            <div className="bg-[#F8F6F1] border border-[#292929]/12 rounded-xs p-5 sm:p-7 space-y-4 shadow-[0_2px_12px_rgba(0,0,0,0.025)]">
-              <div className="flex items-baseline justify-between border-b border-[#292929]/10 pb-3">
-                <span className="text-xs font-mono uppercase tracking-widest text-[#676749] font-medium">
-                  {t.education.academicPerformance}
-                </span>
-                <span className="text-[11px] font-mono text-[#676749]/80">
-                  {t.education.scale}
-                </span>
+            {/* Academic GPA — moved here from the right column so each figure
+                lives in exactly one place. Stacked vertically to give the rail
+                real height; keeps the deeper ground + olive accent. */}
+            <div className="bg-[#ECE5D5] border border-[#292929]/12 border-l-[3px] border-l-[#5E6044] rounded-xs p-6 sm:p-8 shadow-[0_2px_12px_rgba(0,0,0,0.025)]">
+              <div className="pb-1">
+                <div className="flex items-baseline justify-between gap-2">
+                  <span className="text-xs font-mono uppercase tracking-widest text-[#676749] font-medium">
+                    {t.education.academicPerformance}
+                  </span>
+                  <span className="text-[11px] font-mono text-[#676749]/80">
+                    {t.education.scale}
+                  </span>
+                </div>
+                <div className="mt-2 h-0.5 w-8 rounded-full bg-[#5E6044]" />
               </div>
 
-              {/* Tightened 3-column stats cluster with max-width */}
-              <div className="max-w-[460px] grid grid-cols-3 gap-3 sm:gap-6 pt-1">
+              <dl className="mt-1 divide-y divide-[#292929]/10">
                 {educationData.gpa.map((item, idx) => (
-                  <div key={idx} className="space-y-1">
-                    <div className="text-xs font-mono text-[#676749] uppercase tracking-wider truncate">
+                  <div key={idx} className="flex items-baseline justify-between gap-3 py-4">
+                    <dt className="text-[11px] font-mono uppercase tracking-wider text-[#676749]">
                       {item.grade}
-                    </div>
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-2xl sm:text-3xl font-bold font-mono text-[#292929] tracking-tight">
+                    </dt>
+                    <dd className="flex shrink-0 items-baseline gap-1">
+                      <span className="text-3xl sm:text-4xl font-bold font-mono tracking-tight leading-none text-[#5E6044]">
                         {item.score}
                       </span>
-                      <span className="text-xs font-mono text-[#676749]">
-                        /{item.scale}
-                      </span>
-                    </div>
+                      <span className="text-[11px] font-mono text-[#676749]">/{item.scale}</span>
+                    </dd>
                   </div>
                 ))}
-              </div>
+              </dl>
             </div>
+          </div>
 
-            {/* Card 2: Standardized Tests & Credentials */}
+          {/* RIGHT COLUMN: verified & external records only (test records +
+              credential previews). GPA now lives in the left rail. */}
+          <div className="lg:col-span-7 space-y-6">
+
+            {/* Standardized Tests & Credentials */}
             <div className="bg-[#F8F6F1] border border-[#292929]/12 rounded-xs p-5 sm:p-7 space-y-4 shadow-[0_2px_12px_rgba(0,0,0,0.025)]">
               <div className="border-b border-[#292929]/10 pb-3">
                 <span className="text-xs font-mono uppercase tracking-widest text-[#676749] font-medium block">
                   {t.education.standardizedTests}
                 </span>
+                <div className="mt-2 h-0.5 w-8 rounded-full bg-[#5E6044]" />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-4 lg:gap-5 pt-1">
-                {educationData.standardizedTests.map((test) => (
+                {educationData.standardizedTests.map((test) => {
+                  // Single-character scores ("A") read far lighter than "1520";
+                  // bump them ~1.3x so the three columns carry equal weight.
+                  const isCompactScore = test.score.replace(/\s/g, '').length <= 1;
+                  return (
                   <div
                     key={test.id}
                     className="space-y-2 flex flex-col justify-between"
                   >
-                    <div className="space-y-1.5">
+                    <div className="space-y-1.5 sm:min-h-[8.5rem]">
                       <h2
                         className="text-sm font-semibold text-[#292929] tracking-tight"
                         style={{ textWrap: 'balance' }}
                       >
                         {test.test}
                       </h2>
-                      <div className="text-2xl sm:text-3xl font-bold font-mono text-[#292929] tracking-tight">
+                      <div
+                        className={`font-bold font-mono text-[#292929] tracking-tight leading-none ${
+                          isCompactScore ? 'text-[1.95rem] sm:text-[2.4rem]' : 'text-2xl sm:text-3xl'
+                        }`}
+                      >
                         {test.score}
                       </div>
                       <p
@@ -163,11 +175,12 @@ export const EducationPage: React.FC<EducationPageProps> = ({ onNavigate }) => {
                         id={`view-cert-${test.id}`}
                       >
                         <span>{t.education.viewCert}</span>
-                        <ArrowUpRight className="w-3 h-3" />
+                        <ArrowUpRight className="w-3 h-3 text-[#5E6044]" />
                       </button>
                     </div>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 

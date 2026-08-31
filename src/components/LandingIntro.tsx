@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { PageId } from '../types';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Languages } from 'lucide-react';
-import { EditorialFinanceBackground } from './EditorialFinanceBackground';
 import { useLanguage } from '../context/LanguageContext';
 import { TRANSLATIONS } from '../data/translations';
 
@@ -42,13 +41,8 @@ export const LandingIntro: React.FC<LandingIntroProps> = ({ onEnterPortfolio }) 
         animate={{ opacity: isExiting ? 0 : 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-        className="min-h-screen bg-[#F2EBDD] text-[#292929] flex flex-col justify-between p-6 sm:p-12 md:p-16 lg:p-20 relative overflow-hidden select-none"
+        className="min-h-screen bg-[#F2EBDD] text-[#292929] flex flex-col p-6 sm:p-12 md:p-16 lg:p-20 pb-12 relative overflow-hidden select-none"
       >
-        {/* Subtle Ambient Editorial Background */}
-        <div className="absolute inset-0 pointer-events-none">
-          <EditorialFinanceBackground />
-        </div>
-
         {/* Top Minimal Header: Name + Language Switcher + Year */}
         <motion.header
           initial={{ opacity: 0, y: -12 }}
@@ -96,8 +90,9 @@ export const LandingIntro: React.FC<LandingIntroProps> = ({ onEnterPortfolio }) 
           </div>
         </motion.header>
 
-        {/* Centerpiece Section: PORTFOLIO + Connected ENTER */}
-        <main className="my-auto py-6 sm:py-10 md:py-12 relative z-10 w-full max-w-7xl mx-auto flex flex-col justify-center">
+        {/* Centerpiece Section: PORTFOLIO + Connected ENTER — fills the space
+            between header and footer so the wordmark sits truly centred. */}
+        <main className="flex-1 py-8 relative z-10 w-full max-w-7xl mx-auto flex flex-col justify-center">
           {/* Main Title & Action Container */}
           <motion.div
             animate={
@@ -118,9 +113,14 @@ export const LandingIntro: React.FC<LandingIntroProps> = ({ onEnterPortfolio }) 
             transition={{ duration: 0.52, ease: [0.16, 1, 0.3, 1] }}
             className="w-full"
           >
-            {/* Single Large Line with Staggered Word Reveal & Balanced Typography */}
-            <div className="overflow-hidden flex items-baseline justify-start w-full whitespace-nowrap">
-              <h1 className="font-display font-extrabold text-[13.5vw] sm:text-[12.8vw] md:text-[12vw] lg:text-[11.2vw] leading-[0.88] tracking-[-0.015em] uppercase flex items-baseline">
+            {/* Wordmark + hairline share one shrink-wrapped width so the rule
+                ends with the final "O" instead of running past it. */}
+            <div className="w-fit">
+              {/* Staggered word reveal. -ml pulls the "P" side-bearing out so its
+                  ink aligns optically with the rule and "Enter Portfolio" below;
+                  pr keeps the FOLIO hover nudge from being clipped. */}
+              <div className="overflow-hidden flex items-baseline justify-start whitespace-nowrap pr-2 -ml-2.5">
+              <h1 className="font-display font-extrabold text-[13vw] sm:text-[12vw] md:text-[11vw] lg:text-[10.5vw] leading-[0.88] tracking-[-0.015em] uppercase flex items-baseline">
                 {/* PORT (Charcoal) */}
                 <motion.span
                   initial={{ y: '105%', opacity: 0 }}
@@ -141,7 +141,7 @@ export const LandingIntro: React.FC<LandingIntroProps> = ({ onEnterPortfolio }) 
                   animate={{
                     y: 0,
                     opacity: 1,
-                    color: isEnterHovered ? '#7E8354' : '#676749',
+                    color: isEnterHovered ? '#7E8354' : '#4A5238',
                     x: isEnterHovered ? 4 : 0
                   }}
                   transition={{
@@ -159,33 +159,34 @@ export const LandingIntro: React.FC<LandingIntroProps> = ({ onEnterPortfolio }) 
                   FOLIO
                 </motion.span>
               </h1>
+              </div>
+
+              {/* Clean Hairline Connecting Line */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{
+                  duration: 0.95,
+                  delay: 0.42,
+                  ease: [0.16, 1, 0.3, 1]
+                }}
+                className="origin-left h-[1px] bg-black/[0.18] mt-6 sm:mt-8 md:mt-10 w-[calc(100%_-_0.5rem)]"
+              />
             </div>
 
-            {/* Clean Hairline Connecting Line */}
-            <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{
-                duration: 0.95,
-                delay: 0.42,
-                ease: [0.16, 1, 0.3, 1]
-              }}
-              className="origin-left h-[1px] bg-[#292929]/15 mt-6 sm:mt-8 md:mt-10 w-full"
-            />
-
-            {/* ENTER Button pulled closer and visually anchored right below the divider line */}
+            {/* ENTER button directly below the divider. */}
             <motion.div
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.52, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-6 sm:mt-8 flex items-center justify-between"
+              className="mt-8"
             >
               <button
                 onClick={() => handleEnter('about')}
                 onMouseEnter={() => setIsEnterHovered(true)}
                 onMouseLeave={() => setIsEnterHovered(false)}
                 id="landing-enter-cta"
-                className="group inline-flex items-center gap-3 text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#292929] hover:text-[#676749] cursor-pointer transition-colors w-fit relative py-1"
+                className="group inline-flex items-center gap-3 text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight text-[#292929] hover:text-[#676749] cursor-pointer transition-colors w-fit relative py-1"
               >
                 <span className="relative">
                   {t.landing.enter}
@@ -206,15 +207,34 @@ export const LandingIntro: React.FC<LandingIntroProps> = ({ onEnterPortfolio }) 
                 </motion.span>
               </button>
 
-              <span className="text-xs sm:text-sm font-mono text-[#292929]/60 hidden sm:inline">
-                {t.landing.subtitle}
-              </span>
             </motion.div>
           </motion.div>
         </main>
 
-        {/* Bottom subtle breathing space */}
-        <div className="h-4 sm:h-6 pointer-events-none" />
+        {/* Footer: three pillars — closes the composition and echoes the tagline */}
+        <motion.footer
+          initial={{ opacity: 0, y: 12 }}
+          animate={{
+            opacity: isExiting ? 0 : 1,
+            y: isExiting ? 16 : 0
+          }}
+          transition={{ duration: 0.7, delay: 0.66, ease: [0.16, 1, 0.3, 1] }}
+          className="relative z-10 w-full max-w-7xl mx-auto flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-[#6B665C]"
+        >
+          {(isVi
+            ? ['Tài chính Định lượng', 'Nghiên cứu Hóa học', 'Tác động Xã hội']
+            : ['Quantitative Finance', 'Chemical Research', 'Social Impact']
+          ).map((pillar, i) => (
+            <React.Fragment key={pillar}>
+              {i > 0 && (
+                <span className="text-[#6B665C]/60" aria-hidden="true">
+                  /
+                </span>
+              )}
+              <span>{pillar}</span>
+            </React.Fragment>
+          ))}
+        </motion.footer>
       </motion.div>
     </AnimatePresence>
   );

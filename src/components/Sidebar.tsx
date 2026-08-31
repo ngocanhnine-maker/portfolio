@@ -5,7 +5,6 @@ import {
   ArrowLeft,
   Menu,
   X,
-  ArrowUpRight,
   Mail,
   User,
   GraduationCap,
@@ -15,11 +14,11 @@ import {
   Users,
   Activity,
   Compass,
-  FileText,
   PanelLeftClose,
   PanelLeft,
   Github,
   Linkedin,
+  FileText,
   Languages
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
@@ -43,6 +42,11 @@ interface NavItemDef {
   icon: React.ComponentType<{ className?: string }>;
 }
 
+const SIDEBAR_SOCIAL_LINKS: Record<'github' | 'linkedin', boolean> = {
+  github: false,
+  linkedin: false
+};
+
 export const Sidebar: React.FC<SidebarProps> = ({
   activePage,
   onNavigate,
@@ -54,6 +58,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 }) => {
   const { language, setLanguage, toggleLanguage, isVi } = useLanguage();
   const t = TRANSLATIONS[language];
+  const hasCv = Boolean(PERSONAL_INFO.cvUrl.trim());
 
   // Main numbered portfolio flow in exact requested order: About -> Honors & Awards -> Education -> Projects -> Research -> Leadership -> Activities -> Interests
   const numberedNavItems: NavItemDef[] = [
@@ -86,7 +91,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           className="font-bold text-sm sm:text-base tracking-tight text-[#F2EBDD] hover:text-[#989A6C] transition-colors cursor-pointer"
           id="mobile-logo-btn"
         >
-          {isVi ? 'TRẦN NGỌC ÁNH' : 'TRAN NGOC ANH'}
+          {isVi ? 'TRẦN NGỌC ANH' : 'TRAN NGOC ANH'}
         </button>
 
         <div className="flex items-center gap-2">
@@ -200,27 +205,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
               })}
             </nav>
 
-            {/* Separate Resume Link */}
-            <div className="pt-3 border-t border-white/10">
-              <button
-                onClick={() => handleNavClick('resume')}
-                id="mobile-nav-resume"
-                className={`w-full flex items-center justify-between px-3 py-2 rounded-sm text-sm transition-all cursor-pointer ${
-                  activePage === 'resume'
-                    ? 'bg-white/15 text-[#F2EBDD] font-semibold'
-                    : 'text-[#F2EBDD]/70 hover:text-[#F2EBDD] hover:bg-white/5'
-                }`}
-              >
-                <span className="flex items-center gap-2.5">
-                  <FileText className="w-4 h-4 text-[#989A6C]" />
-                  <span>{t.nav.resume}</span>
-                </span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-[#F2EBDD]/40" />
-              </button>
-            </div>
-
             {/* Bottom Links & Language Switch */}
-            <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#F2EBDD]/70">
+            <div className="flex items-center justify-between gap-4 border-t border-white/10 pt-3 text-xs font-mono text-[#F2EBDD]/70">
               <button
                 onClick={onBackToLanding}
                 className="flex items-center gap-1.5 hover:text-[#F2EBDD] transition-colors cursor-pointer"
@@ -236,6 +222,28 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 <Mail className="w-3.5 h-3.5" />
                 {t.nav.email}
               </a>
+              {hasCv ? (
+                <a
+                  href={PERSONAL_INFO.cvUrl}
+                  download
+                  className="flex items-center gap-1 hover:text-[#F2EBDD] transition-colors"
+                  title={isVi ? 'Tải CV' : 'Download CV'}
+                >
+                  <FileText className="h-3.5 w-3.5" />
+                  CV
+                </a>
+              ) : (
+                <span title="Coming soon">
+                  <button
+                    type="button"
+                    disabled
+                    className="flex cursor-not-allowed items-center gap-1 opacity-40"
+                  >
+                    <FileText className="h-3.5 w-3.5" />
+                    CV
+                  </button>
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -259,10 +267,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   className="text-left group cursor-pointer overflow-hidden max-w-[170px]"
                   id="sidebar-brand-btn"
                   title={isVi ? 'Quay lại màn hình mở đầu' : 'Return to Intro'}
-                  aria-label={isVi ? 'Trần Ngọc Ánh - Quay lại giới thiệu' : 'Tran Ngoc Anh - Return to Intro'}
+                  aria-label={isVi ? 'Trần Ngọc Anh - Quay lại giới thiệu' : 'Tran Ngoc Anh - Return to Intro'}
                 >
                   <div className="text-sm xl:text-base font-bold tracking-tight text-[#F2EBDD] group-hover:text-[#989A6C] transition-colors leading-tight truncate">
-                    {isVi ? 'TRẦN NGỌC ÁNH' : 'TRAN NGOC ANH'}
+                    {isVi ? 'TRẦN NGỌC ANH' : 'TRAN NGOC ANH'}
                   </div>
                   <div className="text-[10px] font-mono text-[#F2EBDD]/45 uppercase tracking-wider mt-0.5 truncate">
                     {t.nav.portfolioSubtitle}
@@ -286,12 +294,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     onClick={onBackToLanding}
                     className="font-mono text-xs font-bold text-[#F2EBDD] hover:text-[#989A6C] transition-colors cursor-pointer w-9 h-9 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center focus-visible:ring-1 focus-visible:ring-white/40"
                     id="sidebar-collapsed-monogram"
-                    aria-label={isVi ? 'Trần Ngọc Ánh · Quay lại màn hình giới thiệu' : 'Tran Ngoc Anh · Return to Intro'}
+                    aria-label={isVi ? 'Trần Ngọc Anh · Quay lại màn hình giới thiệu' : 'Tran Ngoc Anh · Return to Intro'}
                   >
                     TNA
                   </button>
                   <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-2.5 py-1 bg-[#181816] text-[#F2EBDD] text-[11px] font-mono border border-white/15 rounded-xs shadow-lg whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-150 motion-reduce:transition-none z-50">
-                    {isVi ? 'Trần Ngọc Ánh · Giới thiệu' : 'Tran Ngoc Anh · Intro'}
+                    {isVi ? 'Trần Ngọc Anh · Giới thiệu' : 'Tran Ngoc Anh · Intro'}
                   </div>
                 </div>
 
@@ -460,152 +468,100 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </div>
         </div>
 
-        {/* Sidebar Footer with Separate Resume link */}
-        <div className={`pt-3 border-t border-white/10 ${isCollapsed ? 'space-y-2.5' : 'space-y-2.5'}`}>
-          {/* ✦ Separate Resume Link near bottom */}
-          <div className="relative group">
-            <button
-              onClick={() => handleNavClick('resume')}
-              id="sidebar-nav-resume"
-              aria-label={t.nav.resume}
-              className={`w-full flex items-center rounded-sm text-xs font-mono transition-all duration-150 cursor-pointer ${
-                isCollapsed
-                  ? 'justify-center p-2'
-                  : 'justify-between px-3 py-1.5'
-              } ${
-                activePage === 'resume'
-                  ? 'text-[#F2EBDD] font-bold bg-[#676749] border border-white/20 shadow-xs'
-                  : 'text-[#F2EBDD]/70 bg-white/5 border border-white/10 hover:bg-white/10 hover:text-[#F2EBDD]'
-              }`}
-            >
-              <div className="flex items-center gap-2 min-w-0">
-                <FileText className={`w-3.5 h-3.5 shrink-0 ${activePage === 'resume' ? 'text-[#F2EBDD]' : 'text-[#989A6C]'}`} />
-                {!isCollapsed && <span className="truncate">{t.nav.resume}</span>}
-              </div>
-              {!isCollapsed && <ArrowUpRight className="w-3 h-3 text-[#F2EBDD]/40 shrink-0" />}
-            </button>
-
-            {isCollapsed && (
-              <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-2.5 py-1 bg-[#181816] text-[#F2EBDD] text-[11px] font-mono border border-white/15 rounded-xs shadow-lg whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-150 motion-reduce:transition-none z-50">
-                {t.nav.resume}
-              </div>
-            )}
-          </div>
-
-          {!isCollapsed ? (
-            /* Full Footer Links */
-            <>
-              <div className="space-y-0.5 text-[10px] uppercase font-mono text-[#F2EBDD]/55 pt-0.5">
-                <a
-                  href={`mailto:${PERSONAL_INFO.email}`}
-                  className="flex items-center justify-between hover:text-[#F2EBDD] transition-colors py-0.5"
-                  id="sidebar-link-email"
-                  aria-label={`Send email to ${PERSONAL_INFO.email}`}
-                >
-                  <span>{t.nav.email}</span>
-                  <ArrowUpRight className="w-3 h-3 text-[#F2EBDD]/40" />
-                </a>
-                <a
-                  href={PERSONAL_INFO.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-between hover:text-[#F2EBDD] transition-colors py-0.5"
-                  id="sidebar-link-github"
-                  aria-label="View GitHub Profile (opens in new tab)"
-                >
-                  <span>GitHub</span>
-                  <ArrowUpRight className="w-3 h-3 text-[#F2EBDD]/40" />
-                </a>
-                <a
-                  href={PERSONAL_INFO.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-between hover:text-[#F2EBDD] transition-colors py-0.5"
-                  id="sidebar-link-linkedin"
-                  aria-label="View LinkedIn Profile (opens in new tab)"
-                >
-                  <span>LinkedIn</span>
-                  <ArrowUpRight className="w-3 h-3 text-[#F2EBDD]/40" />
-                </a>
-              </div>
-
-              <div className="pt-2 text-[10px] font-mono text-[#F2EBDD]/45 flex items-center justify-between uppercase border-t border-white/10">
-                <button
-                  onClick={onBackToLanding}
-                  className="flex items-center gap-1.5 hover:text-[#F2EBDD] transition-colors cursor-pointer py-0.5"
-                  id="sidebar-back-to-landing-footer"
-                  aria-label={isVi ? 'Quay lại màn hình mở đầu' : 'Return to Intro Screen'}
-                >
-                  <ArrowLeft className="w-3 h-3" />
-                  <span>{t.nav.intro}</span>
-                </button>
-                <span>2026 ED.</span>
-              </div>
-            </>
-          ) : (
-            /* Compact Collapsed Footer */
-            <div className="flex flex-col items-center gap-2 pt-1">
-              <div className="relative group">
-                <button
-                  onClick={onBackToLanding}
-                  className="p-1.5 text-[#F2EBDD]/50 hover:text-[#F2EBDD] hover:bg-white/10 rounded-sm transition-colors cursor-pointer focus-visible:ring-1 focus-visible:ring-white/40"
-                  id="sidebar-collapsed-back-btn"
-                  aria-label={isVi ? 'Quay lại màn hình mở đầu' : 'Return to Intro Screen'}
-                >
-                  <ArrowLeft className="w-3.5 h-3.5" />
-                </button>
-                <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-2.5 py-1 bg-[#181816] text-[#F2EBDD] text-[11px] font-mono border border-white/15 rounded-xs shadow-lg whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-150 motion-reduce:transition-none z-50">
+        {/* Sidebar Footer Actions. Social links remain flag-controlled so they
+            can be restored without rebuilding the footer. */}
+        <div className="border-t border-white/10 pt-3">
+          <div className={`flex items-center gap-2 ${isCollapsed ? 'flex-col' : 'justify-center'}`}>
+            <div className="group relative">
+              <button
+                onClick={onBackToLanding}
+                className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-sm text-[#F2EBDD]/65 transition-colors hover:bg-white/10 hover:text-[#F2EBDD] focus-visible:ring-1 focus-visible:ring-white/40"
+                id="sidebar-back-to-landing-footer"
+                aria-label={isVi ? 'Quay lại màn hình mở đầu' : 'Return to Intro Screen'}
+                title={isCollapsed ? undefined : t.nav.intro}
+              >
+                <ArrowLeft className="h-4 w-4" />
+              </button>
+              {isCollapsed && (
+                <div className="pointer-events-none absolute left-full top-1/2 z-50 ml-3 -translate-y-1/2 whitespace-nowrap rounded-xs border border-white/15 bg-[#181816] px-2.5 py-1 text-[11px] font-mono text-[#F2EBDD] opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100 group-focus-within:opacity-100 motion-reduce:transition-none">
                   {t.nav.intro}
                 </div>
-              </div>
+              )}
+            </div>
 
-              <div className="relative group">
-                <a
-                  href={`mailto:${PERSONAL_INFO.email}`}
-                  className="p-1.5 text-[#F2EBDD]/50 hover:text-[#F2EBDD] hover:bg-white/10 rounded-sm transition-colors block focus-visible:ring-1 focus-visible:ring-white/40"
-                  id="sidebar-collapsed-email"
-                  aria-label={`Email: ${PERSONAL_INFO.email}`}
-                >
-                  <Mail className="w-3.5 h-3.5" />
-                </a>
-                <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-2.5 py-1 bg-[#181816] text-[#F2EBDD] text-[11px] font-mono border border-white/15 rounded-xs shadow-lg whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-150 motion-reduce:transition-none z-50">
+            <div className="group relative">
+              <a
+                href={`mailto:${PERSONAL_INFO.email}`}
+                className="flex h-8 w-8 items-center justify-center rounded-sm text-[#F2EBDD]/65 transition-colors hover:bg-white/10 hover:text-[#F2EBDD] focus-visible:ring-1 focus-visible:ring-white/40"
+                id="sidebar-link-email"
+                aria-label={`Email: ${PERSONAL_INFO.email}`}
+                title={isCollapsed ? undefined : t.nav.email}
+              >
+                <Mail className="h-4 w-4" />
+              </a>
+              {isCollapsed && (
+                <div className="pointer-events-none absolute left-full top-1/2 z-50 ml-3 -translate-y-1/2 whitespace-nowrap rounded-xs border border-white/15 bg-[#181816] px-2.5 py-1 text-[11px] font-mono text-[#F2EBDD] opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100 group-focus-within:opacity-100 motion-reduce:transition-none">
                   {t.nav.email}
                 </div>
-              </div>
-
-              <div className="relative group">
-                <a
-                  href={PERSONAL_INFO.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="p-1.5 text-[#F2EBDD]/50 hover:text-[#F2EBDD] hover:bg-white/10 rounded-sm transition-colors block focus-visible:ring-1 focus-visible:ring-white/40"
-                  id="sidebar-collapsed-github"
-                  aria-label="GitHub Profile"
-                >
-                  <Github className="w-3.5 h-3.5" />
-                </a>
-                <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-2.5 py-1 bg-[#181816] text-[#F2EBDD] text-[11px] font-mono border border-white/15 rounded-xs shadow-lg whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-150 motion-reduce:transition-none z-50">
-                  GitHub
-                </div>
-              </div>
-
-              <div className="relative group">
-                <a
-                  href={PERSONAL_INFO.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="p-1.5 text-[#F2EBDD]/50 hover:text-[#F2EBDD] hover:bg-white/10 rounded-sm transition-colors block focus-visible:ring-1 focus-visible:ring-white/40"
-                  id="sidebar-collapsed-linkedin"
-                  aria-label="LinkedIn Profile"
-                >
-                  <Linkedin className="w-3.5 h-3.5" />
-                </a>
-                <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-2.5 py-1 bg-[#181816] text-[#F2EBDD] text-[11px] font-mono border border-white/15 rounded-xs shadow-lg whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-150 motion-reduce:transition-none z-50">
-                  LinkedIn
-                </div>
-              </div>
+              )}
             </div>
-          )}
+
+            <div className="group relative">
+              {hasCv ? (
+                <a
+                  href={PERSONAL_INFO.cvUrl}
+                  download
+                  className="flex h-8 w-8 items-center justify-center rounded-sm text-[#F2EBDD]/65 transition-colors hover:bg-white/10 hover:text-[#F2EBDD] focus-visible:ring-1 focus-visible:ring-white/40"
+                  id="sidebar-link-cv"
+                  aria-label={isVi ? 'Tải CV' : 'Download CV'}
+                  title={isCollapsed ? undefined : isVi ? 'Tải CV' : 'Download CV'}
+                >
+                  <FileText className="h-4 w-4" />
+                </a>
+              ) : (
+                <span title="Coming soon">
+                  <button
+                    type="button"
+                    disabled
+                    className="flex h-8 w-8 cursor-not-allowed items-center justify-center rounded-sm text-[#F2EBDD] opacity-40"
+                    id="sidebar-link-cv"
+                    aria-label={isVi ? 'CV sắp được cập nhật' : 'CV coming soon'}
+                  >
+                    <FileText className="h-4 w-4" />
+                  </button>
+                </span>
+              )}
+              {isCollapsed && hasCv && (
+                <div className="pointer-events-none absolute left-full top-1/2 z-50 ml-3 -translate-y-1/2 whitespace-nowrap rounded-xs border border-white/15 bg-[#181816] px-2.5 py-1 text-[11px] font-mono text-[#F2EBDD] opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100 group-focus-within:opacity-100 motion-reduce:transition-none">
+                  {isVi ? 'Tải CV' : 'Download CV'}
+                </div>
+              )}
+            </div>
+
+            {SIDEBAR_SOCIAL_LINKS.github && (
+              <a
+                href={PERSONAL_INFO.github}
+                target="_blank"
+                rel="noreferrer"
+                className="flex h-8 w-8 items-center justify-center rounded-sm text-[#F2EBDD]/65 transition-colors hover:bg-white/10 hover:text-[#F2EBDD]"
+                aria-label="GitHub Profile"
+              >
+                <Github className="h-4 w-4" />
+              </a>
+            )}
+
+            {SIDEBAR_SOCIAL_LINKS.linkedin && (
+              <a
+                href={PERSONAL_INFO.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="flex h-8 w-8 items-center justify-center rounded-sm text-[#F2EBDD]/65 transition-colors hover:bg-white/10 hover:text-[#F2EBDD]"
+                aria-label="LinkedIn Profile"
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
+            )}
+          </div>
         </div>
       </aside>
     </>

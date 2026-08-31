@@ -63,11 +63,11 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
     <section id="research" className="w-full bg-[#F2EBDD] text-[#292929] border-b border-[#292929]/10 px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-12 sm:py-16 md:py-20 select-none relative">
       <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[1500px] mx-auto w-full space-y-10">
         {/* Section Header */}
-        <div className="space-y-2">
+        <div className="section-heading">
           <span className="text-xs font-mono text-[#676749] uppercase tracking-wider block font-medium">
             {t.research.sectionNum}
           </span>
-          <h1 className="text-4xl sm:text-5xl font-bold text-[#292929] tracking-tight">
+          <h1 className="section-h1 font-bold tracking-tight text-[#292929] lg:whitespace-nowrap">
             {t.research.title}
           </h1>
         </div>
@@ -101,99 +101,103 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                   </div>
 
                   {paper.badge && (
-                    <span className="text-[10px] font-mono tracking-wider uppercase text-[#4A4A38] bg-[#EFE8D8]/70 border border-[#292929]/12 px-2.5 py-0.5 rounded-xs font-medium">
+                    <span className="text-[10px] font-mono uppercase tracking-wider bg-[#292929]/[0.06] text-[#4A4A38] px-1.5 py-0.5 rounded-xs shrink-0 whitespace-nowrap">
                       {paper.badge}
                     </span>
                   )}
                 </div>
 
-                {/* Main Content Layout */}
-                <div className="flex flex-col md:flex-row items-stretch gap-5 lg:gap-7">
-                  
+                {/* Main Content Layout — align to top so the text column never stretches to
+                    match the preview; preview sits above the text on mobile. */}
+                <div className="flex flex-col-reverse md:flex-row items-start gap-5 lg:gap-7">
+
                   {/* Left Side: Editorial Typography & Metadata */}
-                  <div className="flex-1 flex flex-col justify-between space-y-3">
-                    <div className="space-y-2">
-                      <div className="space-y-1">
+                  <div className="flex-1 min-w-0 flex flex-col gap-3.5">
+                    <div className="space-y-2.5">
+                      <div className="space-y-1.5">
                         <h2
                           onClick={() => setDrawerPaper(paper)}
-                          className="text-xl sm:text-2xl font-bold tracking-tight text-[#292929] leading-snug cursor-pointer group-hover:text-[#4F513B] transition-colors"
+                          className="text-xl sm:text-2xl font-bold tracking-tight text-[#292929] leading-snug cursor-pointer group-hover:text-[#4F513B] transition-colors motion-reduce:transition-none"
                         >
                           {paper.mainTitle || paper.title}
                         </h2>
                         {paper.subtitle && (
-                          <p className="text-xs sm:text-[13px] text-[#292929]/70 leading-relaxed font-mono">
+                          <p className="text-[17px] sm:text-[18px] text-[#292929]/70 leading-[1.5] max-w-[68ch]">
                             {paper.subtitle}
                           </p>
                         )}
                       </div>
 
-                      {/* Micro Metadata Grid */}
-                      <div className="pt-2 border-t border-[#292929]/8 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-xs font-mono text-[#676749]">
-                        <div>
-                          <span className="text-[#292929]/50 uppercase text-[10px] block">{t.research.publishedIn}:</span>
-                          <span className="font-semibold text-[#292929] truncate block">{paper.publishedIn}</span>
+                      {/* Micro Metadata Grid — mono labels, sans values that wrap freely */}
+                      <div className="pt-2.5 border-t border-[#292929]/8 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
+                        <div className="min-w-0">
+                          <span className="block text-[10px] font-mono uppercase tracking-wider text-[#292929]/50">{t.research.publishedIn}:</span>
+                          <span className="block mt-0.5 text-[17px] leading-[1.5] font-medium text-[#292929] max-w-[38ch] break-words">{paper.publishedIn}</span>
                         </div>
-                        <div>
-                          <span className="text-[#292929]/50 uppercase text-[10px] block">{t.research.leadAuthor}:</span>
-                          <span className="font-semibold text-[#292929] truncate block">{paper.authorRole}</span>
+                        <div className="min-w-0">
+                          <span className="block text-[10px] font-mono uppercase tracking-wider text-[#292929]/50">{t.research.leadAuthor}:</span>
+                          <span className="block mt-0.5 text-[17px] leading-[1.5] font-medium text-[#292929] max-w-[38ch] break-words">{paper.authorRole}</span>
                         </div>
                       </div>
                     </div>
 
-                    {/* Action Bar */}
-                    <div className="pt-3 border-t border-[#292929]/10 flex flex-wrap items-center justify-between gap-3">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <button
-                          type="button"
-                          onClick={() => handleOpenPdf(paper)}
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#4F513B] hover:bg-[#3D3F2D] text-[#F2EBDD] text-xs font-mono font-medium rounded-xs transition-colors cursor-pointer"
-                        >
-                          <FileText className="w-3.5 h-3.5" />
-                          <span>{t.research.readFullPdf}</span>
-                        </button>
-                        
-                        <button
-                          type="button"
-                          onClick={() => setDrawerPaper(paper)}
-                          className="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-[#292929] hover:text-[#4F513B] transition-colors cursor-pointer group/btn ml-0.5"
-                        >
-                          <span>{t.research.viewResearch}</span>
-                          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/btn:translate-x-0.5" />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                    {/* Abstract — sans running text, only rendered when copy exists */}
+                    {paper.abstract && (
+                      <p className="text-[16px] sm:text-[17px] text-[#292929]/65 leading-[1.65] max-w-[68ch]">
+                        {paper.abstract}
+                      </p>
+                    )}
 
-                  {/* Right Side: Curated Document Preview Anchor */}
-                  {paper.previewImage && (
-                    <div className="w-full md:w-[44%] lg:w-[45%] shrink-0 flex flex-col justify-center">
+                    {/* Action Bar — pinned to the bottom of the text column */}
+                    <div className="mt-auto pt-3.5 border-t border-[#292929]/10 flex flex-wrap items-center gap-x-5 gap-y-2.5">
                       <button
                         type="button"
                         onClick={() => handleOpenPdf(paper)}
-                        className="group/doc w-full relative bg-[#F8F6F1] border border-[#292929]/15 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-md transition-all duration-300 rounded-xs overflow-hidden text-left cursor-pointer"
-                        title="Click to view full research publication PDF"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#4F513B] hover:bg-[#3D3F2D] text-[#F2EBDD] text-xs font-mono font-medium rounded-xs transition-colors motion-reduce:transition-none cursor-pointer"
                       >
-                        <div className="relative w-full aspect-[16/9] bg-[#ECE5D5] overflow-hidden">
+                        <FileText className="w-3.5 h-3.5" />
+                        <span>{t.research.readFullPdf}</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => setDrawerPaper(paper)}
+                        className="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-[#292929] hover:text-[#4F513B] transition-colors motion-reduce:transition-none cursor-pointer group/btn"
+                      >
+                        <span>{t.research.viewResearch}</span>
+                        <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 motion-reduce:transition-none group-hover/btn:translate-x-0.5" />
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Right Side: Document Preview.
+                      Decorative, pointer-only shortcut to the same PDF as "Read Full PDF" —
+                      hidden from the a11y tree (aria-hidden + tabIndex -1) so it is not a
+                      second, unlabeled tab stop for an action the button already exposes. */}
+                  {paper.previewImage && (
+                    <div className="w-full md:w-[44%] lg:w-[45%] shrink-0">
+                      <button
+                        type="button"
+                        onClick={() => handleOpenPdf(paper)}
+                        aria-hidden="true"
+                        tabIndex={-1}
+                        className="group/doc block w-full relative bg-[#F8F6F1] border border-[#292929]/15 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow duration-300 motion-reduce:transition-none rounded-xs overflow-hidden text-left cursor-pointer"
+                      >
+                        <div className="relative w-full aspect-[23/10] bg-[#ECE5D5] overflow-hidden">
                           <img
                             src={paper.previewImage}
-                            alt={`${paper.title} - Cover Page Preview`}
-                            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover/doc:scale-[1.02]"
+                            alt=""
+                            className="w-full h-full object-cover object-top transition-transform duration-500 motion-reduce:transition-none group-hover/doc:scale-[1.02]"
                             loading="lazy"
                           />
-                          <div className="absolute inset-0 bg-black/0 group-hover/doc:bg-black/10 transition-colors duration-200 flex items-end justify-center p-2">
-                            <span className="opacity-0 group-hover/doc:opacity-100 transition-opacity duration-200 bg-[#292929]/90 text-[#F2EBDD] text-[9.5px] font-mono px-2 py-0.5 rounded-xs flex items-center gap-1.5 shadow-sm">
-                              <span>{t.research.readFullPdf}</span>
-                              <ArrowUpRight className="w-2.5 h-2.5" />
-                            </span>
-                          </div>
+                          {/* Subtle hover tint for pointer users */}
+                          <div className="absolute inset-0 bg-[#23261D]/0 group-hover/doc:bg-[#23261D]/[0.06] transition-colors duration-200 motion-reduce:transition-none" />
+                          {/* Bottom fade so the crop reads as a fade-out, not a hard slice */}
+                          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-b from-transparent to-[#F8F6F1]" />
                         </div>
 
-                        <div className="px-2.5 py-1 bg-[#F2EBDD] border-t border-[#292929]/10 flex items-center justify-between text-[9.5px] font-mono text-[#676749]">
-                          <span>{isVi ? 'Trang 1 / Bìa tài liệu nghiên cứu' : `Page 1 / ${isFeatured ? 'Publication Cover' : 'Research Document'}`}</span>
-                          <span className="text-[#292929] group-hover/doc:underline flex items-center gap-0.5">
-                            <span>Open PDF</span>
-                            <ArrowUpRight className="w-2 h-2" />
-                          </span>
+                        <div className="px-2.5 py-1 bg-[#F2EBDD] border-t border-[#292929]/10 text-[9.5px] font-mono text-[#676749]">
+                          {isVi ? 'Trang 1 / Bìa tài liệu nghiên cứu' : `Page 1 / ${isFeatured ? 'Publication Cover' : 'Research Document'}`}
                         </div>
                       </button>
                     </div>

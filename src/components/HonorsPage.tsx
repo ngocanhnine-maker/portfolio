@@ -49,6 +49,19 @@ export const HonorsPage: React.FC<HonorsPageProps> = ({ onNavigate, initialAward
     };
   }, [drawerAward, selectedAward, selectedGalleryPhoto]);
 
+  // Esc closes the drawer / lightboxes
+  useEffect(() => {
+    if (!drawerAward && !selectedAward && !selectedGalleryPhoto) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return;
+      if (selectedGalleryPhoto) setSelectedGalleryPhoto(null);
+      else if (selectedAward) setSelectedAward(null);
+      else if (drawerAward) setDrawerAward(null);
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [drawerAward, selectedAward, selectedGalleryPhoto]);
+
   const filteredAchievements = filter === 'all'
     ? honorsList
     : honorsList.filter((item) => item.level === filter);
@@ -60,8 +73,8 @@ export const HonorsPage: React.FC<HonorsPageProps> = ({ onNavigate, initialAward
   ];
 
   return (
-    <section id="honors" className="w-full min-h-[calc(100vh-3.5rem)] lg:min-h-screen bg-[#5E6044] text-[#F2EBDD] border-b border-black/15 flex flex-col justify-center py-16 md:py-24 px-5 sm:px-8 md:px-12 lg:px-16">
-      <div className="max-w-6xl mx-auto w-full space-y-10 lg:space-y-12">
+    <section id="honors" className="w-full min-h-[calc(100vh-3.5rem)] lg:min-h-screen bg-[#5E6044] text-[#F2EBDD] border-b border-black/15 flex flex-col justify-center py-16 md:py-24 px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20">
+      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[1500px] mx-auto w-full space-y-10 lg:space-y-12">
         {/* Header Title & Minimal Filters */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">
@@ -70,7 +83,7 @@ export const HonorsPage: React.FC<HonorsPageProps> = ({ onNavigate, initialAward
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#F2EBDD] tracking-tight">
+          <h1 className="section-h1 font-bold tracking-tight text-[#F2EBDD] lg:whitespace-nowrap">
             {t.honors.title}
           </h1>
 
@@ -96,7 +109,6 @@ export const HonorsPage: React.FC<HonorsPageProps> = ({ onNavigate, initialAward
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-start">
           {filteredAchievements.map((item, idx) => {
             const awardId = item.id || `${item.year}-${item.award}`;
-            const isPortrait = item.imageAspect === 'portrait' || item.id === 'wico-2026';
 
             // Helper to clean redundant scope words from eyebrow award level (e.g. "National Third Prize" -> "Third Prize", "City-level Second Prize" -> "Second Prize")
             const cleanAwardLevel = (rawAward: string) => {
@@ -125,10 +137,10 @@ export const HonorsPage: React.FC<HonorsPageProps> = ({ onNavigate, initialAward
                     setDrawerAward(item);
                   }
                 }}
-                className="group relative flex flex-col h-full bg-[#464831] border border-white/[0.14] hover:border-white/30 focus-visible:border-white/45 focus-visible:ring-1 focus-visible:ring-white/45 rounded-xs p-4 sm:p-5 transition-[border-color,background-color] duration-300 ease-out cursor-pointer outline-none select-none"
+                className="group relative flex flex-col bg-[#464831] border border-white/15 hover:border-white/30 focus-visible:border-white/45 focus-visible:ring-1 focus-visible:ring-white/45 rounded-xs p-5 sm:p-6 transition-[border-color,background-color] duration-300 ease-out cursor-pointer outline-none select-none"
               >
-                {/* 1 & 2: Framed Certificate Container (aspect-aware for portrait vs landscape) with object-contain & Warm Neutral Matting */}
-                <div className={`relative w-full ${isPortrait ? 'aspect-[4/5]' : 'aspect-[4/3]'} overflow-hidden rounded-xs bg-[#EAE5D9] p-3 flex items-center justify-center border border-black/10`}>
+                {/* Fixed media viewport keeps mixed certificate ratios aligned without cropping. */}
+                <div className="relative flex h-[220px] w-full items-center justify-center overflow-hidden rounded-xs border border-black/10 bg-[#EAE5D9] p-3 sm:h-[260px] lg:h-[320px]">
                   {item.imageUrl ? (
                     <>
                       <img
@@ -159,8 +171,8 @@ export const HonorsPage: React.FC<HonorsPageProps> = ({ onNavigate, initialAward
                   )}
                 </div>
 
-                {/* 3 & 4: 3-Line Text Hierarchy (Eyebrow -> Heading -> Meta Row) with Pinned CTA */}
-                <div className="flex flex-col flex-1 pt-3 space-y-2">
+                {/* Compact text hierarchy follows the image in natural document flow. */}
+                <div className="pt-4 space-y-2">
                   {/* Line 1 (Eyebrow): Award level only, small mono, uppercase, letter-spaced, no badge chrome */}
                   <span className="text-[11px] font-mono uppercase tracking-wider text-[#DDD8C4] font-medium leading-tight">
                     {eyebrowAward}
@@ -185,8 +197,8 @@ export const HonorsPage: React.FC<HonorsPageProps> = ({ onNavigate, initialAward
                     </span>
                   </div>
 
-                  {/* 5: Pinned See More CTA affordance at bottom */}
-                  <div className="pt-3 mt-auto">
+                  {/* CTA stays close to the metadata instead of stretching to the card bottom. */}
+                  <div className="mt-6 border-t border-white/10 pt-4">
                     <span className="text-xs font-mono text-[#DDD8C4]/90 group-hover:text-white group-focus-visible:text-white inline-flex items-center gap-1 transition-colors pointer-events-none">
                       <span className="underline decoration-white/30 underline-offset-4 group-hover:decoration-white group-focus-visible:decoration-white">
                         {t.honors.seeMore}
@@ -231,6 +243,9 @@ export const HonorsPage: React.FC<HonorsPageProps> = ({ onNavigate, initialAward
 
           {/* Slide-in Drawer Container */}
           <div
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${drawerAward.award} — ${drawerAward.competition}`}
             className="relative w-full max-w-xl h-full bg-[#23261D] text-[#F2EBDD] border-l border-white/15 shadow-2xl z-10 flex flex-col justify-between overflow-y-auto transition-transform duration-300 ease-out"
             onClick={(e) => e.stopPropagation()}
           >
@@ -263,7 +278,7 @@ export const HonorsPage: React.FC<HonorsPageProps> = ({ onNavigate, initialAward
                 <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#F2EBDD] leading-snug">
                   {drawerAward.award}
                 </h2>
-                <p className="text-sm font-mono text-[#DDD8C4]/85 leading-relaxed">
+                <p className="text-sm text-[#DDD8C4]/85 leading-relaxed">
                   {drawerAward.competition}
                 </p>
               </div>
@@ -271,13 +286,13 @@ export const HonorsPage: React.FC<HonorsPageProps> = ({ onNavigate, initialAward
               {/* Hero Award Image / Document Container Inside Drawer */}
               {drawerAward.imageUrl && (
                 <div className="space-y-2">
-                  <div className="relative w-full bg-black/40 border border-white/15 rounded-xs overflow-hidden p-2 flex items-center justify-center min-h-[220px]">
-                    <div className="relative group/media w-full flex items-center justify-center">
+                  <div className="relative w-full bg-[#EAE5D9] border border-white/15 rounded-xs overflow-hidden p-3 flex items-center justify-center">
+                    <div className="relative group/media flex w-full items-center justify-center">
                       <img
                         src={drawerAward.imageUrl}
                         alt={`${drawerAward.award} - ${drawerAward.competition}`}
                         referrerPolicy="no-referrer"
-                        className="max-h-[320px] w-auto max-w-full object-contain rounded-xs shadow-md cursor-pointer"
+                        className="max-h-[360px] w-auto max-w-full object-contain rounded-xs shadow-sm cursor-pointer"
                         onClick={() => setSelectedAward(drawerAward)}
                       />
                       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/media:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
@@ -301,7 +316,7 @@ export const HonorsPage: React.FC<HonorsPageProps> = ({ onNavigate, initialAward
                   <span className="text-[11px] font-mono uppercase tracking-widest text-[#DDD8C4] block font-medium">
                     {t.honors.aboutComp}
                   </span>
-                  <p className="text-[#DDD8C4]/85 font-mono text-xs leading-relaxed">
+                  <p className="text-[#DDD8C4]/85 text-sm leading-relaxed">
                     {drawerAward.aboutCompetition || (isVi ? '[ Thông tin về cuộc thi và bối cảnh học thuật đang được cập nhật. ]' : '[ Information regarding the competition background and academic framework will be curated here. ]')}
                   </p>
                   {drawerAward.websiteUrl && (
@@ -323,7 +338,7 @@ export const HonorsPage: React.FC<HonorsPageProps> = ({ onNavigate, initialAward
                   <span className="text-[11px] font-mono uppercase tracking-widest text-[#DDD8C4] block font-medium">
                     {t.honors.levelScope}
                   </span>
-                  <p className="text-[#DDD8C4]/85 font-mono text-xs leading-relaxed">
+                  <p className="text-[#DDD8C4]/85 text-sm leading-relaxed">
                     {drawerAward.levelScope || `[ ${drawerAward.categoryLabel} ranking and scope specifications. ]`}
                   </p>
                   {drawerAward.datesLocation && (
@@ -338,7 +353,7 @@ export const HonorsPage: React.FC<HonorsPageProps> = ({ onNavigate, initialAward
                   <span className="text-[11px] font-mono uppercase tracking-widest text-[#DDD8C4] block font-medium">
                     {t.honors.resultLabel}
                   </span>
-                  <p className="text-[#DDD8C4]/85 font-mono text-xs leading-relaxed">
+                  <p className="text-[#DDD8C4]/85 text-sm leading-relaxed">
                     {drawerAward.result || `[ ${drawerAward.award} - ${drawerAward.year} ]`}
                   </p>
                 </div>
@@ -349,7 +364,7 @@ export const HonorsPage: React.FC<HonorsPageProps> = ({ onNavigate, initialAward
                     <span className="text-[11px] font-mono uppercase tracking-widest text-[#DDD8C4] block font-medium">
                       {t.honors.projectLabel}
                     </span>
-                    <p className="text-[#DDD8C4]/90 font-mono text-xs leading-relaxed">
+                    <p className="text-[#DDD8C4]/90 text-sm leading-relaxed">
                       {drawerAward.projectTopic}
                     </p>
                   </div>
@@ -363,7 +378,7 @@ export const HonorsPage: React.FC<HonorsPageProps> = ({ onNavigate, initialAward
                     </span>
                     <div className="flex flex-wrap gap-1.5 pt-0.5">
                       {drawerAward.teamMembers.map((member, mIdx) => {
-                        const isSelf = member === 'Trần Ngọc Ánh' || member.includes('Trần Ngọc Ánh') || member.includes('Tran Ngoc Anh');
+                        const isSelf = member === 'Trần Ngọc Anh' || member.includes('Trần Ngọc Anh') || member.includes('Tran Ngoc Anh');
                         return (
                           <span
                             key={mIdx}
