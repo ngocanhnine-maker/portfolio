@@ -5,13 +5,18 @@ import { Sidebar } from './components/Sidebar';
 import { LandingIntro } from './components/LandingIntro';
 import { AskAIPage } from './components/AskAIPage';
 import { AboutPage } from './components/AboutPage';
-import { EducationPage } from './components/EducationPage';
-import { HonorsPage } from './components/HonorsPage';
-import { ResearchPage } from './components/ResearchPage';
-import { ProjectsPage } from './components/ProjectsPage';
-import { LeadershipPage } from './components/LeadershipPage';
-import { ActivitiesPage } from './components/ActivitiesPage';
-import { InterestsPage } from './components/InterestsPage';
+import { AboutBoard } from './components/AboutBoard';
+import { AcademicSnapshot } from './components/AcademicSnapshot';
+import { WhereIStarted } from './components/WhereIStarted';
+import { EconomicsEntered } from './components/EconomicsEntered';
+import { NumbersDecisions } from './components/NumbersDecisions';
+import { FinADShowcase } from './components/FinADShowcase';
+import { DataEvidence } from './components/DataEvidence';
+import { Milestones } from './components/Milestones';
+import { BeyondNumbers } from './components/BeyondNumbers';
+import { BeyondMyself } from './components/BeyondMyself';
+import { OutsideLedger } from './components/OutsideLedger';
+import { ClosingPage } from './components/ClosingPage';
 import { CaseStudyModal } from './components/CaseStudyModal';
 
 export default function App() {
@@ -59,27 +64,32 @@ export default function App() {
   useEffect(() => {
     if (currentPage === 'landing' || currentPage === 'ask-ai') return;
 
-    const sections = [
-      'about',
-      'honors',
-      'education',
-      'projects',
-      'research',
-      'leadership',
-      'activities',
-      'interests'
+    // [section element id, nav tab it lights up]
+    const sections: [string, PageId][] = [
+      ['about', 'about'],
+      ['snapshot', 'about'],
+      ['started', 'started'],
+      ['economics', 'economics'],
+      ['wico', 'wico'],
+      ['finad', 'finad'],
+      ['green-credit', 'green-credit'],
+      ['milestones', 'milestones'],
+      ['beyond', 'beyond'],
+      ['community', 'community'],
+      ['outside', 'outside'],
+      ['closing', 'outside']
     ];
     
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 200;
 
       for (let i = sections.length - 1; i >= 0; i--) {
-        const sectionId = sections[i];
+        const [sectionId, tab] = sections[i];
         const el = document.getElementById(sectionId);
         if (el) {
           const top = el.offsetTop;
           if (scrollPosition >= top) {
-            setActiveSection(sectionId as PageId);
+            setActiveSection(tab);
             break;
           }
         }
@@ -159,7 +169,7 @@ export default function App() {
   // Main Portfolio Experience (Fixed Sidebar + Scrollable Content in requested order)
   return (
     <div className="bg-[#F2EBDD] min-h-screen text-[#292929] flex flex-col lg:flex-row relative selection:bg-[#676749] selection:text-white">
-      {/* Fixed Left Sidebar */}
+      {/* Fixed top bar (desktop) / header + menu (mobile) */}
       <Sidebar
         activePage={isAIMode ? 'ask-ai' : activeSection}
         onNavigate={handleNavigate}
@@ -170,11 +180,9 @@ export default function App() {
         onToggleCollapse={handleToggleSidebar}
       />
 
-      {/* Main Content Area: Dynamically responsive to sidebar collapse state */}
+      {/* Main Content Area: sits below the fixed top bar (mobile and desktop) */}
       <main
-        className={`flex-1 min-h-screen pt-14 lg:pt-0 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          isSidebarCollapsed ? 'lg:ml-[72px]' : 'lg:ml-[260px]'
-        }`}
+        className="flex-1 min-h-screen pt-14"
         id="portfolio-main-content"
       >
         {isAIMode ? (
@@ -197,24 +205,21 @@ export default function App() {
              8. Interests (Muted Olive)
           */
           <div className="w-full">
-            <AboutPage onNavigate={handleNavigate} />
-            <HonorsPage
-              onNavigate={handleNavigate}
-              initialAwardId={selectedAwardId}
-            />
-            <EducationPage onNavigate={handleNavigate} />
-            <ProjectsPage
-              onOpenCaseStudy={handleOpenCaseStudy}
-              onNavigate={handleNavigate}
-            />
-            <ResearchPage
-              onNavigate={handleNavigate}
-              onOpenCaseStudy={handleOpenCaseStudy}
-              initialPaperId={selectedResearchId}
-            />
-            <LeadershipPage onNavigate={handleNavigate} />
-            <ActivitiesPage onNavigate={handleNavigate} />
-            <InterestsPage onNavigate={handleNavigate} />
+            {/* Previous design: <AboutPage onNavigate={handleNavigate} /> */}
+            <AboutBoard />
+            <AcademicSnapshot />
+            <WhereIStarted />
+            <EconomicsEntered />
+            <NumbersDecisions />
+            <FinADShowcase />
+            <DataEvidence />
+            <Milestones />
+            <BeyondNumbers />
+            <BeyondMyself />
+            <OutsideLedger />
+            {/* Earlier pages (Honors, Education, Projects, Research, Leadership,
+                Activities, Interests) are hidden for now; their components are kept. */}
+            <ClosingPage />
           </div>
         )}
       </main>

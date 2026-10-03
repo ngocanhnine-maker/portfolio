@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* Type system: EB Garamond for titles and headings, Inter for everything
+   else. `mono` is remapped to Inter so the many small uppercase labels
+   (menu, meta, tags) read as clean sans rather than code. */
+@theme {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'EB Garamond', Garamond, Georgia, serif;
+  --font-mono: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
 @layer base {
   :root {
     --bg-cream: #F2EBDD;
@@ -17,21 +26,21 @@
   body {
     background-color: #F2EBDD;
     color: #292929;
-    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: var(--font-sans);
     letter-spacing: normal;
   }
 
   h1, h2, h3, h4, h5, h6, .font-display {
-    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    letter-spacing: -0.02em;
+    font-family: var(--font-serif);
+    letter-spacing: -0.005em;
   }
 
   .font-serif-editorial {
-    font-family: Georgia, serif;
+    font-family: var(--font-serif);
   }
 
   .font-mono-tag {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-sans);
   }
 
   .section-h1 {
@@ -68,8 +77,8 @@
 
 /* Typography Theme rules */
 .editorial-title {
-  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
-  font-weight: 800;
+  font-family: var(--font-serif);
+  font-weight: 600;
   line-height: 1.05;
   letter-spacing: -0.02em;
 }
@@ -85,7 +94,7 @@
 }
 
 .tag-badge {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-sans);
   font-size: 11px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -108,3 +117,90 @@
   to { transform: translateY(0); }
 }
 
+/* ===================================================================
+ * About Me — editorial spread: portrait on the right, copy on the left.
+ * Layout only. Typography is deliberately left to the site defaults so
+ * the section reads in the same voice as every section below it.
+ * Scoped to #about / .about-* so nothing leaks elsewhere.
+ * =================================================================== */
+#about {
+  min-height: 100svh;
+  padding-block: 70px;
+}
+
+.about-layout { gap: 45px; }
+.about-photo { order: 2; }
+.about-copy { order: 1; }
+
+/* Portrait sits in a torn-paper window (PortraitFrame), slightly desaturated so it sits back. */
+.about-photo > div {
+  min-height: 470px;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+.about-photo img { filter: saturate(0.65); }
+
+.about-copy .section-heading { gap: 17px; }
+
+/* Keep the whole text block in one narrow column, journal-style. */
+.about-copy > * { max-width: 36rem; }
+.about-copy .about-bio { max-width: 36rem; line-height: 1.75; }
+.about-copy .section-heading p:last-child { letter-spacing: 0.08em; }
+
+@media (min-width: 1024px) {
+  .about-copy { gap: 1.75rem; }
+  .about-copy > * + * { margin-top: 0 !important; }
+}
+
+/* Drop cap opens the bio the way a printed feature would. Sized in em so
+   it tracks the body copy at every breakpoint. */
+.about-bio p:first-child::first-letter {
+  float: left;
+  margin: 0.1em 0.14em 0 0;
+  font-family: var(--font-serif);
+  font-size: 3.6em;
+  font-weight: 600;
+  line-height: 0.82;
+  color: var(--accent-olive);
+}
+
+@media (min-width: 1024px) {
+  /* Copy leads, portrait holds the right third. */
+  .about-layout { grid-template-columns: 1.4fr 1fr; }
+  .about-photo, .about-copy { grid-column: auto; }
+  .about-photo { align-self: stretch; }
+  .about-copy { min-width: 0; padding-right: clamp(1.5rem, 5vw, 5.5rem); }
+  .about-photo > div { max-height: 650px; }
+}
+
+@media (max-width: 1200px) and (min-width: 1024px) {
+  .about-layout { gap: 25px; }
+}
+
+@media (max-width: 1023px) {
+  .about-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 35px; }
+  .about-photo > div { min-height: 0; max-height: 650px; height: 100%; }
+}
+
+@media (max-width: 760px) {
+  #about { padding-block: 48px; }
+  .about-layout { grid-template-columns: 1fr; gap: 30px; }
+  .about-photo { order: 1; }
+  .about-copy { order: 2; }
+  .about-photo > div { height: 350px; max-width: none; aspect-ratio: auto; }
+  .about-photo img { object-position: center 27%; }
+}
+
+/* Lavender graph paper for the scrapbook backdrop */
+.scrap-graph-paper {
+  background-color: #F7F4EF;
+  background-image:
+    linear-gradient(to right, rgba(150, 128, 205, 0.38) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(150, 128, 205, 0.38) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-position: -1px -1px;
+}
+
+/* Section anchors land below the fixed 3.5rem top bar */
+#portfolio-main-content section[id] { scroll-margin-top: 3.5rem; }

@@ -3,6 +3,8 @@ import { PageId } from '../types';
 import { useLanguage } from '../context/LanguageContext';
 import { TRANSLATIONS } from '../data/translations';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { ScrapbookBackdrop } from './ScrapbookBackdrop';
+import { PortraitFrame } from './PortraitFrame';
 
 interface AboutPageProps {
   onNavigate?: (page: PageId) => void;
@@ -17,23 +19,23 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, showSubtitle =
   return (
     <section
       id="about"
-      className="w-full min-h-[calc(100vh-3.5rem)] lg:min-h-screen bg-[#F2EBDD] text-[#292929] border-b border-[#292929]/10 flex flex-col justify-center px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-12 lg:py-16 xl:py-20 select-none relative overflow-hidden"
+      className="about-spread w-full min-h-[calc(100vh-3.5rem)] lg:min-h-screen bg-[#F7F4EF] text-[#292929] border-b border-[#292929]/10 flex flex-col justify-center px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-12 lg:py-16 xl:py-20 select-none relative overflow-hidden"
     >
-      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[1500px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-stretch relative z-10">
+      <ScrapbookBackdrop />
+      <div className="about-layout max-w-6xl xl:max-w-7xl 2xl:max-w-[1500px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-stretch relative z-10">
         {/* Left Side: Large, Prominent Portrait Image */}
-        <div className="lg:col-span-5 xl:col-span-5 w-full flex justify-center lg:justify-start">
-          <div className="relative w-full max-w-lg lg:max-w-none aspect-[4/5] lg:aspect-auto lg:h-full lg:min-h-[520px] overflow-hidden rounded bg-[#E2DBCB] border border-[#292929]/20 shadow-xs">
-            <img
+        <div className="about-photo lg:col-span-5 xl:col-span-5 w-full flex justify-center lg:justify-start">
+          <div className="relative w-full max-w-lg lg:max-w-none aspect-[4/5] lg:aspect-auto lg:h-full lg:min-h-[520px]">
+            <PortraitFrame
               src="/profile/dsc-4647-opt.jpg"
               alt={isVi ? 'Trần Ngọc Anh' : 'Tran Ngoc Anh'}
-              referrerPolicy="no-referrer"
-              className="w-full h-full object-cover object-top sm:object-center contrast-[1.02]"
+              imgClassName="object-[center_22%] contrast-[1.02]"
             />
           </div>
         </div>
 
         {/* Right Side: About content */}
-        <div className="flex flex-col space-y-6 lg:col-span-7 lg:justify-center lg:space-y-8 xl:col-span-7">
+        <div className="about-copy flex flex-col space-y-6 lg:col-span-7 lg:justify-center lg:space-y-8 xl:col-span-7">
           {/* Header, subtitle & primary credential */}
           <div className="section-heading">
             <span className="text-xs sm:text-sm font-mono text-[#676749] uppercase tracking-widest block font-medium">
@@ -59,43 +61,42 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, showSubtitle =
 
           {/* Single divider between header and bio */}
           <div className="pt-6 border-t border-[#292929]/15">
-            <div className="space-y-4 max-w-[65ch] text-[16px] sm:text-[17px] font-normal leading-[1.6] text-[#292929]/85">
+            <div className="about-bio space-y-4 max-w-[65ch] text-[16px] font-normal leading-[1.6] text-[#292929]/85">
               {isVi ? (
                 <>
                   <p>
-                    Tôi thích cảm giác bắt đầu một điều mà mình chưa biết
-                    cách làm. Những năm học chuyên Hóa khiến việc thử nghiệm,
-                    quan sát rồi điều chỉnh trở thành một phản xạ. Tôi mang cách
-                    tiếp cận đó ra ngoài phòng thí nghiệm — rõ nhất là khi đăng
-                    ký một cuộc thi kinh tế dù chưa từng học lĩnh vực này bài bản,
-                    chỉ để xem mình có thể hiểu một vấn đề hoàn toàn mới đến đâu.
+                    Tôi thích bắt đầu một việc khi chưa biết phải làm thế nào.
+                    Những năm học chuyên Hóa biến việc thử, quan sát rồi điều
+                    chỉnh thành thói quen. Lần rõ nhất tôi mang thói quen ấy ra
+                    khỏi phòng thí nghiệm là khi tham gia một cuộc thi kinh tế dù
+                    chưa từng học bài bản, phần lớn chỉ để xem mình đi được bao
+                    xa với một vấn đề hoàn toàn mới.
                   </p>
                   <p>
-                    Từ trải nghiệm ấy, tôi dần bị cuốn hút bởi những bài toán
-                    trong kinh doanh, nơi một vấn đề có thể được nhìn từ nhiều góc
-                    độ và hiếm khi chỉ có một lời giải duy nhất. Càng tìm hiểu
-                    sâu, tôi càng hứng thú với cách dữ liệu và công nghệ giúp chúng
-                    ta nhìn vấn đề rõ hơn, kiểm chứng các giả định và đưa ra
-                    quyết định tốt hơn.
+                    Trải nghiệm đó kéo tôi về phía những câu hỏi trong kinh
+                    doanh, nơi một vấn đề có thể được đọc từ nhiều góc và hiếm
+                    khi chỉ có một đáp án. Càng đi xa, tôi càng quan tâm đến cách
+                    dữ liệu và công nghệ làm những vấn đề ấy sáng rõ hơn: kiểm
+                    chứng điều ta vẫn mặc định, và giúp ta quyết định tốt hơn một
+                    chút.
                   </p>
                 </>
               ) : (
                 <>
                   <p>
-                    I enjoy the feeling of starting something before I know how
-                    to do it. Years of studying Chemistry made experimenting,
-                    observing, and adjusting almost instinctive. I carried that
-                    approach beyond the laboratory most clearly when I entered
-                    an economics competition without having formally studied
-                    the field, simply to see how far I could understand a
-                    completely new problem.
+                    I like starting things before I know how to do them. Years
+                    of studying Chemistry turned experimenting, observing and
+                    adjusting into habit. The clearest time I carried that habit
+                    outside the lab was entering an economics competition with
+                    no formal background in the subject, mostly to see how far I
+                    could get with a problem that was entirely new to me.
                   </p>
                   <p>
-                    That experience drew me toward business problems, where a
-                    question can be approached from many angles and rarely has
-                    only one answer. The deeper I explore, the more interested I
-                    become in how data and technology can clarify those problems,
-                    test assumptions, and support better decisions.
+                    It pulled me toward business questions, where a problem can
+                    be read from several angles and rarely has a single answer.
+                    The further I go, the more I care about how data and
+                    technology make those problems clearer: testing what we
+                    assume, and helping us decide a little better.
                   </p>
                 </>
               )}

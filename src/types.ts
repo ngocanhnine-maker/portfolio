@@ -219,7 +219,17 @@ export type PageId =
   | 'activities'
   | 'interests'
   | 'resume'
-  | 'ask-ai';
+  | 'ask-ai'
+  // Journal pages
+  | 'started'
+  | 'economics'
+  | 'wico'
+  | 'finad'
+  | 'green-credit'
+  | 'milestones'
+  | 'beyond'
+  | 'community'
+  | 'outside';
 
 export interface AIMessage {
   id: string;

@@ -18,6 +18,15 @@ export interface TranslationDictionary {
     intro: string;
     active: string;
     email: string;
+    started: string;
+    economics: string;
+    wico: string;
+    finad: string;
+    greenCredit: string;
+    milestones: string;
+    beyond: string;
+    community: string;
+    outside: string;
   };
   landing: {
     enter: string;
@@ -229,14 +238,23 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       resume: 'Resume',
       askAi: 'Ask AI',
       sections: 'Sections',
-      portfolioSubtitle: 'Curated Academic & Professional Archive',
+      portfolioSubtitle: 'A Working Journal',
       introScreen: 'Intro Screen',
       intro: 'Intro',
       active: 'Active',
-      email: 'Email'
+      email: 'Email',
+      started: 'Where I Started',
+      economics: 'Economics',
+      wico: 'WICO',
+      finad: 'FinAD',
+      greenCredit: 'Green Credit',
+      milestones: 'Milestones',
+      beyond: 'Beyond the Numbers',
+      community: 'Community',
+      outside: 'Outside the Ledger'
     },
     landing: {
-      enter: 'Enter Portfolio',
+      enter: 'Turn the Page',
       portfolio: 'Portfolio Archive'
     },
     about: {
@@ -252,7 +270,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     honors: {
       sectionNum: '02 / Honors & Awards',
       title: 'Honors & Awards',
-      subtitle: 'International, national, and regional recognitions in economics, chemistry, and research innovation.',
+      subtitle: 'Competitions in economics, chemistry and research, and what each one asked of me.',
       viewCertificate: 'View Certificate & Official Score',
       viewProject: 'View Related Project & Research',
       competitionScope: 'Scope / Level',
@@ -284,7 +302,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     education: {
       sectionNum: '03 / Education',
       title: 'Education',
-      subtitle: 'Academic background, standardized test scores, and scholastic milestones.',
+      subtitle: 'Where I study, how it has gone, and the tests along the way.',
       institution: 'Hanoi–Amsterdam High School for the Gifted',
       specialization: 'Major Specialization: Chemistry',
       focus: 'Academic Major',
@@ -306,7 +324,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     projects: {
       sectionNum: '04 / Projects',
       title: 'Projects',
-      subtitle: 'Selected technical builds, quantitative analytics platforms, and software architectures.',
+      subtitle: 'Things I built to understand a problem better, usually by working with data.',
       viewCaseStudy: 'View Case Study',
       viewCase: 'View Case',
       prevSection: 'Education',
@@ -318,7 +336,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     research: {
       sectionNum: '05 / Research',
       title: 'Research',
-      subtitle: 'Empirical inquiries, econometrics, and peer-reviewed scientific publications.',
+      subtitle: 'Questions I followed further than a classroom would, in economics and chemistry.',
       publishedPaper: 'Published Paper',
       researchProject: 'Research Project',
       viewFullPaper: 'Read Full Publication PDF',
@@ -346,14 +364,14 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     leadership: {
       sectionNum: '06 / Leadership',
       title: 'Leadership',
-      subtitle: 'Strategic execution, team guidance, and organization management.',
+      subtitle: 'Times I was responsible for a group, and what that taught me about working with people.',
       prevSection: 'Research',
       nextSection: 'Activities'
     },
     activities: {
       sectionNum: '07 / Activities',
       title: 'Activities',
-      subtitle: 'Professional internships, practical data analytics, and organizational contributions.',
+      subtitle: 'Internships, mentoring and community work: places where ideas met real constraints.',
       featuredSection: 'Featured Activities',
       secondarySection: 'Archive & Community Cohorts',
       secondaryTitle: 'Other Activities',
@@ -384,7 +402,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     interests: {
       sectionNum: '08 / Interests',
       title: 'Interests',
-      subtitle: 'Interdisciplinary pursuits, analytical passions, and personal exploratory domains.',
+      subtitle: 'Music, curiosity, and the slower parts of my week.',
       introLine: 'The things I return to when I’m not building or analyzing.',
       currentlyText: 'CURRENTLY → learning guitar',
       prevSection: 'Activities',
@@ -394,7 +412,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     resume: {
       sectionNum: 'Curriculum Vitae',
       title: 'Resume',
-      subtitle: 'Comprehensive overview of qualifications, experience, and competencies.',
+      subtitle: 'Everything on one page, for when you need the short version.',
       downloadCv: 'Download Resume (PDF)',
       copyEmail: 'Copy Email',
       copiedEmail: 'Copied to Clipboard',
@@ -411,7 +429,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     },
     askAi: {
       title: 'Ask AI Navigator',
-      subtitle: 'Interactive conversational assistant for exploring this portfolio archive.',
+      subtitle: 'Ask about anything in this journal.',
       heroTitle: 'What would you like to explore?',
       badge: 'Portfolio Assistant',
       placeholder: 'Ask anything about projects, research, or experience...',
@@ -443,11 +461,20 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       resume: 'Hồ sơ',
       askAi: 'Hỏi AI',
       sections: 'Danh mục',
-      portfolioSubtitle: 'Lưu trữ Học thuật & Hồ sơ Chuyên môn',
+      portfolioSubtitle: 'Nhật ký học tập & làm việc',
       introScreen: 'Màn hình mở đầu',
       intro: 'Mở đầu',
       active: 'Đang xem',
-      email: 'Email'
+      email: 'Email',
+      started: 'Nơi bắt đầu',
+      economics: 'Kinh tế',
+      wico: 'WICO',
+      finad: 'FinAD',
+      greenCredit: 'Tín dụng xanh',
+      milestones: 'Dấu mốc',
+      beyond: 'Ngoài con số',
+      community: 'Cộng đồng',
+      outside: 'Ngoài sổ cái'
     },
     landing: {
       enter: 'Khám phá Portfolio',
@@ -466,7 +493,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     honors: {
       sectionNum: '02 / Giải thưởng & Thành tích',
       title: 'Giải thưởng',
-      subtitle: 'Các danh hiệu và huy chương quốc tế, quốc gia và cấp thành phố về kinh tế, hóa học và nghiên cứu sáng chế.',
+      subtitle: 'Những cuộc thi về kinh tế, hóa học và nghiên cứu, và điều mỗi cuộc thi đòi hỏi ở tôi.',
       viewCertificate: 'Xem chứng nhận & điểm số chính thức',
       viewProject: 'Xem dự án & nghiên cứu liên quan',
       competitionScope: 'Quy mô / Cấp độ',
@@ -498,7 +525,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     education: {
       sectionNum: '03 / Học vấn',
       title: 'Học vấn',
-      subtitle: 'Quá trình học tập, bảng điểm học tập GPA và các chứng chỉ chuẩn hóa quốc tế.',
+      subtitle: 'Nơi tôi học, kết quả học tập, và những kỳ thi trên đường đi.',
       institution: 'THPT Chuyên Hà Nội – Amsterdam',
       specialization: 'Chuyên ban: Hóa học',
       focus: 'Chuyên ban Học tập',
@@ -520,7 +547,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     projects: {
       sectionNum: '04 / Dự án',
       title: 'Dự án',
-      subtitle: 'Các sản phẩm kỹ thuật, nền tảng phân tích định lượng và kiến trúc phần mềm tiêu biểu.',
+      subtitle: 'Những thứ tôi xây dựng để hiểu một vấn đề rõ hơn, thường là bằng cách làm việc với dữ liệu.',
       viewCaseStudy: 'Xem Case Study chi tiết',
       viewCase: 'Xem dự án',
       prevSection: 'Học vấn',
@@ -532,7 +559,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     research: {
       sectionNum: '05 / Nghiên cứu',
       title: 'Nghiên cứu',
-      subtitle: 'Các công trình nghiên cứu thực nghiệm, mô hình kinh tế lượng và bài báo khoa học đã xuất bản.',
+      subtitle: 'Những câu hỏi tôi theo đuổi xa hơn khuôn khổ lớp học, trong kinh tế và hóa học.',
       publishedPaper: 'Bài báo đã xuất bản',
       researchProject: 'Dự án nghiên cứu',
       viewFullPaper: 'Đọc toàn văn bài báo (PDF)',
@@ -560,14 +587,14 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     leadership: {
       sectionNum: '06 / Lãnh đạo',
       title: 'Lãnh đạo',
-      subtitle: 'Năng lực điều hành chiến lược, dẫn dắt đội ngũ và quản lý tổ chức.',
+      subtitle: 'Những lần tôi chịu trách nhiệm cho một tập thể, và điều đó dạy tôi gì về làm việc cùng người khác.',
       prevSection: 'Nghiên cứu',
       nextSection: 'Hoạt động'
     },
     activities: {
       sectionNum: '07 / Hoạt động',
       title: 'Hoạt động',
-      subtitle: 'Quá trình thực tập chuyên môn, phân tích dữ liệu thực tế và đóng góp cho cộng đồng.',
+      subtitle: 'Thực tập, hướng dẫn và hoạt động cộng đồng: nơi ý tưởng gặp những giới hạn thực tế.',
       featuredSection: 'Hoạt động tiêu biểu',
       secondarySection: 'Lưu trữ & Hoạt động cộng đồng',
       secondaryTitle: 'Hoạt động khác',
@@ -598,8 +625,8 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     interests: {
       sectionNum: '08 / Sở thích',
       title: 'Sở thích',
-      subtitle: 'Các định hướng nghiên cứu liên ngành, đam mê phân tích và sở thích cá nhân.',
-      introLine: 'Những điều tôi tìm về khi không bận rộn với nghiên cứu hay mô hình hóa.',
+      subtitle: 'Âm nhạc, sự tò mò, và những phần chậm rãi trong tuần của tôi.',
+      introLine: 'Những điều tôi tìm về khi không xây dựng hay phân tích điều gì.',
       currentlyText: 'HIỆN TẠI → học guitar',
       prevSection: 'Hoạt động',
       viewResume: 'Xem Hồ sơ (CV)',
@@ -608,7 +635,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     resume: {
       sectionNum: 'Hồ sơ năng lực',
       title: 'Hồ sơ',
-      subtitle: 'Bản tóm tắt toàn diện về học vấn, kinh nghiệm, năng lực chuyên môn và kỹ năng.',
+      subtitle: 'Tất cả trên một trang, khi bạn cần bản ngắn gọn.',
       downloadCv: 'Tải CV (PDF)',
       copyEmail: 'Sao chép Email',
       copiedEmail: 'Đã sao chép vào bộ nhớ tạm',
@@ -625,7 +652,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     },
     askAi: {
       title: 'Trợ lý AI Tìm kiếm',
-      subtitle: 'Trợ lý đối thoại thông minh giúp khám phá toàn bộ dữ liệu trong hồ sơ năng lực.',
+      subtitle: 'Hỏi về bất cứ điều gì trong cuốn nhật ký này.',
       heroTitle: 'Bạn muốn tìm hiểu thông tin gì?',
       badge: 'Trợ lý Hồ sơ Năng lực',
       placeholder: 'Hỏi bất kỳ điều gì về học vấn, giải thưởng, dự án, nghiên cứu...',

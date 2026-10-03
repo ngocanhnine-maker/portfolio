@@ -19,7 +19,10 @@ import {
   Github,
   Linkedin,
   FileText,
-  Languages
+  Languages,
+  FlaskConical,
+  TrendingUp,
+  HeartHandshake
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { useLanguage } from '../context/LanguageContext';
@@ -42,6 +45,43 @@ interface NavItemDef {
   icon: React.ComponentType<{ className?: string }>;
 }
 
+const TOOLTIP =
+  'pointer-events-none absolute top-full left-1/2 z-50 mt-3 -translate-x-1/2 whitespace-nowrap rounded-[3px] bg-[#EFE6D2] px-2.5 py-1 text-[11px] text-[#2A2620] opacity-0 shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-opacity duration-150 group-hover:opacity-100 group-focus-within:opacity-100 motion-reduce:transition-none';
+
+const TOOLTIP_BELOW =
+  'pointer-events-none absolute top-full right-0 z-50 mt-3 whitespace-nowrap rounded-[3px] bg-[#EFE6D2] px-2.5 py-1 text-[11px] text-[#2A2620] opacity-0 shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-opacity duration-150 group-hover:opacity-100 group-focus-within:opacity-100 motion-reduce:transition-none';
+
+// One-word chapter names for the desktop bar; full names show as the tooltip.
+const SHORT_LABELS: Record<'en' | 'vi', Partial<Record<PageId, string>>> = {
+  en: {
+    about: 'About',
+    started: 'Origins',
+    economics: 'Economics',
+    wico: 'WICO',
+    finad: 'FinAD',
+    'green-credit': 'Research',
+    milestones: 'Milestones',
+    beyond: 'Leadership',
+    community: 'Community',
+    outside: 'Life'
+  },
+  vi: {
+    about: 'Giới thiệu',
+    started: 'Khởi đầu',
+    economics: 'Kinh tế',
+    wico: 'WICO',
+    finad: 'FinAD',
+    'green-credit': 'Nghiên cứu',
+    milestones: 'Dấu mốc',
+    beyond: 'Lãnh đạo',
+    community: 'Cộng đồng',
+    outside: 'Đời sống'
+  }
+};
+
+const FOOT_BTN =
+  'flex h-8 w-8 cursor-pointer items-center justify-center text-[#F2EBDD]/55 transition-colors hover:text-[#F2EBDD] focus-visible:ring-1 focus-visible:ring-white/40';
+
 const SIDEBAR_SOCIAL_LINKS: Record<'github' | 'linkedin', boolean> = {
   github: false,
   linkedin: false
@@ -61,15 +101,19 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const hasCv = Boolean(PERSONAL_INFO.cvUrl.trim());
 
   // Main numbered portfolio flow in exact requested order: About -> Honors & Awards -> Education -> Projects -> Research -> Leadership -> Activities -> Interests
+  // Journal chapters, in page order. Academic Snapshot sits under About;
+  // the closing page sits under Outside the Ledger.
   const numberedNavItems: NavItemDef[] = [
     { id: 'about', number: '01', labelKey: 'about', icon: User },
-    { id: 'honors', number: '02', labelKey: 'honors', icon: Award },
-    { id: 'education', number: '03', labelKey: 'education', icon: GraduationCap },
-    { id: 'projects', number: '04', labelKey: 'projects', icon: Layers },
-    { id: 'research', number: '05', labelKey: 'research', icon: BookOpen },
-    { id: 'leadership', number: '06', labelKey: 'leadership', icon: Users },
-    { id: 'activities', number: '07', labelKey: 'activities', icon: Activity },
-    { id: 'interests', number: '08', labelKey: 'interests', icon: Compass },
+    { id: 'started', number: '02', labelKey: 'started', icon: FlaskConical },
+    { id: 'economics', number: '03', labelKey: 'economics', icon: TrendingUp },
+    { id: 'wico', number: '04', labelKey: 'wico', icon: Award },
+    { id: 'finad', number: '05', labelKey: 'finad', icon: Layers },
+    { id: 'green-credit', number: '06', labelKey: 'greenCredit', icon: BookOpen },
+    { id: 'milestones', number: '07', labelKey: 'milestones', icon: GraduationCap },
+    { id: 'beyond', number: '08', labelKey: 'beyond', icon: Users },
+    { id: 'community', number: '09', labelKey: 'community', icon: HeartHandshake },
+    { id: 'outside', number: '10', labelKey: 'outside', icon: Compass },
   ];
 
   const handleNavClick = (id: PageId) => {
@@ -249,261 +293,127 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </div>
       )}
 
-      {/* Desktop Fixed Left Sidebar: Collapsible with Smooth Transition */}
-      <aside
-        className={`hidden lg:flex fixed top-0 left-0 bottom-0 bg-[#181816] border-r border-white/10 flex-col justify-between z-20 select-none transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          isCollapsed ? 'w-[72px] px-3 py-5' : 'w-[260px] p-5 xl:p-6'
-        }`}
+      {/* Desktop top bar: the spine of a journal laid across the top. Identity
+          on the left, chapter tabs in the middle, utilities and actions on the
+          right. The active chapter is a cream paper tab hanging below the bar. */}
+      <header
+        className="hidden lg:flex fixed top-0 left-0 right-0 h-14 bg-[#181816] z-30 select-none items-stretch pl-6 xl:pl-8 pr-4 xl:pr-6"
         id="desktop-sidebar"
         aria-label="Main Navigation"
       >
-        {/* Top Section: Brand + Language Switcher + Toggle */}
-        <div>
-          <div className={`flex items-center mb-5 ${isCollapsed ? 'justify-center flex-col gap-3' : 'justify-between'}`}>
-            {!isCollapsed ? (
-              <>
-                <button
-                  onClick={onBackToLanding}
-                  className="text-left group cursor-pointer overflow-hidden max-w-[170px]"
-                  id="sidebar-brand-btn"
-                  title={isVi ? 'Quay lại màn hình mở đầu' : 'Return to Intro'}
-                  aria-label={isVi ? 'Trần Ngọc Anh - Quay lại giới thiệu' : 'Tran Ngoc Anh - Return to Intro'}
-                >
-                  <div className="text-sm xl:text-base font-bold tracking-tight text-[#F2EBDD] group-hover:text-[#989A6C] transition-colors leading-tight truncate">
-                    {isVi ? 'TRẦN NGỌC ANH' : 'TRAN NGOC ANH'}
-                  </div>
-                  <div className="text-[10px] font-mono text-[#F2EBDD]/45 uppercase tracking-wider mt-0.5 truncate">
-                    {t.nav.portfolioSubtitle}
-                  </div>
-                </button>
+        {/* Stitching along the bottom edge */}
+        <div className="pointer-events-none absolute left-0 right-0 bottom-[6px] border-b border-dashed border-[#F2EBDD]/15" aria-hidden="true" />
 
-                <button
-                  onClick={onToggleCollapse}
-                  className="p-1.5 text-[#F2EBDD]/50 hover:text-[#F2EBDD] hover:bg-white/10 rounded-sm transition-colors cursor-pointer shrink-0"
-                  id="sidebar-collapse-btn"
-                  aria-label="Collapse sidebar navigation"
-                >
-                  <PanelLeftClose className="w-4 h-4" />
-                </button>
-              </>
-            ) : (
-              /* Collapsed Header State: Monogram & Expand Toggle */
-              <div className="flex flex-col items-center gap-2.5">
-                <div className="relative group">
-                  <button
-                    onClick={onBackToLanding}
-                    className="font-mono text-xs font-bold text-[#F2EBDD] hover:text-[#989A6C] transition-colors cursor-pointer w-9 h-9 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center focus-visible:ring-1 focus-visible:ring-white/40"
-                    id="sidebar-collapsed-monogram"
-                    aria-label={isVi ? 'Trần Ngọc Anh · Quay lại màn hình giới thiệu' : 'Tran Ngoc Anh · Return to Intro'}
-                  >
-                    TNA
-                  </button>
-                  <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-2.5 py-1 bg-[#181816] text-[#F2EBDD] text-[11px] font-mono border border-white/15 rounded-xs shadow-lg whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-150 motion-reduce:transition-none z-50">
-                    {isVi ? 'Trần Ngọc Anh · Giới thiệu' : 'Tran Ngoc Anh · Intro'}
-                  </div>
-                </div>
-
-                <div className="relative group">
-                  <button
-                    onClick={onToggleCollapse}
-                    className="p-2 text-[#F2EBDD]/60 hover:text-[#F2EBDD] hover:bg-white/10 rounded-sm transition-colors cursor-pointer focus-visible:ring-1 focus-visible:ring-white/40"
-                    id="sidebar-expand-btn"
-                    aria-label="Expand sidebar navigation"
-                  >
-                    <PanelLeft className="w-4 h-4 text-[#989A6C]" />
-                  </button>
-                  <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-2.5 py-1 bg-[#181816] text-[#F2EBDD] text-[11px] font-mono border border-white/15 rounded-xs shadow-lg whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-150 motion-reduce:transition-none z-50">
-                    {isVi ? 'Mở rộng thanh bên' : 'Expand Sidebar'}
-                  </div>
-                </div>
-              </div>
-            )}
+        {/* Identity */}
+        <button
+          onClick={onBackToLanding}
+          className="group shrink-0 self-center text-left cursor-pointer mr-6 xl:mr-10"
+          id="sidebar-brand-btn"
+          title={isVi ? 'Quay lại màn hình mở đầu' : 'Return to Intro'}
+          aria-label={isVi ? 'Trần Ngọc Anh - Quay lại giới thiệu' : 'Tran Ngoc Anh - Return to Intro'}
+        >
+          <div className="font-serif italic font-semibold text-[1.3rem] leading-none text-[#F2EBDD] group-hover:text-[#D9C9A3] transition-colors whitespace-nowrap">
+            {isVi ? 'Trần Ngọc Anh' : 'Tran Ngoc Anh'}
           </div>
-
-          {/* Desktop Language Switcher (EN / VI) */}
-          <div className="mb-4">
-            {!isCollapsed ? (
-              <div className="flex items-center justify-between px-2.5 py-1.5 rounded-sm bg-white/5 border border-white/10">
-                <div className="flex items-center gap-1.5 text-[11px] font-mono text-[#F2EBDD]/60">
-                  <Languages className="w-3.5 h-3.5 text-[#989A6C]" />
-                  <span>Language</span>
-                </div>
-                <div className="flex items-center bg-black/40 rounded-xs p-0.5 border border-white/10">
-                  <button
-                    onClick={() => setLanguage('en')}
-                    aria-label="Switch language to English"
-                    className={`px-2 py-0.5 text-[10px] font-mono rounded-xs transition-colors cursor-pointer ${
-                      language === 'en'
-                        ? 'bg-[#676749] text-[#F2EBDD] font-bold shadow-xs'
-                        : 'text-[#F2EBDD]/60 hover:text-[#F2EBDD]'
-                    }`}
-                  >
-                    EN
-                  </button>
-                  <button
-                    onClick={() => setLanguage('vi')}
-                    aria-label="Chuyển ngôn ngữ sang Tiếng Việt"
-                    className={`px-2 py-0.5 text-[10px] font-mono rounded-xs transition-colors cursor-pointer ${
-                      language === 'vi'
-                        ? 'bg-[#676749] text-[#F2EBDD] font-bold shadow-xs'
-                        : 'text-[#F2EBDD]/60 hover:text-[#F2EBDD]'
-                    }`}
-                  >
-                    VI
-                  </button>
-                </div>
-              </div>
-            ) : (
-              <div className="flex justify-center group relative">
-                <button
-                  onClick={toggleLanguage}
-                  aria-label={`Current language: ${language.toUpperCase()}. Click to switch to ${language === 'en' ? 'Vietnamese' : 'English'}`}
-                  className="w-8 h-8 rounded-sm bg-white/5 border border-white/10 text-[10px] font-mono font-bold text-[#F2EBDD] hover:bg-white/10 flex items-center justify-center cursor-pointer transition-colors focus-visible:ring-1 focus-visible:ring-white/40"
-                >
-                  {language.toUpperCase()}
-                </button>
-                <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-2.5 py-1 bg-[#181816] text-[#F2EBDD] text-[11px] font-mono border border-white/15 rounded-xs shadow-lg whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-150 motion-reduce:transition-none z-50">
-                  Switch: {language === 'en' ? 'Tiếng Việt' : 'English'}
-                </div>
-              </div>
-            )}
+          <div className="hidden xl:block text-[9px] uppercase tracking-[0.16em] text-[#F2EBDD]/45 mt-1 whitespace-nowrap">
+            {t.nav.portfolioSubtitle}
           </div>
+        </button>
 
-          {/* ✦ 1. Ask AI (Highlighted at top, not numbered) */}
-          <div className="relative group mb-4">
-            <button
-              onClick={() => handleNavClick('ask-ai')}
-              id="sidebar-nav-ask-ai"
-              aria-label={t.nav.askAi}
-              className={`w-full flex items-center rounded-sm font-medium text-sm transition-all duration-150 cursor-pointer ${
-                isCollapsed ? 'justify-center p-2.5' : 'justify-between px-3 py-2'
-              } ${
-                activePage === 'ask-ai'
-                  ? 'bg-[#676749] text-[#F2EBDD] shadow-xs font-semibold border border-white/20'
-                  : 'bg-white/5 text-[#F2EBDD] border border-white/10 hover:bg-white/10 hover:border-white/20'
-              }`}
-            >
-              <span className="flex items-center gap-2.5 min-w-0">
-                <Sparkles className={`w-4 h-4 shrink-0 ${activePage === 'ask-ai' ? 'text-[#F2EBDD]' : 'text-[#989A6C]'}`} />
-                {!isCollapsed && <span className="truncate">{t.nav.askAi}</span>}
-              </span>
-              {!isCollapsed && (
-                <span className="text-[10px] font-mono uppercase px-1.5 py-0.5 bg-black/40 text-[#F2EBDD]/80 rounded-xs shrink-0">
-                  ✦ AI
+        {/* Chapter tabs: number + one-word label, no icons, so every tab is readable */}
+        <nav className="flex-1 min-w-0 flex items-stretch justify-center" aria-label="Portfolio Sections">
+          {numberedNavItems.map((item) => {
+            const isActive = activePage === item.id;
+            const label = t.nav[item.labelKey];
+            const short = (isVi ? SHORT_LABELS.vi : SHORT_LABELS.en)[item.id] ?? label;
+
+            return (
+              <button
+                key={item.id}
+                onClick={() => handleNavClick(item.id)}
+                id={`sidebar-nav-${item.id}`}
+                title={label}
+                aria-label={`${item.number} · ${label}`}
+                aria-current={isActive ? 'page' : undefined}
+                className={`relative flex items-baseline gap-1.5 px-[clamp(6px,0.75vw,14px)] pt-[19px] cursor-pointer whitespace-nowrap rounded-b-[4px] text-[12.5px] xl:text-[13px] transition-colors duration-200 ${
+                  isActive
+                    ? 'self-start h-[calc(100%+6px)] bg-[#EFE6D2] text-[#2A2620] font-semibold shadow-[2px_2px_0_rgba(0,0,0,0.35)]'
+                    : 'h-full text-[#F2EBDD]/60 hover:text-[#F2EBDD]'
+                }`}
+              >
+                {isActive && <span className="absolute top-0 left-1.5 right-1.5 h-[2px] bg-[#8E3A44]" aria-hidden="true" />}
+                <span className={`hidden min-[1500px]:inline font-serif italic text-[12px] ${isActive ? 'text-[#8E3A44]' : 'text-[#D9C9A3]/45'}`}>
+                  {item.number}
                 </span>
-              )}
-            </button>
+                <span className="relative">
+                  {short}
+                  {!isActive && (
+                    <span className="absolute left-0 right-0 -bottom-1 h-px bg-[#D9C9A3] origin-left scale-x-0 transition-transform duration-200 [button:hover_&]:scale-x-100" aria-hidden="true" />
+                  )}
+                </span>
+              </button>
+            );
+          })}
+        </nav>
 
-            {/* Floating Tooltip in Collapsed Mode */}
-            {isCollapsed && (
-              <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-2.5 py-1 bg-[#181816] text-[#F2EBDD] text-[11px] font-mono border border-white/15 rounded-xs shadow-lg whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-150 motion-reduce:transition-none z-50">
-                ✦ {t.nav.askAi}
-              </div>
-            )}
-          </div>
+        {/* Utilities + actions */}
+        <div className="shrink-0 self-center flex items-center gap-3.5 xl:gap-4 ml-4">
+          <span className="flex items-center gap-1.5 text-[11px] tracking-[0.12em]">
+            {(['en', 'vi'] as const).map((lang, i) => (
+              <React.Fragment key={lang}>
+                {i > 0 && <span className="text-[#F2EBDD]/25">/</span>}
+                <button
+                  onClick={() => setLanguage(lang)}
+                  aria-label={lang === 'en' ? 'Switch language to English' : 'Chuyển ngôn ngữ sang Tiếng Việt'}
+                  className={`cursor-pointer transition-colors pb-px border-b ${
+                    language === lang
+                      ? 'text-[#F2EBDD] font-semibold border-[#D9C9A3]'
+                      : 'text-[#F2EBDD]/45 hover:text-[#F2EBDD] border-transparent'
+                  }`}
+                >
+                  {lang.toUpperCase()}
+                </button>
+              </React.Fragment>
+            ))}
+          </span>
 
-          {/* ✦ 2. Main Numbered Portfolio Flow */}
-          <div className="space-y-1">
-            {!isCollapsed && (
-              <div className="text-[10px] font-mono text-[#F2EBDD]/35 uppercase tracking-wider px-3 pb-1">
-                {t.nav.sections}
-              </div>
-            )}
+          <button
+            onClick={() => handleNavClick('ask-ai')}
+            id="sidebar-nav-ask-ai"
+            aria-label={t.nav.askAi}
+            className={`flex items-center gap-1.5 text-[13px] cursor-pointer whitespace-nowrap transition-colors ${
+              activePage === 'ask-ai' ? 'text-[#F2EBDD]' : 'text-[#F2EBDD]/70 hover:text-[#F2EBDD]'
+            }`}
+          >
+            <Sparkles className="w-3.5 h-3.5 text-[#D9C9A3]" />
+            <span className={`hidden xl:inline border-b ${activePage === 'ask-ai' ? 'border-[#D9C9A3]' : 'border-transparent'}`}>{t.nav.askAi}</span>
+          </button>
 
-            <nav className="space-y-0.5" aria-label="Portfolio Sections">
-              {numberedNavItems.map((item) => {
-                const isActive = item.id === 'honors' ? isHonorsActive : activePage === item.id;
-                const IconComponent = item.icon;
-                const label = t.nav[item.labelKey];
+          <span className="hidden xl:block h-5 w-px bg-[#F2EBDD]/15" aria-hidden="true" />
 
-                return (
-                  <div key={item.id} className="relative group">
-                    <button
-                      onClick={() => handleNavClick(item.id)}
-                      id={`sidebar-nav-${item.id}`}
-                      aria-label={`${item.number} · ${label}`}
-                      className={`w-full flex items-center text-sm text-left transition-all duration-150 cursor-pointer rounded-sm ${
-                        isCollapsed ? 'justify-center p-2.5' : 'justify-between px-3 py-1.5'
-                      } ${
-                        isActive
-                          ? 'text-[#F2EBDD] font-bold bg-[#676749] border border-white/20 shadow-xs'
-                          : 'text-[#F2EBDD]/60 hover:text-[#F2EBDD] hover:bg-white/5 border border-transparent'
-                      }`}
-                    >
-                      <div className="flex items-center gap-2.5 min-w-0">
-                        {!isCollapsed && (
-                          <span
-                            className={`text-[11px] font-mono w-4 shrink-0 transition-colors ${
-                              isActive ? 'text-[#DDD8C4] font-bold' : 'text-[#F2EBDD]/35'
-                            }`}
-                          >
-                            {item.number}
-                          </span>
-                        )}
-                        <IconComponent
-                          className={`w-3.5 h-3.5 shrink-0 transition-colors ${
-                            isActive ? 'text-[#F2EBDD]' : 'text-[#F2EBDD]/40 group-hover:text-[#F2EBDD]'
-                          }`}
-                        />
-                        {!isCollapsed && (
-                          <span className="tracking-tight truncate text-xs sm:text-[13px]">{label}</span>
-                        )}
-                      </div>
-
-                      {!isCollapsed && isActive && (
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#DDD8C4] shrink-0 ml-1" />
-                      )}
-                    </button>
-
-                    {/* Floating Tooltip in Collapsed Mode */}
-                    {isCollapsed && (
-                      <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-2.5 py-1 bg-[#181816] text-[#F2EBDD] text-[11px] font-mono border border-white/15 rounded-xs shadow-lg whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-150 motion-reduce:transition-none z-50">
-                        {item.number} · {label}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </nav>
-          </div>
-        </div>
-
-        {/* Sidebar Footer Actions. Social links remain flag-controlled so they
-            can be restored without rebuilding the footer. */}
-        <div className="border-t border-white/10 pt-3">
-          <div className={`flex items-center gap-2 ${isCollapsed ? 'flex-col' : 'justify-center'}`}>
+          <div className="hidden xl:flex items-center gap-0.5">
             <div className="group relative">
               <button
                 onClick={onBackToLanding}
-                className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-sm text-[#F2EBDD]/65 transition-colors hover:bg-white/10 hover:text-[#F2EBDD] focus-visible:ring-1 focus-visible:ring-white/40"
+                className={FOOT_BTN}
                 id="sidebar-back-to-landing-footer"
                 aria-label={isVi ? 'Quay lại màn hình mở đầu' : 'Return to Intro Screen'}
-                title={isCollapsed ? undefined : t.nav.intro}
               >
                 <ArrowLeft className="h-4 w-4" />
               </button>
-              {isCollapsed && (
-                <div className="pointer-events-none absolute left-full top-1/2 z-50 ml-3 -translate-y-1/2 whitespace-nowrap rounded-xs border border-white/15 bg-[#181816] px-2.5 py-1 text-[11px] font-mono text-[#F2EBDD] opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100 group-focus-within:opacity-100 motion-reduce:transition-none">
-                  {t.nav.intro}
-                </div>
-              )}
+              <div className={TOOLTIP_BELOW}>{t.nav.intro}</div>
             </div>
 
             <div className="group relative">
               <a
                 href={`mailto:${PERSONAL_INFO.email}`}
-                className="flex h-8 w-8 items-center justify-center rounded-sm text-[#F2EBDD]/65 transition-colors hover:bg-white/10 hover:text-[#F2EBDD] focus-visible:ring-1 focus-visible:ring-white/40"
+                className={FOOT_BTN}
                 id="sidebar-link-email"
                 aria-label={`Email: ${PERSONAL_INFO.email}`}
-                title={isCollapsed ? undefined : t.nav.email}
               >
                 <Mail className="h-4 w-4" />
               </a>
-              {isCollapsed && (
-                <div className="pointer-events-none absolute left-full top-1/2 z-50 ml-3 -translate-y-1/2 whitespace-nowrap rounded-xs border border-white/15 bg-[#181816] px-2.5 py-1 text-[11px] font-mono text-[#F2EBDD] opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100 group-focus-within:opacity-100 motion-reduce:transition-none">
-                  {t.nav.email}
-                </div>
-              )}
+              <div className={TOOLTIP_BELOW}>{t.nav.email}</div>
             </div>
 
             <div className="group relative">
@@ -511,59 +421,40 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 <a
                   href={PERSONAL_INFO.cvUrl}
                   download
-                  className="flex h-8 w-8 items-center justify-center rounded-sm text-[#F2EBDD]/65 transition-colors hover:bg-white/10 hover:text-[#F2EBDD] focus-visible:ring-1 focus-visible:ring-white/40"
+                  className={FOOT_BTN}
                   id="sidebar-link-cv"
                   aria-label={isVi ? 'Tải CV' : 'Download CV'}
-                  title={isCollapsed ? undefined : isVi ? 'Tải CV' : 'Download CV'}
                 >
                   <FileText className="h-4 w-4" />
                 </a>
               ) : (
-                <span title="Coming soon">
-                  <button
-                    type="button"
-                    disabled
-                    className="flex h-8 w-8 cursor-not-allowed items-center justify-center rounded-sm text-[#F2EBDD] opacity-40"
-                    id="sidebar-link-cv"
-                    aria-label={isVi ? 'CV sắp được cập nhật' : 'CV coming soon'}
-                  >
-                    <FileText className="h-4 w-4" />
-                  </button>
-                </span>
+                <button
+                  type="button"
+                  disabled
+                  className={`${FOOT_BTN} cursor-not-allowed opacity-40`}
+                  id="sidebar-link-cv"
+                  aria-label={isVi ? 'CV sắp được cập nhật' : 'CV coming soon'}
+                >
+                  <FileText className="h-4 w-4" />
+                </button>
               )}
-              {isCollapsed && hasCv && (
-                <div className="pointer-events-none absolute left-full top-1/2 z-50 ml-3 -translate-y-1/2 whitespace-nowrap rounded-xs border border-white/15 bg-[#181816] px-2.5 py-1 text-[11px] font-mono text-[#F2EBDD] opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100 group-focus-within:opacity-100 motion-reduce:transition-none">
-                  {isVi ? 'Tải CV' : 'Download CV'}
-                </div>
-              )}
+              <div className={TOOLTIP_BELOW}>{hasCv ? (isVi ? 'Tải CV' : 'Download CV') : 'Coming soon'}</div>
             </div>
 
             {SIDEBAR_SOCIAL_LINKS.github && (
-              <a
-                href={PERSONAL_INFO.github}
-                target="_blank"
-                rel="noreferrer"
-                className="flex h-8 w-8 items-center justify-center rounded-sm text-[#F2EBDD]/65 transition-colors hover:bg-white/10 hover:text-[#F2EBDD]"
-                aria-label="GitHub Profile"
-              >
+              <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer" className={FOOT_BTN} aria-label="GitHub Profile">
                 <Github className="h-4 w-4" />
               </a>
             )}
 
             {SIDEBAR_SOCIAL_LINKS.linkedin && (
-              <a
-                href={PERSONAL_INFO.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="flex h-8 w-8 items-center justify-center rounded-sm text-[#F2EBDD]/65 transition-colors hover:bg-white/10 hover:text-[#F2EBDD]"
-                aria-label="LinkedIn Profile"
-              >
+              <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noreferrer" className={FOOT_BTN} aria-label="LinkedIn Profile">
                 <Linkedin className="h-4 w-4" />
               </a>
             )}
           </div>
         </div>
-      </aside>
+      </header>
     </>
   );
 };
