@@ -221,6 +221,8 @@ export type PageId =
   | 'resume'
   | 'ask-ai'
   // Journal pages
+  | 'snapshot'
+  | 'closing'
   | 'started'
   | 'economics'
   | 'wico'

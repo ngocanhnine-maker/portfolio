@@ -227,7 +227,7 @@ export const LandingIntro: React.FC<LandingIntroProps> = ({ onEnterPortfolio }) 
                 transition={{ duration: 0.8, delay: 0.44, ease: [0.16, 1, 0.3, 1] }}
                 className="mt-[min(3.5vw,5svh)] text-[4.5vw] sm:text-[min(2.8vw,4svh)] leading-tight font-medium"
               >
-                — A Portfolio by {isVi ? 'Trần Ngọc Ánh' : 'Tran Ngoc Anh'} —
+                — A Portfolio by {isVi ? 'Trần Ngọc Anh' : 'Tran Ngoc Anh'} —
               </motion.p>
 
               <motion.button

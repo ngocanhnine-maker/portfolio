@@ -5,9 +5,9 @@ import { seeded } from './ScrapbookBackdrop';
 
 // Photos for each part. '' shows an empty photo slot until a real photo is added.
 const PHOTOS = {
-  photography: '',
+  photography: '/gallery/photography/hanoi-skyline.jpg',
   music: '/gallery/piano/zhongsin-performance.jpg',
-  life: ''
+  life: '/gallery/photography/friends.jpg'
 };
 
 const CONTENT = {

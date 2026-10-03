@@ -108,6 +108,10 @@ export const AboutBoard: React.FC = () => {
                 {isVi ? 'Trần Ngọc Anh' : 'Tran Ngoc Anh'}
               </h1>
 
+              <p className="absolute left-[6%] top-[22%] m-0 translate-y-[1.9cqw] leading-[8.333cqw] text-[clamp(9px,2.4cqw,13px)] uppercase tracking-[0.22em] font-semibold text-[#8E3A44]">
+                {isVi ? 'Tài chính · Kinh doanh · Dữ liệu' : 'Finance · Business · Data'}
+              </p>
+
               {/* Dashed ruled lines */}
               <div
                 className="absolute left-[6%] right-[6%] top-[22%] bottom-[22%]"
@@ -121,10 +125,18 @@ export const AboutBoard: React.FC = () => {
               />
 
               {/* One ruled line = 8.333cqw (ruled band is half the card width, six lines) */}
-              <p className="absolute left-[6%] right-[6%] top-[22%] m-0 translate-y-[1.9cqw] text-[clamp(11px,3.15cqw,18px)] leading-[8.333cqw] text-[#3D2A24]/85">
+              <p className="absolute left-[6%] right-[6%] top-[22%] m-0 translate-y-[10.233cqw] pr-[1%] line-clamp-4 tracking-[-0.005em] text-[clamp(9.5px,3.15cqw,18px)] leading-[8.333cqw] text-[#3D2A24]/85">
                 {isVi
-                  ? 'Tôi thích hiểu cách mọi thứ vận hành, nhất là khi câu trả lời không hiện ra ngay từ đầu. Theo thời gian, sự tò mò ấy đưa tôi đến với tài chính và công nghệ, nơi tôi thích nhìn vấn đề từ nhiều góc độ và tìm ra những cách rõ ràng hơn để hiểu chúng.'
-                  : 'I like understanding how things work, especially when the answer is not obvious at first. Over time, that curiosity has drawn me toward finance and technology, where I enjoy looking at problems from different angles and finding clearer ways to make sense of them.'}
+                  ? 'Tôi thích hiểu cách mọi thứ vận hành, nhất là khi câu trả lời không hiện ra ngay. Sự tò mò ấy đưa tôi đến với tài chính và công nghệ, nơi tôi thích nhìn vấn đề từ nhiều góc độ và tìm cách hiểu chúng rõ ràng hơn.'
+                  : 'I like understanding how things work, especially when the answer is not obvious at first. That curiosity has drawn me toward finance and technology, where I enjoy looking at problems from different angles.'}
+              </p>
+
+              {/* Last ruled line: contact */}
+              <p className="absolute left-[6%] right-[6%] top-[22%] m-0 translate-y-[43.565cqw] leading-[8.333cqw] text-[clamp(9.5px,3.15cqw,18px)] text-[#3D2A24]/85">
+                Email:{' '}
+                <a href="mailto:ngocanh.nine@gmail.com" className="text-[#2E1A16] font-medium hover:text-[#8E3A44] transition-colors">
+                  ngocanh.nine@gmail.com
+                </a>
               </p>
             </div>
 
