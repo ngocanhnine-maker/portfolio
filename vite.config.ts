@@ -1,11 +1,30 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import {defineConfig} from 'vite';
+import {defineConfig, type Plugin} from 'vite';
+
+// GitHub Pages serves the site under /<repo>/. Set BASE_PATH=/portfolio/ for that build;
+// local dev and other hosts keep '/'.
+const base = process.env.BASE_PATH || '/';
+
+// Source code refers to files in /public with root-absolute paths ("/landing/x.jpg").
+// Under a sub-path those must be prefixed with the base. CSS url(...) is left alone:
+// Vite already rewrites those, and Tailwind class names must stay unchanged.
+const PUBLIC_DIRS = 'landing|textures|profile|projects|gallery|certificates|papers|documents';
+const prefixPublicPaths = (): Plugin => ({
+  name: 'prefix-public-paths',
+  enforce: 'post',
+  transform(code, id) {
+    if (base === '/' || id.includes('node_modules') || !/\.(tsx?|jsx?)$/.test(id)) return null;
+    const re = new RegExp(`(?<!url\\()(['"\`])/(${PUBLIC_DIRS})/`, 'g');
+    return re.test(code) ? {code: code.replace(re, `$1${base}$2/`), map: null} : null;
+  },
+});
 
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss()],
+    base,
+    plugins: [react(), tailwindcss(), prefixPublicPaths()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
