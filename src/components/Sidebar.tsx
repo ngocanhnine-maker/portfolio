@@ -129,7 +129,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   return (
     <>
       {/* Mobile Top Header */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 h-14 bg-[#181816]/95 backdrop-blur-md border-b border-white/10 z-40 px-4 sm:px-5 flex items-center justify-between">
+      <div className="lg:hidden fixed top-0 left-0 right-0 h-14 bg-[#5A2129]/95 backdrop-blur-md border-b border-white/10 z-40 px-4 sm:px-5 flex items-center justify-between">
         <button
           onClick={onBackToLanding}
           className="font-bold text-sm sm:text-base tracking-tight text-[#F2EBDD] hover:text-[#989A6C] transition-colors cursor-pointer"
@@ -193,7 +193,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       {/* Mobile Menu Backdrop & Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-30 bg-black/60 backdrop-blur-xs flex flex-col pt-14">
-          <div className="bg-[#181816] border-b border-white/15 p-6 shadow-2xl space-y-5 max-h-[calc(100vh-3.5rem)] overflow-y-auto">
+          <div className="bg-[#5A2129] border-b border-white/15 p-6 shadow-2xl space-y-5 max-h-[calc(100vh-3.5rem)] overflow-y-auto">
             {/* Ask AI button separated at top */}
             <div className="pb-3 border-b border-white/10">
               <button
@@ -297,7 +297,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           on the left, chapter tabs in the middle, utilities and actions on the
           right. The active chapter is a cream paper tab hanging below the bar. */}
       <header
-        className="hidden lg:flex fixed top-0 left-0 right-0 h-14 bg-[#181816] z-30 select-none items-stretch pl-6 xl:pl-8 pr-4 xl:pr-6"
+        className="hidden lg:flex fixed top-0 left-0 right-0 h-14 bg-[#5A2129] z-30 select-none items-stretch pl-6 xl:pl-8 pr-4 xl:pr-6"
         id="desktop-sidebar"
         aria-label="Main Navigation"
       >

@@ -70,8 +70,8 @@ export const TOPICS: Topic[] = [
     title: { en: 'Chemistry & early years', vi: 'Hóa học & khởi đầu' },
     keywords: ['chemistry', 'chemical', 'science', 'natural science', 'olympiad', 'hsg', 'national chemistry', 'started', 'beginning', 'origins', 'math', 'mathematics', 'hoa', 'hoa hoc', 'khoa hoc tu nhien', 'bat dau', 'khoi dau', 'toan', 'hoc sinh gioi'],
     answer: {
-      en: 'It started with Chemistry and Mathematics. She won **Third Prize in the National Chemistry Competition** (Grade 11) and a **Bronze Medal in the Natural Science Olympiad** (Grade 10).',
-      vi: 'Mọi thứ bắt đầu từ Hóa học và Toán. Bạn đạt **Giải Ba Kỳ thi HSG Quốc gia môn Hóa học** (lớp 11) và **Huy chương Đồng Olympic Khoa học Tự nhiên** (lớp 10).'
+      en: 'It started with Chemistry and Mathematics. She won **Third Prize in the National Chemistry Competition** (Grade 11) and, before that, **First Prize in the Hanoi Natural Sciences Competition** (Grade 9).',
+      vi: 'Mọi thứ bắt đầu từ Hóa học và Toán. Bạn đạt **Giải Ba Kỳ thi HSG Quốc gia môn Hóa học** (lớp 11) và trước đó là **Giải Nhất HSG Thành phố môn Khoa học Tự nhiên** (lớp 9).'
     },
     more: {
       en: 'Those years taught her to work carefully, test assumptions and stay with hard problems until they became clearer. That habit is what she later carried into economics.',
@@ -173,14 +173,14 @@ export const TOPICS: Topic[] = [
     id: 'leadership',
     page: 'beyond',
     title: { en: 'Leadership & mentoring', vi: 'Lãnh đạo & hướng dẫn' },
-    keywords: ['leadership', 'leader', 'lead', 'led', 'team', 'teamwork', 'mentor', 'mentoring', 'teaching', 'teach', 'stem', 'collaboration', 'lanh dao', 'truong nhom', 'doi nhom', 'lam viec nhom', 'huong dan', 'day', 'co van'],
+    keywords: ['leadership', 'leader', 'lead', 'led', 'team', 'teamwork', 'mentor', 'mentoring', 'teaching', 'teach', 'with project', 'advisor', 'entrance exam', 'collaboration', 'lanh dao', 'truong nhom', 'doi nhom', 'lam viec nhom', 'huong dan', 'day', 'co van'],
     answer: {
       en: 'Her leadership is mostly about the work in between: splitting a project into parts people can own, listening when the team disagrees, and pulling views into one direction. She led the **six-person WICO delegation** and chaired the **Peace Village** charity project.',
       vi: 'Lãnh đạo với bạn chủ yếu là những việc ở giữa: chia dự án thành phần mỗi người đảm nhận được, lắng nghe khi nhóm bất đồng, và gom các góc nhìn về một hướng. Bạn dẫn dắt **đoàn WICO sáu người** và làm trưởng ban dự án thiện nguyện **Làng Hòa Bình**.'
     },
     more: {
-      en: 'She also mentors younger students: three Grade 9 students she coached through a six-month exam run-up were all admitted to specialized schools. She has guided students through basic coding and simple circuits too.',
-      vi: 'Bạn cũng hướng dẫn các em nhỏ hơn: ba học sinh lớp 9 bạn kèm suốt sáu tháng ôn thi đều đỗ trường chuyên. Bạn còn hướng dẫn các em lập trình cơ bản và mạch điện đơn giản.'
+      en: 'She also mentors younger students: three Grade 9 students she coached through a six-month exam run-up were all admitted to specialized schools. She also mentored students for the entrance exam through WITH Project Season V.',
+      vi: 'Bạn cũng hướng dẫn các em nhỏ hơn: ba học sinh lớp 9 bạn kèm suốt sáu tháng ôn thi đều đỗ trường chuyên. Bạn cũng hướng dẫn các em ôn thi vào lớp 10 qua WITH Project mùa 5.'
     },
     next: ['internship', 'community']
   },

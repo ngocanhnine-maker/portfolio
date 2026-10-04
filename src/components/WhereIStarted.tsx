@@ -16,10 +16,10 @@ const CONTENT = {
         body: 'Preparing for it taught me precision: checking every step, questioning every result, and staying with a problem until the reasoning held.'
       },
       {
-        title: 'Natural Science Olympiad',
-        result: 'Bronze Medal',
-        grade: 'Grade 10',
-        body: 'Unfamiliar problems taught me to adapt, try another angle, and treat a hard question as something to learn from rather than avoid.'
+        title: 'Hanoi Natural Sciences Competition',
+        result: 'First Prize',
+        grade: 'Grade 9',
+        body: 'Bringing physics, chemistry and biology into one exam taught me to connect ideas across subjects, and gave me the confidence to go further in science.'
       }
     ],
     outro: 'Over time, I became more interested in questions that did not end with one correct answer.'
@@ -36,10 +36,10 @@ const CONTENT = {
         body: 'Quá trình ôn luyện dạy tôi sự chính xác: kiểm tra từng bước, đặt câu hỏi với từng kết quả, và theo đến cùng cho đến khi lập luận vững vàng.'
       },
       {
-        title: 'Olympic Khoa học Tự nhiên',
-        result: 'Huy chương Đồng',
-        grade: 'Lớp 10',
-        body: 'Những bài toán lạ dạy tôi cách thích nghi, thử một góc nhìn khác, và xem câu hỏi khó là điều để học hỏi thay vì né tránh.'
+        title: 'HSG Thành phố môn Khoa học Tự nhiên',
+        result: 'Giải Nhất',
+        grade: 'Lớp 9',
+        body: 'Gói vật lý, hóa học và sinh học vào một bài thi dạy tôi nối các ý tưởng giữa nhiều môn, và cho tôi thêm tự tin để đi xa hơn với khoa học.'
       }
     ],
     outro: 'Dần dần, tôi quan tâm nhiều hơn đến những câu hỏi không kết thúc bằng một đáp án đúng duy nhất.'
@@ -76,10 +76,12 @@ interface CardProps {
   grade: string;
   body: string;
   accessory: React.ReactNode;
+  /** Optional certificate photo shown in place of the icon. */
+  image?: { src: string; alt: string };
   tilt: string;
 }
 
-const MilestoneCard: React.FC<CardProps> = ({ tone, icon: Icon, clip, title, result, grade, body, accessory, tilt }) => (
+const MilestoneCard: React.FC<CardProps> = ({ tone, icon: Icon, clip, title, result, grade, body, accessory, tilt, image }) => (
   <article className={`relative w-full max-w-[520px] justify-self-center ${tilt}`}>
     <div className="[filter:drop-shadow(0_4px_8px_rgba(60,40,20,0.22))]">
       <div
@@ -96,7 +98,13 @@ const MilestoneCard: React.FC<CardProps> = ({ tone, icon: Icon, clip, title, res
         <div className="absolute top-0 bottom-0 left-[13%] w-[4px] border-x border-[#B5584F]/45" aria-hidden="true" />
 
         <div className="text-center">
-          <Icon className="mx-auto w-[clamp(40px,3.8vw,58px)] h-[clamp(40px,3.8vw,58px)] text-[#2E1A16]" strokeWidth={1.25} />
+          {image ? (
+            <div className="mx-auto w-[78%] bg-[#FFFDF8] p-[3%] shadow-[0_2px_6px_rgba(60,40,20,0.25)] -rotate-[1deg]">
+              <img src={image.src} alt={image.alt} className="block w-full h-auto" />
+            </div>
+          ) : (
+            <Icon className="mx-auto w-[clamp(40px,3.8vw,58px)] h-[clamp(40px,3.8vw,58px)] text-[#2E1A16]" strokeWidth={1.25} />
+          )}
           <h3 className="mt-4 m-0 font-serif italic font-semibold text-[#2E1A16] leading-[1.1] text-[clamp(1.35rem,2vw,2rem)]">
             {title}
           </h3>
@@ -166,6 +174,7 @@ export const WhereIStarted: React.FC = () => {
               {...c.cards[0]}
               tone="light"
               icon={FlaskConical}
+              image={{ src: '/certificates/national-chemistry-2025-2026.jpg', alt: isVi ? 'Giấy chứng nhận Giải Ba HSG Quốc gia môn Hóa học' : 'National Chemistry Competition Third Prize certificate' }}
               clip={clipA}
               tilt="md:-rotate-[1.2deg]"
               accessory={
@@ -180,6 +189,7 @@ export const WhereIStarted: React.FC = () => {
               {...c.cards[1]}
               tone="dark"
               icon={Atom}
+              image={{ src: '/certificates/city-ns-2023-2024.jpg', alt: isVi ? 'Giấy khen Giải Nhất HSG Thành phố môn Khoa học Tự nhiên' : 'Hanoi Natural Sciences Competition First Prize certificate' }}
               clip={clipB}
               tilt="md:rotate-[1deg]"
               accessory={

@@ -6,8 +6,8 @@ import { CertificateViewer, CertificateModalData } from './CertificateViewer';
 
 const LEADERSHIP_VIDEO_URL = '/projects/leadership.mp4';
 const LEADERSHIP_THUMB = '/gallery/wico/wico-photo-award-2.jpg';
-// A real photo from STEM teaching / mentoring. '' shows an empty photo slot.
-const STEM_PHOTO = '';
+// Mentoring photo: the WITH Project Season V cohort.
+const STEM_PHOTO = '/gallery/with/with-project-season-v.jpg';
 // Date of birth is masked in this preview; the viewer opens the original PDF.
 const INTERNSHIP_PREVIEW = '/certificates/gtel-internship-preview.jpg';
 const INTERNSHIP_PDF = '/certificates/gtel-internship-certificate.pdf';
@@ -19,9 +19,9 @@ const CONTENT = {
     leadershipBody:
       'Most of my leadership has been about the work in between: splitting a project into parts people could own, listening when the team disagreed, and pulling different views into one direction we could all commit to.',
     videoSoon: 'Video coming soon',
-    teaching: 'STEM Teaching',
+    teaching: 'Mentoring',
     teachingBody:
-      'I guided younger students through basic coding and simple circuits. Explaining an idea to someone seeing it for the first time showed me which parts I only half understood, and taught me to start from what they already knew.',
+      'Through WITH Project and the Ams Advisor club, I helped Grade 9 students prepare for the high-school entrance exam. Explaining a problem to someone meeting it for the first time showed me which parts I only half understood, and taught me to start from what they already knew.',
     photoSoon: 'Photo coming soon',
     internship: 'Internship',
     internshipMeta: 'GTEL · Financial Planning · 2026',
@@ -36,9 +36,9 @@ const CONTENT = {
     leadershipBody:
       'Phần lớn việc lãnh đạo của tôi nằm ở những việc ở giữa: chia dự án thành các phần mà mỗi người có thể đảm nhận, lắng nghe khi nhóm bất đồng, và gom những góc nhìn khác nhau về một hướng mà cả nhóm cùng theo.',
     videoSoon: 'Video sắp ra mắt',
-    teaching: 'Dạy STEM',
+    teaching: 'Hướng dẫn học tập',
     teachingBody:
-      'Tôi hướng dẫn các em nhỏ hơn làm lập trình cơ bản và mạch điện đơn giản. Giải thích một ý tưởng cho người lần đầu gặp nó cho tôi thấy phần nào mình mới hiểu một nửa, và dạy tôi bắt đầu từ điều các em đã biết.',
+      'Qua WITH Project và CLB Ams Advisor, tôi đồng hành cùng các em lớp 9 ôn thi vào lớp 10. Giảng một bài cho người lần đầu gặp nó cho tôi thấy phần nào mình mới hiểu một nửa, và dạy tôi bắt đầu từ điều các em đã biết.',
     photoSoon: 'Ảnh sắp được cập nhật',
     internship: 'Thực tập',
     internshipMeta: 'GTEL · Kế hoạch Tài chính · 2026',
@@ -172,7 +172,7 @@ export const BeyondNumbers: React.FC = () => {
                 <Tape className="-top-[9px] left-1/2 -translate-x-1/2 w-[40%] rotate-[2deg]" />
                 <div className="aspect-[4/3] overflow-hidden bg-[#E6DCC9] flex items-center justify-center">
                   {STEM_PHOTO ? (
-                    <img src={STEM_PHOTO} alt={c.teaching} className="w-full h-full object-cover" />
+                    <img src={STEM_PHOTO} alt={c.teaching} className="w-full h-full object-cover object-[50%_70%]" />
                   ) : (
                     <span className="flex flex-col items-center gap-1.5 text-[#3D2A24]/50 text-[10px] uppercase tracking-[0.14em] text-center px-2">
                       <ImageIcon className="w-5 h-5" strokeWidth={1.4} />
