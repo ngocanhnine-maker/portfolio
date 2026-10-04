@@ -14,7 +14,7 @@ const CONTENT: Record<'en' | 'vi', { title: string; cards: Card[] }> = {
         alt: 'Vietnam Economics Olympiad 2026 First Prize certificate',
         name: 'Vietnam Economics Olympiad',
         result: 'First Prize',
-        body: 'An important turning point that deepened my interest in economics and the kinds of questions shaped by markets, incentives, and decisions.'
+        body: "I went into economics with a lot to learn. VEO gave me a reason to keep going, even after the competition was over."
       },
       {
         image: '/gallery/wico/wico-photo-stage-1.jpg',
@@ -22,7 +22,7 @@ const CONTENT: Record<'en' | 'vi', { title: string; cards: Card[] }> = {
         alt: 'Holding the WICO 2026 Gold Medal in Seoul',
         name: 'WICO',
         result: 'Gold Medal',
-        body: 'This experience brought financial analysis closer to real business decisions and showed me how numbers can support judgment, not just calculation.'
+        body: "Our team brought together financial analysis and machine learning to explore the same question: how risky is lending to a business?"
       },
       {
         image: '/gallery/national-chem/national-chem-team-2.jpg',
@@ -30,7 +30,7 @@ const CONTENT: Record<'en' | 'vi', { title: string; cards: Card[] }> = {
         alt: 'National Chemistry Competition award ceremony at the Temple of Literature',
         name: 'National Chemistry Competition',
         result: 'Third Prize',
-        body: 'One of my strongest early academic milestones, where I developed discipline, precision, and confidence in solving complex problems.'
+        body: "This result reminds me of all the time spent on Chemistry problems, checking a solution and trying again until I understood it."
       },
       {
         image: '/gallery/axgo/axgo-photo-6.jpg',
@@ -38,7 +38,7 @@ const CONTENT: Record<'en' | 'vi', { title: string; cards: Card[] }> = {
         alt: 'At the AX Global Olympiad 2026 International Finals',
         name: 'AXGO',
         result: 'Corporate Analysis Project',
-        body: 'Through analysing DOJI, I became more interested in how business performance can be understood through data, strategy, and financial thinking.'
+        body: "Looking at DOJI, I got to put the numbers alongside the company’s strategy. It made me want to understand more about how businesses work."
       }
     ]
   },
@@ -51,7 +51,7 @@ const CONTENT: Record<'en' | 'vi', { title: string; cards: Card[] }> = {
         alt: 'Giấy khen Giải Nhất Olympic Kinh tế Việt Nam 2026',
         name: 'Olympic Kinh tế Việt Nam',
         result: 'Giải Nhất',
-        body: 'Một bước ngoặt quan trọng khiến tôi quan tâm sâu hơn đến kinh tế và những câu hỏi được định hình bởi thị trường, động cơ và quyết định.'
+        body: "Lúc bắt đầu học kinh tế, mình còn rất nhiều điều chưa biết. Sau VEO, mình vẫn muốn học tiếp, dù cuộc thi đã xong rồi."
       },
       {
         image: '/gallery/wico/wico-photo-stage-1.jpg',
@@ -59,7 +59,7 @@ const CONTENT: Record<'en' | 'vi', { title: string; cards: Card[] }> = {
         alt: 'Cầm Huy chương Vàng WICO 2026 tại Seoul',
         name: 'WICO',
         result: 'Huy chương Vàng',
-        body: 'Trải nghiệm này đưa phân tích tài chính đến gần hơn với quyết định kinh doanh thực tế, và cho tôi thấy con số có thể hỗ trợ việc phán đoán chứ không chỉ để tính toán.'
+        body: "Nhóm mình thử kết hợp phân tích tài chính và học máy để cùng trả lời một câu hỏi: cho doanh nghiệp này vay thì rủi ro đến đâu?"
       },
       {
         image: '/gallery/national-chem/national-chem-team-2.jpg',
@@ -67,7 +67,7 @@ const CONTENT: Record<'en' | 'vi', { title: string; cards: Card[] }> = {
         alt: 'Lễ trao giải Học sinh giỏi Quốc gia môn Hóa học tại Văn Miếu',
         name: 'Kỳ thi HSG Quốc gia môn Hóa học',
         result: 'Giải Ba',
-        body: 'Một trong những dấu mốc học thuật sớm và vững chắc nhất, nơi tôi rèn sự kỷ luật, chính xác và tự tin khi giải những bài toán phức tạp.'
+        body: "Nhìn lại kết quả này, mình nhớ đến khoảng thời gian ôn Hóa: làm bài, kiểm tra lại lời giải, rồi thử tiếp đến khi hiểu được."
       },
       {
         image: '/gallery/axgo/axgo-photo-6.jpg',
@@ -75,7 +75,7 @@ const CONTENT: Record<'en' | 'vi', { title: string; cards: Card[] }> = {
         alt: 'Tại vòng chung kết quốc tế AX Global Olympiad 2026',
         name: 'AXGO',
         result: 'Dự án phân tích doanh nghiệp',
-        body: 'Qua việc phân tích DOJI, tôi quan tâm hơn đến cách hiểu hiệu quả kinh doanh thông qua dữ liệu, chiến lược và tư duy tài chính.'
+        body: "Phân tích DOJI, mình được đặt số liệu cạnh chiến lược của công ty. Càng tìm hiểu, mình càng muốn biết doanh nghiệp vận hành như thế nào."
       }
     ]
   }

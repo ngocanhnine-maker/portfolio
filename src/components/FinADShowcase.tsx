@@ -12,41 +12,41 @@ const CONTENT = {
     title: 'Building FinAD',
     subtitle: 'FinAD — Financial Analysis from PDF to Insight',
     intro:
-      'FinAD started from a practical problem: reading and pulling figures out of financial-report PDFs takes hours, and typing them in by hand invites mistakes. I built it to turn Vietnamese financial statements into structured data, calculate the key ratios, and make trends easier to see.',
+      "That part kept bothering me. Taking figures out of financial-report PDFs took hours, and it was easy to mistype a number. I started building FinAD to help with it: a tool that organises data from Vietnamese financial statements, calculates ratios and lets me compare years more easily.",
     visit: 'Visit FinAD',
     watch: 'Watch Demo',
     soon: 'Demo video coming soon',
     frameAlt: 'FinAD home page: financial analysis for Vietnamese company reports',
     features: [
-      { name: 'Extract', body: 'Convert Vietnamese financial-report PDFs into structured financial statements.' },
-      { name: 'Structure', body: 'Organise data into balance sheet, income statement and cash flow statement formats.' },
-      { name: 'Analyse', body: 'Calculate key ratios such as ROA, ROE, D/E, current ratio, quick ratio, OCF and FCF.' },
-      { name: 'Compare', body: 'Track trends across multiple years and highlight changes in performance.' },
-      { name: 'Insight', body: 'Generate concise AI-assisted observations from the financial data.' }
+      { name: 'Extract', body: "Reads figures from Vietnamese financial-report PDFs." },
+      { name: 'Structure', body: "Organises them into balance sheets, income statements and cash flow statements." },
+      { name: 'Analyse', body: "Calculates ROA, ROE, D/E, current and quick ratios, OCF and FCF." },
+      { name: 'Compare', body: "Places different years side by side so changes are easier to spot." },
+      { name: 'Insight', body: "Uses AI to help write short observations about the data." }
     ],
     flow: ['PDF', 'Structured Data', 'Ratios', 'Trends', 'Insights'],
     outro:
-      'What began as a workaround for messy financial reports became my first attempt at building a tool around a problem I kept encountering.'
+      "FinAD was my first attempt at building a tool for a problem I kept running into myself. I wanted to spend less time copying figures and more time understanding them."
   },
   vi: {
     title: 'Xây dựng FinAD',
     subtitle: 'FinAD — Phân tích tài chính từ PDF đến nhận định',
     intro:
-      'FinAD bắt đầu từ một vấn đề rất thực tế: việc đọc và trích xuất dữ liệu từ báo cáo tài chính PDF mất nhiều thời gian và dễ sai khi nhập thủ công. Tôi xây dựng FinAD để chuyển báo cáo tài chính Việt Nam thành dữ liệu có cấu trúc, tính toán các chỉ số chính và giúp người dùng nhìn thấy xu hướng rõ hơn.',
+      "Đó cũng là việc khiến mình muốn làm FinAD. Lấy số liệu từ báo cáo PDF mất hàng giờ, mà gõ tay thì rất dễ nhầm. Mình thử làm một công cụ để sắp xếp dữ liệu từ báo cáo tài chính Việt Nam, tính các chỉ số và so sánh giữa các năm cho dễ hơn.",
     visit: 'Truy cập FinAD',
     watch: 'Xem demo',
     soon: 'Video demo sắp ra mắt',
     frameAlt: 'Trang chủ FinAD: phân tích báo cáo tài chính doanh nghiệp Việt Nam',
     features: [
-      { name: 'Trích xuất', body: 'Chuyển PDF báo cáo tài chính Việt Nam thành báo cáo có cấu trúc.' },
-      { name: 'Cấu trúc', body: 'Sắp xếp dữ liệu theo bảng cân đối kế toán, báo cáo kết quả kinh doanh và lưu chuyển tiền tệ.' },
-      { name: 'Phân tích', body: 'Tính các chỉ số chính như ROA, ROE, D/E, thanh toán hiện hành, thanh toán nhanh, OCF và FCF.' },
-      { name: 'So sánh', body: 'Theo dõi xu hướng qua nhiều năm và làm nổi bật thay đổi trong kết quả hoạt động.' },
-      { name: 'Nhận định', body: 'Tạo các nhận xét ngắn gọn có hỗ trợ AI từ dữ liệu tài chính.' }
+      { name: 'Trích xuất', body: "Lấy số liệu từ báo cáo tài chính Việt Nam dạng PDF." },
+      { name: 'Cấu trúc', body: "Sắp xếp thành bảng cân đối kế toán, kết quả kinh doanh và lưu chuyển tiền tệ." },
+      { name: 'Phân tích', body: "Tính ROA, ROE, D/E, hệ số thanh toán hiện hành và nhanh, OCF, FCF." },
+      { name: 'So sánh', body: "Đặt số liệu các năm cạnh nhau để dễ thấy chỗ tăng, chỗ giảm." },
+      { name: 'Nhận định', body: "Dùng AI hỗ trợ viết nhận xét ngắn về số liệu." }
     ],
     flow: ['PDF', 'Dữ liệu có cấu trúc', 'Chỉ số', 'Xu hướng', 'Nhận định'],
     outro:
-      'Điều bắt đầu như một cách xoay xở với những báo cáo tài chính lộn xộn đã trở thành lần đầu tôi thử xây một công cụ quanh một vấn đề mình liên tục gặp.'
+      "FinAD là lần đầu mình thử làm một công cụ cho vấn đề chính mình hay gặp. Mình muốn bớt thời gian chép số liệu để có thêm thời gian hiểu chúng."
   }
 };
 

@@ -84,7 +84,7 @@ const SHORT_LABELS: Record<'en' | 'vi', Partial<Record<PageId, string>>> = {
 };
 
 const FOOT_BTN =
-  'flex h-8 w-8 cursor-pointer items-center justify-center text-[#F2EBDD]/55 transition-colors hover:text-[#F2EBDD] focus-visible:ring-1 focus-visible:ring-white/40';
+  'flex h-7 w-7 cursor-pointer items-center justify-center text-[#F2EBDD]/55 transition-colors hover:text-[#F2EBDD] focus-visible:ring-1 focus-visible:ring-white/40';
 
 const SIDEBAR_SOCIAL_LINKS: Record<'github' | 'linkedin', boolean> = {
   github: false,
@@ -302,12 +302,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
           on the left, chapter tabs in the middle, utilities and actions on the
           right. The active chapter is a cream paper tab hanging below the bar. */}
       <header
-        className="hidden lg:flex fixed top-0 left-0 right-0 h-14 bg-[#5A2129] z-30 select-none items-stretch pl-6 xl:pl-8 pr-4 xl:pr-6"
+        className="hidden lg:flex fixed top-0 left-0 right-0 h-12 bg-[#682B2B] shadow-[0_1px_0_rgba(0,0,0,0.25),0_2px_8px_rgba(40,15,10,0.18)] z-30 select-none items-stretch pl-6 xl:pl-8 pr-4 xl:pr-6"
         id="desktop-sidebar"
         aria-label="Main Navigation"
       >
         {/* Stitching along the bottom edge */}
-        <div className="pointer-events-none absolute left-0 right-0 bottom-[6px] border-b border-dashed border-[#F2EBDD]/15" aria-hidden="true" />
+        <div className="pointer-events-none absolute left-0 right-0 bottom-[4px] border-b border-dashed border-[#EFE3CC]/15" aria-hidden="true" />
 
         {/* Identity */}
         <button
@@ -317,15 +317,15 @@ export const Sidebar: React.FC<SidebarProps> = ({
           title={isVi ? 'Quay lại màn hình mở đầu' : 'Return to Intro'}
           aria-label={isVi ? 'Trần Ngọc Anh - Quay lại giới thiệu' : 'Tran Ngoc Anh - Return to Intro'}
         >
-          <div className="font-serif italic font-semibold text-[1.3rem] leading-none text-[#F2EBDD] group-hover:text-[#D9C9A3] transition-colors whitespace-nowrap">
+          <div className="font-serif italic font-semibold text-[1.15rem] leading-none text-[#F2EBDD] group-hover:text-[#D9C9A3] transition-colors whitespace-nowrap">
             {isVi ? 'Trần Ngọc Anh' : 'Tran Ngoc Anh'}
           </div>
-          <div className="hidden xl:block text-[9px] uppercase tracking-[0.16em] text-[#F2EBDD]/45 mt-1 whitespace-nowrap">
+          <div className="hidden xl:block text-[8.5px] uppercase tracking-[0.2em] text-[#EFE3CC]/45 mt-[3px] whitespace-nowrap">
             {t.nav.portfolioSubtitle}
           </div>
         </button>
 
-        {/* Chapter tabs: number + one-word label, no icons, so every tab is readable */}
+        {/* Chapter index: "01 About" … The active chapter gets a small cream bookmark tab hanging below the bar. */}
         <nav className="flex-1 min-w-0 flex items-stretch justify-center" aria-label="Portfolio Sections">
           {numberedNavItems.map((item) => {
             const isActive = activePage === item.id;
@@ -340,30 +340,38 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 title={label}
                 aria-label={`${item.number} · ${label}`}
                 aria-current={isActive ? 'page' : undefined}
-                className={`relative flex items-baseline gap-1.5 px-[clamp(4px,0.55vw,12px)] pt-[19px] cursor-pointer whitespace-nowrap rounded-b-[4px] text-[12px] min-[1400px]:text-[13px] transition-colors duration-200 ${
-                  isActive
-                    ? 'self-start h-[calc(100%+6px)] bg-[#EFE6D2] text-[#2A2620] font-semibold shadow-[2px_2px_0_rgba(0,0,0,0.35)]'
-                    : 'h-full text-[#F2EBDD]/60 hover:text-[#F2EBDD]'
+                className={`group/tab relative h-full flex items-center gap-[5px] px-[clamp(4px,0.5vw,11px)] cursor-pointer whitespace-nowrap text-[11.5px] min-[1400px]:text-[12.5px] tracking-[0.01em] transition-colors duration-200 ${
+                  isActive ? 'text-[#F6EEDD]' : 'text-[#EFE3CC]/60 hover:text-[#F6EEDD]'
                 }`}
               >
-                {isActive && <span className="absolute top-0 left-1.5 right-1.5 h-[2px] bg-[#8E3A44]" aria-hidden="true" />}
-                <span className={`hidden min-[1800px]:inline font-serif italic text-[12px] ${isActive ? 'text-[#8E3A44]' : 'text-[#D9C9A3]/45'}`}>
+                <span className={`hidden min-[1520px]:inline font-serif italic text-[11px] min-[1600px]:text-[12px] tabular-nums ${isActive ? 'text-[#E3CFA3]' : 'text-[#EFE3CC]/35'}`}>
                   {item.number}
                 </span>
                 <span className="relative">
                   {short}
-                  {!isActive && (
-                    <span className="absolute left-0 right-0 -bottom-1 h-px bg-[#D9C9A3] origin-left scale-x-0 transition-transform duration-200 [button:hover_&]:scale-x-100" aria-hidden="true" />
-                  )}
+                  <span
+                    className={`absolute left-0 right-0 -bottom-[3px] h-px bg-[#E3CFA3] origin-left transition-transform duration-200 ${
+                      isActive ? 'scale-x-100' : 'scale-x-0 group-hover/tab:scale-x-100'
+                    }`}
+                    aria-hidden="true"
+                  />
                 </span>
+                {/* Bookmark tab peeking below the bar */}
+                {isActive && (
+                  <span
+                    className="absolute left-1/2 -translate-x-1/2 -bottom-[13px] w-[16px] h-[15px] bg-[#EFE6D2] shadow-[0_2px_3px_rgba(40,15,10,0.25)]"
+                    style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 50% 72%, 0 100%)' }}
+                    aria-hidden="true"
+                  />
+                )}
               </button>
             );
           })}
         </nav>
 
         {/* Utilities + actions */}
-        <div className="shrink-0 self-center flex items-center gap-3.5 xl:gap-4 ml-4">
-          <span className="flex items-center gap-1.5 text-[11px] tracking-[0.12em]">
+        <div className="shrink-0 self-center flex items-center gap-3 ml-3 pl-3 border-l border-[#EFE3CC]/12 opacity-80 hover:opacity-100 transition-opacity">
+          <span className="flex items-center gap-1 text-[10px] tracking-[0.12em]">
             {(['en', 'vi'] as const).map((lang, i) => (
               <React.Fragment key={lang}>
                 {i > 0 && <span className="text-[#F2EBDD]/25">/</span>}
@@ -386,17 +394,15 @@ export const Sidebar: React.FC<SidebarProps> = ({
             onClick={() => handleNavClick('ask-ai')}
             id="sidebar-nav-ask-ai"
             aria-label={t.nav.askAi}
-            className={`flex items-center gap-1.5 text-[13px] cursor-pointer whitespace-nowrap transition-colors ${
+            className={`flex items-center gap-1 text-[11.5px] cursor-pointer whitespace-nowrap transition-colors ${
               activePage === 'ask-ai' ? 'text-[#F2EBDD]' : 'text-[#F2EBDD]/70 hover:text-[#F2EBDD]'
             }`}
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#D9C9A3]" />
-            <span className={`hidden xl:inline border-b ${activePage === 'ask-ai' ? 'border-[#D9C9A3]' : 'border-transparent'}`}>{t.nav.askAi}</span>
+            <Sparkles className="w-3 h-3 text-[#D9C9A3]" />
+            <span className={`hidden min-[1520px]:inline border-b ${activePage === 'ask-ai' ? 'border-[#D9C9A3]' : 'border-transparent'}`}>{t.nav.askAi}</span>
           </button>
 
-          <span className="hidden xl:block h-5 w-px bg-[#F2EBDD]/15" aria-hidden="true" />
-
-          <div className="hidden xl:flex items-center gap-0.5">
+          <div className="hidden xl:flex items-center">
             <div className="group relative">
               <button
                 onClick={onBackToLanding}
@@ -404,7 +410,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 id="sidebar-back-to-landing-footer"
                 aria-label={isVi ? 'Quay lại màn hình mở đầu' : 'Return to Intro Screen'}
               >
-                <ArrowLeft className="h-4 w-4" />
+                <ArrowLeft className="h-3.5 w-3.5" />
               </button>
               <div className={TOOLTIP_BELOW}>{t.nav.intro}</div>
             </div>
@@ -416,7 +422,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 id="sidebar-link-email"
                 aria-label={`Email: ${PERSONAL_INFO.email}`}
               >
-                <Mail className="h-4 w-4" />
+                <Mail className="h-3.5 w-3.5" />
               </a>
               <div className={TOOLTIP_BELOW}>{t.nav.email}</div>
             </div>
@@ -430,7 +436,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   id="sidebar-link-cv"
                   aria-label={isVi ? 'Tải CV' : 'Download CV'}
                 >
-                  <FileText className="h-4 w-4" />
+                  <FileText className="h-3.5 w-3.5" />
                 </a>
               ) : (
                 <button
@@ -440,7 +446,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   id="sidebar-link-cv"
                   aria-label={isVi ? 'CV sắp được cập nhật' : 'CV coming soon'}
                 >
-                  <FileText className="h-4 w-4" />
+                  <FileText className="h-3.5 w-3.5" />
                 </button>
               )}
               <div className={TOOLTIP_BELOW}>{hasCv ? (isVi ? 'Tải CV' : 'Download CV') : 'Coming soon'}</div>
@@ -448,13 +454,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
             {SIDEBAR_SOCIAL_LINKS.github && (
               <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer" className={FOOT_BTN} aria-label="GitHub Profile">
-                <Github className="h-4 w-4" />
+                <Github className="h-3.5 w-3.5" />
               </a>
             )}
 
             {SIDEBAR_SOCIAL_LINKS.linkedin && (
               <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noreferrer" className={FOOT_BTN} aria-label="LinkedIn Profile">
-                <Linkedin className="h-4 w-4" />
+                <Linkedin className="h-3.5 w-3.5" />
               </a>
             )}
           </div>

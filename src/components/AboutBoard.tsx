@@ -127,8 +127,8 @@ export const AboutBoard: React.FC = () => {
               {/* One ruled line = 8.333cqw (ruled band is half the card width, six lines) */}
               <p className="absolute left-[6%] right-[6%] top-[22%] m-0 translate-y-[10.233cqw] pr-[1%] line-clamp-4 tracking-[-0.005em] text-[clamp(9.5px,3.15cqw,18px)] leading-[8.333cqw] text-[#3D2A24]/85">
                 {isVi
-                  ? 'Tôi thích hiểu cách mọi thứ vận hành, nhất là khi câu trả lời không hiện ra ngay. Sự tò mò ấy đưa tôi đến với tài chính và công nghệ, nơi tôi thích nhìn vấn đề từ nhiều góc độ và tìm cách hiểu chúng rõ ràng hơn.'
-                  : 'I like understanding how things work, especially when the answer is not obvious at first. That curiosity has drawn me toward finance and technology, where I enjoy looking at problems from different angles.'}
+                  ? 'Mình là Ngọc Anh. Mỗi Tết, mình hay đếm tiền lì xì, ghi từng khoản rồi so với năm trước xem được bao nhiêu. Từ thói quen nhỏ đó, mình dần thấy thích tìm hiểu về tài chính, dữ liệu và công nghệ.'
+                  : 'I’m Ngoc Anh. Every Tết, I’d count my lucky money, note each deposit and compare the total with past years. I liked seeing how it added up. That curiosity later grew into an interest in finance, data and technology.'}
               </p>
 
               {/* Last ruled line: contact */}

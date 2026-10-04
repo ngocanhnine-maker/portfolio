@@ -40,12 +40,12 @@ export const TOPICS: Topic[] = [
     title: { en: 'Who she is', vi: 'Giới thiệu' },
     keywords: ['who', 'who is', 'about her', 'about you', 'introduce', 'introduction', 'overview', 'summary', 'background', 'bio', 'tran ngoc anh', 'ngoc anh', 'yourself', 'herself', 'gioi thieu', 'tong quan', 'la ai', 'ban than', 'tom tat'],
     answer: {
-      en: '**Tran Ngoc Anh** is a Chemistry-major student at **Hanoi–Amsterdam High School for the Gifted** (Class of 2027). She started out in Chemistry and Mathematics, moved into economics, and now works where **finance, business and data** meet.',
-      vi: '**Trần Ngọc Anh** là học sinh chuyên Hóa tại **THPT Chuyên Hà Nội – Amsterdam** (khóa 2024–2027). Bạn bắt đầu từ Hóa học và Toán, rẽ sang kinh tế, và hiện làm việc ở giao điểm của **tài chính, kinh doanh và dữ liệu**.'
+      en: "**Tran Ngoc Anh** is a Chemistry student at **Hanoi–Amsterdam High School for the Gifted** (Class of 2027). She started with Chemistry and Maths, got curious about economics, and began trying projects in **finance, business and data**.",
+      vi: "**Trần Ngọc Anh** đang học chuyên Hóa tại **THPT Chuyên Hà Nội – Amsterdam** (khóa 2024–2027). Từ Hóa và Toán, Ngọc Anh dần tìm sang kinh tế, rồi thử làm các dự án về **tài chính, kinh doanh và dữ liệu**."
     },
     more: {
-      en: 'The journal follows that path in order: early Chemistry competitions, a First Prize in the Vietnam Economics Olympiad, a WICO Gold Medal for an AI credit-risk project, the FinAD tool, and a published green-credit paper.',
-      vi: 'Cuốn nhật ký đi theo đúng hành trình đó: các kỳ thi Hóa học, Giải Nhất Olympic Kinh tế Việt Nam, Huy chương Vàng WICO với dự án AI đánh giá rủi ro tín dụng, công cụ FinAD, và một bài báo về tín dụng xanh.'
+      en: "The journal brings those interests together: science competitions, VEO, the WICO credit-risk project, FinAD and a paper on green credit. There are also pages about volunteering, music, photos and time with friends.",
+      vi: "Cuốn nhật ký gom những chuyện đó lại: các kỳ thi khoa học, VEO, dự án rủi ro tín dụng ở WICO, FinAD và bài nghiên cứu tín dụng xanh. Cũng có cả chuyện tình nguyện, chơi đàn, chụp ảnh và những ngày bình thường với bạn bè nữa."
     },
     next: ['scores', 'awards', 'finad']
   },
@@ -55,12 +55,12 @@ export const TOPICS: Topic[] = [
     title: { en: 'Grades & test scores', vi: 'Điểm số & chứng chỉ' },
     keywords: ['gpa', 'grade', 'grades', 'score', 'scores', 'sat', 'ielts', 'a level', 'a-level', 'alevel', 'test', 'tests', 'transcript', 'academic', 'school', 'education', 'study', 'diem', 'hoc van', 'hoc luc', 'bang diem', 'chung chi', 'truong', 'diem trung binh'],
     answer: {
-      en: 'GPA: **9.6** (Grade 10), **9.8** (Grade 11), **9.7** cumulative, on a 10-point scale. Tests: **SAT 1520** (June 2026), **IELTS Academic 7.5** (July 2025) and **A-Level Mathematics: A** (Cambridge International, AS).',
-      vi: 'GPA: **9.6** (lớp 10), **9.8** (lớp 11), trung bình **9.7** trên thang 10. Chứng chỉ: **SAT 1520** (06/2026), **IELTS Academic 7.5** (07/2025) và **A-Level Mathematics: A** (Cambridge International, AS).'
+      en: "Here’s a quick look at her results: **GPA 9.6 in Grade 10, 9.8 in Grade 11 and 9.7 overall**, on a 10-point scale. Her test results are **SAT 1520** (June 2026), **IELTS Academic 7.5** (July 2025) and **A-Level Mathematics: A** (Cambridge International, AS).",
+      vi: "Đây là phần điểm số của Ngọc Anh: **GPA lớp 10 là 9.6, lớp 11 là 9.8, trung bình 9.7** trên thang 10. Các chứng chỉ gồm **SAT 1520** (06/2026), **IELTS Academic 7.5** (07/2025) và **A-Level Mathematics: A** (Cambridge International, AS)."
     },
     more: {
-      en: 'On the Academic Snapshot page you can click SAT, IELTS or A-Level to open the official score report.',
-      vi: 'Ở trang Tóm tắt Học thuật, bạn có thể bấm vào SAT, IELTS hoặc A-Level để mở bảng điểm chính thức.'
+      en: "You can find these in Academic Record. Click SAT, IELTS or A-Level there to open the score report.",
+      vi: "Bạn có thể xem ở phần Hồ sơ Học tập. Bấm vào SAT, IELTS hoặc A-Level là mở được bảng điểm nhé."
     },
     next: ['chemistry', 'skills', 'awards']
   },
@@ -70,12 +70,12 @@ export const TOPICS: Topic[] = [
     title: { en: 'Chemistry & early years', vi: 'Hóa học & khởi đầu' },
     keywords: ['chemistry', 'chemical', 'science', 'natural science', 'olympiad', 'hsg', 'national chemistry', 'started', 'beginning', 'origins', 'math', 'mathematics', 'hoa', 'hoa hoc', 'khoa hoc tu nhien', 'bat dau', 'khoi dau', 'toan', 'hoc sinh gioi'],
     answer: {
-      en: 'It started with Chemistry and Mathematics. She won **Third Prize in the National Chemistry Competition** (Grade 11) and, before that, **First Prize in the Hanoi Natural Sciences Competition** (Grade 9).',
-      vi: 'Mọi thứ bắt đầu từ Hóa học và Toán. Bạn đạt **Giải Ba Kỳ thi HSG Quốc gia môn Hóa học** (lớp 11) và trước đó là **Giải Nhất HSG Thành phố môn Khoa học Tự nhiên** (lớp 9).'
+      en: "Chemistry and Maths were where she started. She won **First Prize in the Hanoi Natural Sciences Competition in Grade 9**, then **Third Prize in the National Chemistry Competition in Grade 11**.",
+      vi: "Hóa và Toán là điểm bắt đầu của Ngọc Anh. Lớp 9, Ngọc Anh đạt **Giải Nhất HSG Thành phố môn Khoa học Tự nhiên**; đến lớp 11 là **Giải Ba Kỳ thi HSG Quốc gia môn Hóa học**."
     },
     more: {
-      en: 'Those years taught her to work carefully, test assumptions and stay with hard problems until they became clearer. That habit is what she later carried into economics.',
-      vi: 'Những năm ấy dạy bạn làm việc cẩn thận, kiểm chứng giả định và kiên nhẫn với bài toán khó cho đến khi nó sáng rõ. Đó cũng là thói quen bạn mang sang kinh tế.'
+      en: "Preparing for those exams meant working through problems and checking each step, even when an answer seemed right. She still uses that habit when working with financial data.",
+      vi: "Ôn những kỳ thi này là làm bài rồi kiểm tra lại từng bước, kể cả lúc tưởng đã đúng rồi. Đến khi làm với số liệu tài chính, Ngọc Anh vẫn giữ thói quen đó."
     },
     next: ['economics', 'awards']
   },
@@ -85,12 +85,12 @@ export const TOPICS: Topic[] = [
     title: { en: 'Economics & VEO', vi: 'Kinh tế & VEO' },
     keywords: ['economics', 'economic', 'econ', 'veo', 'vietnam economics olympiad', 'markets', 'incentives', 'business', 'kinh te', 'olympic kinh te', 'thi truong', 'kinh doanh'],
     answer: {
-      en: 'She came to economics with no formal background, started from the basics, and went on to win **First Prize at the Vietnam Economics Olympiad (VEO 2026)**.',
-      vi: 'Bạn đến với kinh tế khi chưa có nền tảng chính thức, bắt đầu từ những điều cơ bản, và sau đó đạt **Giải Nhất Olympic Kinh tế Việt Nam (VEO 2026)**.'
+      en: "Economics was new to her, so she started with the basics, including supply and demand and opportunity cost. She went on to win **First Prize at the Vietnam Economics Olympiad (VEO 2026)** and wanted to keep studying after the competition.",
+      vi: "Ban đầu, kinh tế còn mới với Ngọc Anh nên bạn ấy học từ những phần cơ bản như cung cầu và chi phí cơ hội. Sau đó, Ngọc Anh đạt **Giải Nhất Olympic Kinh tế Việt Nam (VEO 2026)** và vẫn muốn học tiếp dù cuộc thi đã kết thúc."
     },
     more: {
-      en: 'What stayed with her was that economic questions rarely have one right answer: context matters and every choice is a trade-off. That is when numbers started to feel like evidence rather than answers.',
-      vi: 'Điều đọng lại là câu hỏi kinh tế hiếm khi có một đáp án đúng: bối cảnh quan trọng và mỗi lựa chọn đều là đánh đổi. Từ đó, con số bắt đầu giống bằng chứng hơn là đáp án.'
+      en: "What she enjoyed was thinking through different choices and explaining why one made sense in a particular situation. That interest carried into her work on businesses and financial data.",
+      vi: "Điều Ngọc Anh thích là cân nhắc từng lựa chọn, rồi giải thích vì sao một cách làm hợp lý trong hoàn cảnh đó. Từ đây, bạn ấy muốn thử tìm hiểu doanh nghiệp và số liệu tài chính cụ thể hơn."
     },
     next: ['wico', 'green']
   },
@@ -100,12 +100,12 @@ export const TOPICS: Topic[] = [
     title: { en: 'WICO & credit risk', vi: 'WICO & rủi ro tín dụng' },
     keywords: ['wico', 'credit', 'credit risk', 'sme', 'smes', 'random forest', 'xgboost', 'scorecard', '5c', 'machine learning', 'ml', 'invention', 'seoul', 'korea', 'gold medal', 'tin dung', 'rui ro', 'doanh nghiep nho', 'han quoc', 'huy chuong vang'],
     answer: {
-      en: 'At **WICO 2026** in Seoul her team won a **Gold Medal** for an AI credit-risk framework for Vietnamese SMEs. It combined financial analysis with the **5Cs of credit, a scorecard, and Random Forest / XGBoost** models.',
-      vi: 'Tại **WICO 2026** ở Seoul, nhóm của bạn đạt **Huy chương Vàng** với khung đánh giá rủi ro tín dụng bằng AI cho SME Việt Nam, kết hợp phân tích tài chính với **5C, scorecard và mô hình Random Forest / XGBoost**.'
+      en: "At **WICO 2026 in Seoul**, her team won a **Gold Medal** for a project on credit risk in Vietnamese small and medium-sized businesses. They combined financial analysis, the **5Cs of credit, a scorecard, and Random Forest / XGBoost** to look at several sides of a business before scoring its risk.",
+      vi: "Ở **WICO 2026 tại Seoul**, nhóm Ngọc Anh đạt **Huy chương Vàng** với dự án đánh giá rủi ro tín dụng cho doanh nghiệp vừa và nhỏ ở Việt Nam. Nhóm kết hợp phân tích tài chính, **5C, bảng chấm điểm và Random Forest / XGBoost** để xem doanh nghiệp từ nhiều phía trước khi chấm điểm rủi ro."
     },
     more: {
-      en: 'The case study covered five SMEs (2020–2025). One firm had a **Debt/Equity of 228.7%**, another saw **revenue fall 75%** in a single year, which is why no single ratio was enough. She led the six-person delegation, and the research paper can be opened from the WICO page.',
-      vi: 'Case study gồm năm SME (2020–2025). Một doanh nghiệp có **Nợ/Vốn chủ 228.7%**, một doanh nghiệp khác **doanh thu giảm 75%** chỉ trong một năm, nên không một chỉ số riêng lẻ nào đủ. Bạn dẫn dắt đoàn sáu người, và bài nghiên cứu có thể mở ngay ở trang WICO.'
+      en: "They studied five businesses using data from **2020–2025**. One had a **Debt/Equity ratio of 228.7%**; another saw **revenue fall 75%** in one year. Those figures needed to be read alongside the rest of each company’s finances. Ngoc Anh led the six-person delegation, and you can read the paper on the WICO page.",
+      vi: "Nhóm dùng dữ liệu **2020–2025** của năm doanh nghiệp. Có doanh nghiệp có **Nợ/Vốn chủ sở hữu 228.7%**, có doanh nghiệp **doanh thu giảm 75%** trong một năm. Muốn hiểu các con số này, nhóm phải xem thêm những phần khác của báo cáo. Ngọc Anh dẫn đoàn sáu người; bài nghiên cứu có ở trang WICO nhé."
     },
     next: ['finad', 'leadership', 'awards']
   },
@@ -115,12 +115,12 @@ export const TOPICS: Topic[] = [
     title: { en: 'FinAD', vi: 'FinAD' },
     keywords: ['finad', 'fin ad', 'tool', 'app', 'website', 'product', 'build', 'built', 'project', 'projects', 'pdf', 'financial statement', 'financial statements', 'ratios', 'dashboard', 'demo', 'code', 'coding', 'programming', 'du an', 'cong cu', 'san pham', 'bao cao tai chinh', 'lap trinh'],
     answer: {
-      en: '**FinAD** turns Vietnamese financial-statement PDFs into structured data: **PDF → structured statements → ratios → multi-year trends → AI-assisted insights**. It started as a workaround for re-typing messy reports by hand.',
-      vi: '**FinAD** chuyển PDF báo cáo tài chính Việt Nam thành dữ liệu có cấu trúc: **PDF → báo cáo chuẩn hóa → chỉ số → xu hướng nhiều năm → nhận định có hỗ trợ AI**. Nó bắt đầu từ việc phải gõ lại thủ công những báo cáo lộn xộn.'
+      en: "**FinAD** started with a time-consuming task: copying figures out of financial-report PDFs by hand. Ngoc Anh built it to organise data from Vietnamese financial statements, calculate ratios, compare years and add short AI-assisted observations.",
+      vi: "**FinAD** bắt đầu từ việc chép số liệu trong báo cáo PDF khá mất thời gian và dễ nhầm. Ngọc Anh thử làm công cụ này để sắp xếp dữ liệu từ báo cáo tài chính Việt Nam, tính chỉ số, so sánh các năm và viết nhận xét ngắn có AI hỗ trợ."
     },
     more: {
-      en: `It calculates ratios such as ROA, ROE, D/E, current and quick ratio, OCF and FCF, and checks accounting identities so extraction is not trusted blindly. It is live at ${FINAD_URL}, and the FinAD page has a demo video.`,
-      vi: `FinAD tính các chỉ số như ROA, ROE, D/E, thanh toán hiện hành và nhanh, OCF, FCF, và kiểm tra các đẳng thức kế toán để không tin mù quáng vào dữ liệu trích xuất. Trang web đang chạy tại ${FINAD_URL}, và trang FinAD có video demo.`
+      en: `FinAD calculates ROA, ROE, D/E, current and quick ratios, OCF and FCF. It also checks accounting identities to help catch problems in the extracted data. You can try it at ${FINAD_URL} or watch the demo on the FinAD page.`,
+      vi: `FinAD tính ROA, ROE, D/E, hệ số thanh toán hiện hành và nhanh, OCF, FCF. Công cụ cũng kiểm tra các đẳng thức kế toán để hỗ trợ phát hiện lỗi trong dữ liệu lấy ra. Bạn có thể thử ở ${FINAD_URL} hoặc xem video demo trong phần FinAD nhé.`
     },
     next: ['skills', 'green', 'wico']
   },
@@ -130,12 +130,12 @@ export const TOPICS: Topic[] = [
     title: { en: 'Green credit research', vi: 'Nghiên cứu tín dụng xanh' },
     keywords: ['research', 'paper', 'publication', 'published', 'journal', 'green', 'green credit', 'bank', 'banks', 'banking', 'roa', 'ols', 'regression', 'empirical', 'study', 'nghien cuu', 'bai bao', 'tin dung xanh', 'ngan hang', 'tap chi'],
     answer: {
-      en: 'Her paper **"Green Credit and Bank Financial Performance"** was published in the *Journal of Management Research* (Vol. 18, No. 2, 2026). It asks whether green lending improves bank performance.',
-      vi: 'Bài báo **"Green Credit and Bank Financial Performance"** được đăng trên *Journal of Management Research* (Tập 18, Số 2, 2026), với câu hỏi: tín dụng xanh có cải thiện hiệu quả ngân hàng không?'
+      en: "Her paper **“Green Credit and Bank Financial Performance”** appeared in the *Journal of Management Research* (Vol. 18, No. 2, 2026). She wanted to find out whether banks lending more to green projects also performed better financially.",
+      vi: "Trong bài **“Green Credit and Bank Financial Performance”**, Ngọc Anh tìm hiểu xem ngân hàng cho vay nhiều hơn vào dự án xanh thì có hoạt động hiệu quả hơn không. Bài được đăng trên *Journal of Management Research* (Tập 18, Số 2, 2026)."
     },
     more: {
-      en: 'Data: **8 Vietnamese banks, 2022–2024, 24 observations, pooled OLS**. The **Green Credit Ratio** had a positive, statistically significant link with ROA; the absolute volume of green credit did not.',
-      vi: 'Dữ liệu: **8 ngân hàng Việt Nam, 2022–2024, 24 quan sát, pooled OLS**. **Tỷ lệ tín dụng xanh** có quan hệ dương và có ý nghĩa thống kê với ROA; quy mô tuyệt đối thì không.'
+      en: "She used **24 observations from 8 Vietnamese banks in 2022–2024**, with **pooled OLS**. A higher **Green Credit Ratio** was linked to higher ROA, with statistical significance. The total amount of green credit didn’t show the same result, so the two measures needed to be kept distinct.",
+      vi: "Dữ liệu gồm **8 ngân hàng Việt Nam, giai đoạn 2022–2024, với 24 quan sát**, dùng **pooled OLS**. **Tỷ lệ tín dụng xanh** cao hơn đi cùng ROA cao hơn, với mối liên hệ có ý nghĩa thống kê. Tổng lượng tín dụng xanh chưa cho kết quả tương tự, nên khi đọc kết luận cần phân biệt hai cách đo này."
     },
     next: ['wico', 'finad']
   },
@@ -145,12 +145,12 @@ export const TOPICS: Topic[] = [
     title: { en: 'Awards', vi: 'Giải thưởng' },
     keywords: ['award', 'awards', 'prize', 'prizes', 'medal', 'medals', 'honor', 'honors', 'honours', 'achievement', 'achievements', 'competition', 'competitions', 'milestone', 'milestones', 'won', 'win', 'giai', 'giai thuong', 'thanh tich', 'huy chuong', 'dau moc', 'cuoc thi'],
     answer: {
-      en: 'Main milestones: **VEO 2026 – First Prize**, **WICO 2026 – Gold Medal**, **National Chemistry Competition – Third Prize**, and **AXGO 2026 – Gold Award** for a corporate analysis of DOJI.',
-      vi: 'Các dấu mốc chính: **VEO 2026 – Giải Nhất**, **WICO 2026 – Huy chương Vàng**, **HSG Quốc gia môn Hóa – Giải Ba**, và **AXGO 2026 – Gold Award** với dự án phân tích doanh nghiệp DOJI.'
+      en: "A few of her main results are **First Prize at VEO 2026**, **Gold Medal at WICO 2026**, **Third Prize in the National Chemistry Competition**, and a **Gold Award at AXGO 2026** for her analysis of DOJI.",
+      vi: "Một vài kết quả nổi bật của Ngọc Anh là **Giải Nhất VEO 2026**, **Huy chương Vàng WICO 2026**, **Giải Ba HSG Quốc gia môn Hóa** và **Gold Award tại AXGO 2026** với bài phân tích DOJI."
     },
     more: {
-      en: 'Earlier, she also won city-level prizes in Chemistry and Natural Sciences in Hanoi. Ask about any one of them for the story behind it.',
-      vi: 'Trước đó bạn còn có các giải cấp thành phố Hà Nội về Hóa học và Khoa học Tự nhiên. Bạn có thể hỏi riêng về từng giải để nghe câu chuyện phía sau.'
+      en: "She also took part in Chemistry and Natural Sciences competitions in Hanoi before these. You can ask about one competition at a time to hear more about what she worked on.",
+      vi: "Trước đó, Ngọc Anh cũng có các giải cấp thành phố Hà Nội về Hóa và Khoa học Tự nhiên. Bạn có thể hỏi riêng từng cuộc thi để nghe thêm về phần việc bạn ấy đã làm."
     },
     next: ['economics', 'wico', 'axgo']
   },
@@ -160,12 +160,12 @@ export const TOPICS: Topic[] = [
     title: { en: 'AXGO & DOJI', vi: 'AXGO & DOJI' },
     keywords: ['axgo', 'ax global', 'doji', 'fashion', 'virtual try on', 'try-on', 'corporate analysis', 'case study', 'phan tich doanh nghiep'],
     answer: {
-      en: 'At **AX Global Olympiad 2026** she received a **Gold Award** for a business and market analysis of **DOJI**’s AI virtual try-on, a case study in AI and fashion tech.',
-      vi: 'Tại **AX Global Olympiad 2026**, bạn nhận **Gold Award** cho bài phân tích kinh doanh và thị trường về tính năng thử đồ ảo bằng AI của **DOJI**, một case study về AI và công nghệ thời trang.'
+      en: "At **AX Global Olympiad 2026**, she received a **Gold Award** for a business and market analysis of **DOJI’s AI virtual try-on feature**. The project brought together her interests in business and technology.",
+      vi: "Ở **AX Global Olympiad 2026**, Ngọc Anh nhận **Gold Award** cho bài phân tích kinh doanh và thị trường về **tính năng thử đồ ảo bằng AI của DOJI**. Đây là một dự án kết hợp hai mảng bạn ấy đang quan tâm: kinh doanh và công nghệ."
     },
     more: {
-      en: 'It made her more interested in how business performance can be read through data, strategy and financial thinking together.',
-      vi: 'Dự án khiến bạn quan tâm hơn đến cách đọc hiệu quả kinh doanh qua dữ liệu, chiến lược và tư duy tài chính cùng lúc.'
+      en: "Looking at DOJI meant reading the data alongside the company’s strategy and finances. It made her want to understand more about how businesses work.",
+      vi: "Phân tích DOJI là dịp Ngọc Anh đặt dữ liệu cạnh chiến lược và tài chính của công ty. Càng tìm hiểu, bạn ấy càng muốn biết doanh nghiệp vận hành như thế nào."
     },
     next: ['awards', 'finad']
   },
@@ -175,12 +175,12 @@ export const TOPICS: Topic[] = [
     title: { en: 'Leadership & mentoring', vi: 'Lãnh đạo & hướng dẫn' },
     keywords: ['leadership', 'leader', 'lead', 'led', 'team', 'teamwork', 'mentor', 'mentoring', 'teaching', 'teach', 'with project', 'advisor', 'entrance exam', 'collaboration', 'lanh dao', 'truong nhom', 'doi nhom', 'lam viec nhom', 'huong dan', 'day', 'co van'],
     answer: {
-      en: 'Her leadership is mostly about the work in between: splitting a project into parts people can own, listening when the team disagrees, and pulling views into one direction. She led the **six-person WICO delegation** and chaired the **Peace Village** charity project.',
-      vi: 'Lãnh đạo với bạn chủ yếu là những việc ở giữa: chia dự án thành phần mỗi người đảm nhận được, lắng nghe khi nhóm bất đồng, và gom các góc nhìn về một hướng. Bạn dẫn dắt **đoàn WICO sáu người** và làm trưởng ban dự án thiện nguyện **Làng Hòa Bình**.'
+      en: "She led the **six-person WICO delegation** and coordinated the **Peace Village charity project**. In the journal, she talks about dividing the work, listening when people disagree and helping the group decide what to do next. It’s something she’s still learning.",
+      vi: "Ngọc Anh từng dẫn **đoàn WICO sáu người** và làm trưởng ban dự án thiện nguyện **Làng Hòa Bình**. Trong portfolio, bạn ấy kể về chuyện chia việc, nghe ý kiến khác nhau và cùng nhóm tìm cách làm tiếp. Đó cũng là việc Ngọc Anh vẫn đang học."
     },
     more: {
-      en: 'She also mentors younger students: three Grade 9 students she coached through a six-month exam run-up were all admitted to specialized schools. She also mentored students for the entrance exam through WITH Project Season V.',
-      vi: 'Bạn cũng hướng dẫn các em nhỏ hơn: ba học sinh lớp 9 bạn kèm suốt sáu tháng ôn thi đều đỗ trường chuyên. Bạn cũng hướng dẫn các em ôn thi vào lớp 10 qua WITH Project mùa 5.'
+      en: "She also helped Grade 9 students prepare for entrance exams through **Ams Advisor and WITH Project Season V**. Three students she coached over six months were admitted to specialized schools. Explaining problems sometimes helped her notice gaps in her own understanding too.",
+      vi: "Ngọc Anh còn kèm các em lớp 9 ôn thi vào lớp 10 qua **Ams Advisor và WITH Project mùa 5**. Ba em được bạn ấy kèm trong sáu tháng đều đỗ trường chuyên. Có lúc giảng bài, Ngọc Anh cũng nhận ra phần chính mình cần hiểu kỹ hơn."
     },
     next: ['internship', 'community']
   },
@@ -190,12 +190,12 @@ export const TOPICS: Topic[] = [
     title: { en: 'GTEL internship', vi: 'Thực tập GTEL' },
     keywords: ['internship', 'intern', 'gtel', 'work experience', 'experience', 'job', 'company', 'financial planning', 'thuc tap', 'kinh nghiem', 'cong ty', 'ke hoach tai chinh'],
     answer: {
-      en: 'From **7 June to 6 August 2026** she interned as a **Business Data Analyst** in the **Financial Planning** department of **GTEL** (Global Technology – Telecommunication Corporation).',
-      vi: 'Từ **07/06 đến 06/08/2026**, bạn thực tập vị trí **Business Data Analyst** tại phòng **Kế hoạch Tài chính** của **GTEL** (Tổng công ty Công nghệ – Viễn thông Toàn cầu).'
+      en: "She spent **7 June to 6 August 2026** as a **Business Data Analyst intern** in **GTEL’s Financial Planning department**. It gave her a chance to see how the work she was interested in looked inside a company.",
+      vi: "Từ **07/06 đến 06/08/2026**, Ngọc Anh thực tập vị trí **Business Data Analyst** tại phòng **Kế hoạch Tài chính của GTEL**. Đây là dịp để bạn ấy xem những việc mình đang quan tâm được làm thế nào trong một công ty."
     },
     more: {
-      en: 'She collected, cleaned and standardised business data using Excel, SQL, Power BI and Tableau, and saw how financial decisions are coordinated with other parts of a company rather than made by finance alone.',
-      vi: 'Bạn thu thập, làm sạch và chuẩn hóa dữ liệu kinh doanh bằng Excel, SQL, Power BI và Tableau, và thấy các quyết định tài chính được phối hợp với các bộ phận khác chứ không chỉ do phòng tài chính quyết.'
+      en: "She worked on collecting, cleaning and organising business data with Excel, SQL, Power BI and Tableau. She also saw how financial decisions involved conversations with several departments.",
+      vi: "Ngọc Anh thu thập, làm sạch và sắp xếp dữ liệu kinh doanh bằng Excel, SQL, Power BI và Tableau. Bạn ấy cũng được thấy một quyết định tài chính cần trao đổi với nhiều phòng ban như thế nào."
     },
     next: ['skills', 'leadership']
   },
@@ -205,12 +205,12 @@ export const TOPICS: Topic[] = [
     title: { en: 'Community work', vi: 'Hoạt động cộng đồng' },
     keywords: ['community', 'volunteer', 'volunteering', 'charity', 'social', 'fundraising', 'peace village', 'bach mai', 'sos', 'hai phong', 'children', 'tet', 'cong dong', 'tinh nguyen', 'thien nguyen', 'tu thien', 'lang hoa binh', 'gay quy', 'tre em'],
     answer: {
-      en: 'Three community projects: **Peace Village – Thanh Xuan** (Chairperson; fundraising and a Tet gift-giving event for children with mobility impairments), **Bach Mai Hospital** (fundraising for families facing treatment costs) and **SOS Children’s Village Hai Phong**.',
-      vi: 'Ba hoạt động cộng đồng: **Làng Hòa Bình Thanh Xuân** (trưởng ban; gây quỹ và trao quà Tết cho các em suy giảm vận động), **Bệnh viện Bạch Mai** (gây quỹ cho gia đình khó khăn khi điều trị) và **Làng trẻ em SOS Hải Phòng**.'
+      en: "She helped with fundraising at **Peace Village – Thanh Xuan**, **Bach Mai Hospital** and **SOS Children’s Village Hai Phong**. At Peace Village, she coordinated the team and a Tet gift-giving day for children with mobility impairments. At Bach Mai, the fundraising supported families facing treatment costs.",
+      vi: "Ngọc Anh tham gia gây quỹ tại **Làng Hòa Bình Thanh Xuân**, **Bệnh viện Bạch Mai** và **Làng trẻ em SOS Hải Phòng**. Ở Làng Hòa Bình, bạn ấy phụ trách nhóm và buổi trao quà Tết cho các em gặp khó khăn về vận động. Ở Bạch Mai, hoạt động gây quỹ hỗ trợ các gia đình khó khăn với chi phí điều trị."
     },
     more: {
-      en: 'Peace Village is where her leadership role was clearest: she coordinated the team from fundraising to the day of the event.',
-      vi: 'Làng Hòa Bình là nơi vai trò lãnh đạo của bạn rõ nhất: bạn điều phối nhóm từ khâu gây quỹ đến ngày tổ chức.'
+      en: "Her role at Peace Village covered the preparations, fundraising and the day of the event. At Bach Mai and SOS Hai Phong, she joined as a volunteer alongside the rest of the group.",
+      vi: "Ở Làng Hòa Bình, Ngọc Anh theo cùng nhóm từ lúc chuẩn bị, gây quỹ đến ngày trao quà. Còn ở Bạch Mai và SOS Hải Phòng, bạn ấy tham gia với vai trò tình nguyện viên, cùng mọi người góp sức."
     },
     next: ['leadership', 'hobbies']
   },
@@ -220,12 +220,12 @@ export const TOPICS: Topic[] = [
     title: { en: 'Outside school', vi: 'Ngoài giờ học' },
     keywords: ['hobby', 'hobbies', 'interest', 'interests', 'free time', 'fun', 'music', 'piano', 'guitar', 'photography', 'photo', 'photos', 'life', 'personal', 'zhongsin', 'so thich', 'am nhac', 'chup anh', 'nhiep anh', 'thoi gian ranh', 'cuoc song'],
     answer: {
-      en: 'Outside the ledger: **photography** (a reason to slow down and notice details), **music** (she performed piano at the Zhongsin International Music Competition), and the small moments with friends outside school.',
-      vi: 'Ngoài sổ sách: **nhiếp ảnh** (lý do để chậm lại và để ý chi tiết), **âm nhạc** (bạn từng biểu diễn piano tại cuộc thi Zhongsin International Music Competition), và những khoảnh khắc nhỏ cùng bạn bè ngoài trường học.'
+      en: "She likes **photography**, **music** and spending time with friends. Taking photos helps her notice things she might walk past. She also plays piano and has performed at the **Zhongsin International Music Competition**.",
+      vi: "Ngọc Anh thích **chụp ảnh**, **âm nhạc** và dành thời gian với bạn bè. Chụp ảnh là một cách để bạn ấy dừng lại nhìn kỹ những thứ bình thường hay đi qua. Ngọc Anh cũng chơi piano và từng biểu diễn tại **cuộc thi âm nhạc quốc tế Zhongsin**."
     },
     more: {
-      en: 'Music is where she steps away from structure and learns at a different pace.',
-      vi: 'Âm nhạc là nơi bạn tạm rời khỏi khuôn khổ và học theo một nhịp khác.'
+      en: "In the journal, she talks about enjoying music at her own pace and keeping space for ordinary days with friends. Those memories are part of the portfolio too.",
+      vi: "Trong portfolio, Ngọc Anh kể về việc chơi đàn theo nhịp của mình và những ngày bình thường với bạn bè. Bạn ấy muốn giữ một góc cho những kỷ niệm đó nữa."
     },
     next: ['community', 'about']
   },
@@ -235,12 +235,12 @@ export const TOPICS: Topic[] = [
     title: { en: 'Skills & tools', vi: 'Kỹ năng & công cụ' },
     keywords: ['skill', 'skills', 'tool', 'tools', 'stack', 'python', 'sql', 'excel', 'power bi', 'tableau', 'pandas', 'language', 'languages', 'english', 'technical', 'ky nang', 'cong cu', 'ngon ngu', 'tieng anh'],
     answer: {
-      en: 'Tools she works with: **Python** (Pandas, Scikit-learn, XGBoost), **SQL**, **Excel**, **Power BI** and **Tableau**, plus financial-ratio analysis. Languages: Vietnamese and English (**IELTS 7.5**).',
-      vi: 'Công cụ bạn dùng: **Python** (Pandas, Scikit-learn, XGBoost), **SQL**, **Excel**, **Power BI** và **Tableau**, cùng phân tích chỉ số tài chính. Ngôn ngữ: tiếng Việt và tiếng Anh (**IELTS 7.5**).'
+      en: "She uses **Python** (Pandas, Scikit-learn, XGBoost), **SQL**, **Excel**, **Power BI** and **Tableau**, and works with financial ratios. She speaks Vietnamese and English, with **IELTS 7.5**.",
+      vi: "Ngọc Anh dùng **Python** (Pandas, Scikit-learn, XGBoost), **SQL**, **Excel**, **Power BI**, **Tableau** và làm việc với các chỉ số tài chính. Bạn ấy sử dụng tiếng Việt và tiếng Anh, với **IELTS 7.5**."
     },
     more: {
-      en: 'You can see them in use in FinAD, the WICO credit-risk models and the GTEL internship.',
-      vi: 'Bạn có thể thấy các công cụ này được dùng trong FinAD, mô hình rủi ro tín dụng WICO và kỳ thực tập GTEL.'
+      en: "For examples of how she uses them, take a look at FinAD, the WICO credit-risk project or her GTEL internship.",
+      vi: "Muốn xem các công cụ này được dùng vào việc gì, bạn có thể đọc phần FinAD, dự án rủi ro tín dụng WICO hoặc kỳ thực tập GTEL nhé."
     },
     next: ['finad', 'internship']
   },
@@ -254,8 +254,8 @@ export const TOPICS: Topic[] = [
       vi: `Bạn có thể liên hệ Trần Ngọc Anh qua **${EMAIL}**. FinAD đang chạy tại ${FINAD_URL}.`
     },
     more: {
-      en: 'A downloadable CV is not on the site yet.',
-      vi: 'CV để tải về hiện chưa có trên trang.'
+      en: "There isn’t a downloadable CV here yet, but the journal pages cover her studies, projects and activities.",
+      vi: "Hiện trang chưa có CV để tải về, nhưng bạn có thể đọc các phần về học tập, dự án và hoạt động trong portfolio nhé."
     },
     next: ['about']
   }
@@ -326,8 +326,8 @@ export function answerQuery(query: string, lang: Lang, lastTopics: string[] = []
       return {
         text:
           lang === 'vi'
-            ? 'Chào bạn! Mình có thể kể về hành trình học tập, giải thưởng, FinAD, nghiên cứu, hoạt động hay sở thích của Ngọc Anh. Bạn muốn bắt đầu từ đâu?'
-            : 'Hi! I can tell you about Ngoc Anh’s path, awards, FinAD, research, activities or life outside school. Where would you like to start?',
+            ? 'Chào bạn! Mình là trợ lý của portfolio này. Bạn có thể hỏi mình về chuyện học, các dự án hay sở thích của Ngọc Anh. Bạn muốn nghe phần nào trước?'
+            : 'Hi! I’m the portfolio assistant. You can ask me about Ngoc Anh’s studies, projects or life outside school. Where would you like to start?',
         links: [],
         followUps: followUpsFor(['about'], lang, []).concat(
           TOPICS.filter((t) => t.id === 'about').map((t) => ({ label: t.title[lang], prompt: t.title[lang] }))
@@ -356,8 +356,8 @@ export function answerQuery(query: string, lang: Lang, lastTopics: string[] = []
     return {
       text:
         lang === 'vi'
-          ? 'Mình chưa chắc đã hiểu đúng câu hỏi. Mình trả lời tốt nhất về: học vấn & điểm số, giải thưởng, kinh tế & VEO, WICO, FinAD, nghiên cứu tín dụng xanh, lãnh đạo & thực tập, hoạt động cộng đồng, sở thích và thông tin liên hệ.'
-          : 'I’m not sure I caught that. I can best answer about: grades & test scores, awards, economics & VEO, WICO, FinAD, the green-credit paper, leadership & internship, community work, hobbies and contact details.',
+          ? 'Mình chưa hiểu rõ câu hỏi này. Bạn thử hỏi cụ thể hơn một chút nhé, chẳng hạn vì sao Ngọc Anh làm FinAD, học kinh tế từ đâu, hoặc thường làm gì lúc rảnh.'
+          : 'I’m not quite sure what you mean. Could you be a little more specific? You could ask why Ngoc Anh built FinAD, how she got into economics, or what she does in her free time.',
       links: [],
       followUps: ['about', 'awards', 'finad'].map((id) => {
         const t = TOPICS.find((x) => x.id === id)!;

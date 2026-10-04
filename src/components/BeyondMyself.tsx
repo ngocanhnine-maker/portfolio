@@ -14,7 +14,7 @@ const CONTENT: Record<'en' | 'vi', { title: string; cards: Card[] }> = {
         alt: 'Tet gift-giving with children and teachers at Peace Village – Thanh Xuan',
         name: 'Peace Village – Thanh Xuan',
         role: 'Chairperson',
-        body: 'Led a team organizing a charity initiative at Peace Village – Thanh Xuan, coordinating fundraising and a Tet gift-giving event for children with mobility impairments.'
+        body: "At Peace Village, I coordinated our team’s fundraising and a Tet gift-giving day for children with mobility impairments. My role covered both the preparations and the day we brought the gifts to the children."
       },
       {
         image: '/gallery/bach-mai/bach-mai-community-support-1.jpg',
@@ -22,7 +22,7 @@ const CONTENT: Record<'en' | 'vi', { title: string; cards: Card[] }> = {
         alt: 'Volunteer group at Bach Mai Hospital',
         name: 'Bach Mai Hospital',
         role: 'Volunteer',
-        body: 'Supported a fundraising initiative for families facing financial difficulties related to medical treatment.'
+        body: "At Bach Mai Hospital, I joined the fundraising effort for families struggling with treatment costs. It was a way for me to help with part of the expenses they were facing."
       },
       {
         image: '/gallery/sos-hai-phong/sos-hai-phong-visit.jpg',
@@ -30,7 +30,7 @@ const CONTENT: Record<'en' | 'vi', { title: string; cards: Card[] }> = {
         alt: 'Visiting children at SOS Children’s Village Hai Phong',
         name: 'SOS Children’s Village Hai Phong',
         role: 'Volunteer',
-        body: 'Participated in a community fundraising initiative supporting children at SOS Children’s Village Hai Phong.'
+        body: "I also took part in a fundraising project for the children at SOS Children’s Village Hai Phong. Here, I joined as a volunteer, contributing alongside the rest of the group."
       }
     ]
   },
@@ -43,7 +43,7 @@ const CONTENT: Record<'en' | 'vi', { title: string; cards: Card[] }> = {
         alt: 'Trao quà Tết cùng các em và thầy cô tại Làng Hòa Bình Thanh Xuân',
         name: 'Làng Hòa Bình Thanh Xuân',
         role: 'Trưởng ban tổ chức',
-        body: 'Dẫn dắt nhóm tổ chức hoạt động thiện nguyện tại Làng Hòa Bình Thanh Xuân, điều phối gây quỹ và buổi trao quà Tết cho các em bị suy giảm khả năng vận động.'
+        body: "Ở Làng Hòa Bình, mình phụ trách nhóm gây quỹ và tổ chức trao quà Tết cho các em gặp khó khăn về vận động. Mình theo cùng cả nhóm từ lúc chuẩn bị đến ngày mang quà tới các em."
       },
       {
         image: '/gallery/bach-mai/bach-mai-community-support-1.jpg',
@@ -51,7 +51,7 @@ const CONTENT: Record<'en' | 'vi', { title: string; cards: Card[] }> = {
         alt: 'Nhóm tình nguyện tại Bệnh viện Bạch Mai',
         name: 'Bệnh viện Bạch Mai',
         role: 'Tình nguyện viên',
-        body: 'Hỗ trợ hoạt động gây quỹ cho các gia đình gặp khó khăn tài chính trong quá trình điều trị bệnh.'
+        body: "Ở Bệnh viện Bạch Mai, mình tham gia gây quỹ cho những gia đình gặp khó khăn với chi phí điều trị. Mình muốn góp một phần để các gia đình bớt lo về khoản tiền chữa bệnh."
       },
       {
         image: '/gallery/sos-hai-phong/sos-hai-phong-visit.jpg',
@@ -59,7 +59,7 @@ const CONTENT: Record<'en' | 'vi', { title: string; cards: Card[] }> = {
         alt: 'Thăm các em tại Làng trẻ em SOS Hải Phòng',
         name: 'Làng trẻ em SOS Hải Phòng',
         role: 'Tình nguyện viên',
-        body: 'Tham gia hoạt động gây quỹ cộng đồng hỗ trợ các em tại Làng trẻ em SOS Hải Phòng.'
+        body: "Mình cũng tham gia dự án gây quỹ cho các em ở Làng trẻ em SOS Hải Phòng. Lần này, mình là một tình nguyện viên, cùng mọi người góp sức vào công việc chung."
       }
     ]
   }

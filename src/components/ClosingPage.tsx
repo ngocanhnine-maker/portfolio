@@ -14,7 +14,7 @@ const CONTENT = {
   en: {
     title: 'Closing Note',
     body:
-      'This journal captures the questions, projects, and turns that have shaped how I think so far. I’m still exploring where finance, data, and technology can take me next — and what I might build along the way.',
+      "Thanks for reading this far. Putting these pages together helped me see how one interest led to another, from Chemistry to economics, then to projects I wanted to try. I’m still figuring out where finance and technology fit into my future. For now, this is my story so far.",
     signature: 'Tran Ngoc Anh · 2026',
     back: 'Back to the beginning',
     photoAlt: 'Tran Ngoc Anh'
@@ -22,7 +22,7 @@ const CONTENT = {
   vi: {
     title: 'Lời kết',
     body:
-      'Cuốn nhật ký này ghi lại những câu hỏi, dự án và bước rẽ đã định hình cách tôi suy nghĩ đến nay. Tôi vẫn đang tìm xem tài chính, dữ liệu và công nghệ có thể đưa mình đi đâu tiếp — và mình có thể xây dựng điều gì trên đường đi.',
+      "Cảm ơn bạn đã đọc đến đây nhé. Gom những chuyện này lại, mình mới thấy từ Hóa sang kinh tế, rồi đến các dự án, mỗi thứ đều có một chút liên quan với nhau. Mình vẫn đang tìm xem muốn đi tiếp thế nào với tài chính và công nghệ. Còn đây là câu chuyện của mình đến lúc này.",
     signature: 'Trần Ngọc Anh · 2026',
     back: 'Về trang đầu',
     photoAlt: 'Trần Ngọc Anh'

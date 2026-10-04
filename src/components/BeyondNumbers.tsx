@@ -17,16 +17,16 @@ const CONTENT = {
     title: 'Leadership & Experience',
     leadership: 'Leadership',
     leadershipBody:
-      'Most of my leadership has been about the work in between: splitting a project into parts people could own, listening when the team disagreed, and pulling different views into one direction we could all commit to.',
+      "A lot of these projects involved figuring things out together. As a team leader, I helped divide the work, listened when we disagreed and worked with everyone to decide what to do next. I’m still learning how to do that well.",
     videoSoon: 'Video coming soon',
     teaching: 'Mentoring',
     teachingBody:
-      'Through WITH Project and the Ams Advisor club, I helped Grade 9 students prepare for the high-school entrance exam. Explaining a problem to someone meeting it for the first time showed me which parts I only half understood, and taught me to start from what they already knew.',
+      "Through WITH Project and Ams Advisor, I helped Grade 9 students prepare for their high-school entrance exams. Sometimes, explaining a problem showed me that I hadn’t fully understood it either. I learned to start with what the students already knew.",
     photoSoon: 'Photo coming soon',
     internship: 'Internship',
     internshipMeta: 'GTEL · Financial Planning · 2026',
     internshipBody:
-      'At GTEL’s financial planning department, I watched how financial decisions are coordinated with other parts of the business rather than made by finance alone.',
+      "At GTEL’s Financial Planning department, I got to see how this worked in a company. Financial decisions involved people from several departments, so understanding the numbers was only part of the job.",
     certAlt: 'GTEL internship confirmation letter',
     viewerTitle: 'GTEL Internship Confirmation'
   },
@@ -34,16 +34,16 @@ const CONTENT = {
     title: 'Lãnh đạo & Trải nghiệm',
     leadership: 'Lãnh đạo',
     leadershipBody:
-      'Phần lớn việc lãnh đạo của tôi nằm ở những việc ở giữa: chia dự án thành các phần mà mỗi người có thể đảm nhận, lắng nghe khi nhóm bất đồng, và gom những góc nhìn khác nhau về một hướng mà cả nhóm cùng theo.',
+      "Nhiều dự án ở trên là những việc mình làm cùng một nhóm. Khi làm trưởng nhóm, mình chia việc, nghe từng ý kiến khi mọi người chưa đồng ý với nhau, rồi cùng cả nhóm tìm cách làm tiếp. Mình vẫn đang học cách làm tốt những việc đó.",
     videoSoon: 'Video sắp ra mắt',
     teaching: 'Hướng dẫn học tập',
     teachingBody:
-      'Qua WITH Project và CLB Ams Advisor, tôi đồng hành cùng các em lớp 9 ôn thi vào lớp 10. Giảng một bài cho người lần đầu gặp nó cho tôi thấy phần nào mình mới hiểu một nửa, và dạy tôi bắt đầu từ điều các em đã biết.',
+      "Ở WITH Project và CLB Ams Advisor, mình kèm các em lớp 9 ôn thi vào lớp 10. Có lúc đang giảng, mình mới thấy chính mình cũng chưa hiểu thật kỹ một chỗ. Mình tập bắt đầu từ phần các em đã biết, rồi cùng gỡ từng bước.",
     photoSoon: 'Ảnh sắp được cập nhật',
     internship: 'Thực tập',
     internshipMeta: 'GTEL · Kế hoạch Tài chính · 2026',
     internshipBody:
-      'Tại phòng Kế hoạch Tài chính của GTEL, tôi quan sát cách các quyết định tài chính được phối hợp với những bộ phận khác trong doanh nghiệp, chứ không chỉ do bộ phận tài chính đưa ra.',
+      "Thực tập ở phòng Kế hoạch Tài chính của GTEL, mình được xem cách mọi người phối hợp trong một công ty. Một quyết định tài chính cần trao đổi với nhiều phòng ban, nên hiểu số liệu mới là một phần công việc.",
     certAlt: 'Giấy xác nhận thực tập tại GTEL',
     viewerTitle: 'Giấy xác nhận thực tập GTEL'
   }

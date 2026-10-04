@@ -10,27 +10,27 @@ const CONTENT = {
     title: 'Discovering Economics',
     imageAlt: 'Certificate: First Prize, Vietnam Economics Olympiad 2026',
     caption: 'Vietnam Economics Olympiad · 2026',
-    shiftHeading: 'The Shift',
+    shiftHeading: "Starting from scratch",
     shift:
-      'I came to economics without any formal background. I started with the basics, supply and demand, costs, opportunity cost, and slowly learned to look at a problem through markets, incentives and the decisions businesses actually have to make.',
-    milestoneHeading: 'The Milestone',
+      "Economics gave me plenty of those questions. I was new to it, so I started with supply and demand, then opportunity cost. Little by little, I began to understand why a business might choose one option over another.",
+    milestoneHeading: "Giving it a go",
     milestoneTitle: 'Vietnam Economics Olympiad — First Prize',
     milestone:
-      'The competition showed me that I enjoy questions without a single right answer: the ones where context matters and every choice comes with a trade-off.',
-    outro: 'That was when numbers stopped feeling like answers and started becoming evidence.'
+      "At VEO, I had to explain why an answer made sense in that particular situation. I enjoyed thinking through the choices and what each one would mean. Winning First Prize made me want to keep studying the subject.",
+    outro: "That left me wondering how I could use what I’d learned to understand an actual business."
   },
   vi: {
     title: 'Khám phá Kinh tế',
     imageAlt: 'Giấy khen: Giải Nhất Olympic Kinh tế Việt Nam 2026',
     caption: 'Olympic Kinh tế Việt Nam · 2026',
-    shiftHeading: 'Bước chuyển',
+    shiftHeading: "Học lại từ đầu",
     shift:
-      'Tôi đến với kinh tế khi chưa có nền tảng chính thức. Tôi bắt đầu từ những điều cơ bản như cung cầu, chi phí, chi phí cơ hội, rồi dần học cách nhìn một vấn đề qua thị trường, động cơ và những quyết định mà doanh nghiệp thực sự phải đưa ra.',
-    milestoneHeading: 'Dấu mốc',
+      "Kinh tế có khá nhiều câu hỏi như vậy. Lúc mới học, mình gần như bắt đầu từ con số không: cung cầu là gì, chi phí cơ hội là gì. Học thêm một chút, mình lại hiểu hơn vì sao doanh nghiệp chọn cách này mà không chọn cách kia.",
+    milestoneHeading: "Thử sức với VEO",
     milestoneTitle: 'Olympic Kinh tế Việt Nam — Giải Nhất',
     milestone:
-      'Cuộc thi cho tôi thấy mình thích những câu hỏi không chỉ có một đáp án đúng: những câu hỏi mà bối cảnh quan trọng và mỗi lựa chọn đều đi kèm đánh đổi.',
-    outro: 'Đó là lúc những con số thôi là đáp án, và bắt đầu trở thành bằng chứng.'
+      "Ở VEO, mình phải giải thích vì sao một câu trả lời hợp lý trong hoàn cảnh đó. Mình thích việc cân nhắc từng lựa chọn và xem chọn rồi thì điều gì sẽ xảy ra. Giải Nhất là một niềm vui, và mình cũng muốn học tiếp môn này.",
+    outro: "Từ đó, mình muốn thử dùng những gì đã học để tìm hiểu một doanh nghiệp cụ thể."
   }
 };
 

@@ -182,7 +182,7 @@ export default function App() {
 
       {/* Main Content Area: sits below the fixed top bar (mobile and desktop) */}
       <main
-        className="flex-1 min-h-screen pt-14"
+        className="flex-1 min-h-screen pt-14 lg:pt-12"
         id="portfolio-main-content"
       >
         {isAIMode ? (

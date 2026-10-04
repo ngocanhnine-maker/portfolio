@@ -7,42 +7,42 @@ const CONTENT = {
   en: {
     title: 'Foundations',
     intro:
-      'Before finance and technology, I spent much of my time learning through Chemistry and Mathematics. These subjects taught me to work carefully, test assumptions, and stay with difficult problems until they became clearer.',
+      "For a long time, Chemistry and Maths were the subjects I spent most of my time on. I got used to working through a problem, checking the steps, and trying again when the answer didn’t make sense. That’s where this story starts.",
     cards: [
       {
         title: 'National Chemistry Competition',
         result: 'Third Prize',
         grade: 'Grade 11',
-        body: 'Preparing for it taught me precision: checking every step, questioning every result, and staying with a problem until the reasoning held.'
+        body: "Preparing for this competition meant going back over each step, even when I thought I had it right. I still use that habit when working with data now."
       },
       {
         title: 'Hanoi Natural Sciences Competition',
         result: 'First Prize',
         grade: 'Grade 9',
-        body: 'Bringing physics, chemistry and biology into one exam taught me to connect ideas across subjects, and gave me the confidence to go further in science.'
+        body: "With Physics, Chemistry and Biology in the same exam, I had to use what I knew from all three. This result gave me the confidence to keep going with science."
       }
     ],
-    outro: 'Over time, I became more interested in questions that did not end with one correct answer.'
+    outro: "I liked working out an answer. Over time, I also got curious about questions where people could reasonably disagree."
   },
   vi: {
     title: 'Nền tảng',
     intro:
-      'Trước tài chính và công nghệ, phần lớn thời gian của tôi dành cho Hóa học và Toán học. Hai môn ấy dạy tôi làm việc cẩn thận, kiểm chứng giả định, và kiên nhẫn với những bài toán khó cho đến khi chúng sáng rõ hơn.',
+      "Có một thời gian, mình dành phần lớn thời gian cho Hóa và Toán. Làm bài, kiểm tra lại từng bước, rồi thử lại nếu kết quả chưa hợp lý cứ thế thành thói quen. Câu chuyện của mình bắt đầu từ những buổi học như vậy.",
     cards: [
       {
         title: 'Kỳ thi Học sinh giỏi Quốc gia môn Hóa học',
         result: 'Giải Ba',
         grade: 'Lớp 11',
-        body: 'Quá trình ôn luyện dạy tôi sự chính xác: kiểm tra từng bước, đặt câu hỏi với từng kết quả, và theo đến cùng cho đến khi lập luận vững vàng.'
+        body: "Ôn thi Hóa, mình phải xem lại từng bước, kể cả khi nghĩ là đã làm đúng. Đến giờ, lúc làm với số liệu, mình vẫn giữ thói quen kiểm tra lại như thế."
       },
       {
         title: 'HSG Thành phố môn Khoa học Tự nhiên',
         result: 'Giải Nhất',
         grade: 'Lớp 9',
-        body: 'Gói vật lý, hóa học và sinh học vào một bài thi dạy tôi nối các ý tưởng giữa nhiều môn, và cho tôi thêm tự tin để đi xa hơn với khoa học.'
+        body: "Đề có cả Lý, Hóa và Sinh, nên mình phải dùng kiến thức của cả ba môn để giải. Kết quả này cho mình thêm tự tin để tiếp tục học sâu hơn về khoa học."
       }
     ],
-    outro: 'Dần dần, tôi quan tâm nhiều hơn đến những câu hỏi không kết thúc bằng một đáp án đúng duy nhất.'
+    outro: "Mình thích cảm giác giải ra một bài khó. Rồi mình bắt đầu tò mò cả những câu hỏi mà mỗi người có thể trả lời một cách khác nhau."
   }
 };
 

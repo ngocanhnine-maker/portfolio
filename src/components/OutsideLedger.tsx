@@ -15,18 +15,18 @@ const CONTENT = {
     title: 'Beyond Academics',
     photoSoon: 'Photo coming soon',
     parts: [
-      { key: 'photography', name: 'Photography', body: 'Photography gives me a reason to slow down and notice details I might otherwise miss.', alt: 'A photo I took' },
-      { key: 'music', name: 'Music', body: 'Music is where I step away from structure and enjoy learning at a different pace.', alt: 'Playing piano at the Zhongsin International Music Competition' },
-      { key: 'life', name: 'Life Beyond School', body: 'I value the small moments outside school just as much as the milestones inside it.', alt: 'A moment with friends' }
+      { key: 'photography', name: 'Photography', body: "I like taking photos of things I might otherwise walk straight past. Looking through the camera gives me a reason to stop and notice them.", alt: 'A photo I took' },
+      { key: 'music', name: 'Music', body: "I make time for music too. Playing and learning at my own pace feels different from the work I do for school, and I like having that in my week.", alt: 'Playing piano at the Zhongsin International Music Competition' },
+      { key: 'life', name: 'Life Beyond School', body: "Then there are the ordinary days with friends. Some of my favourite memories come from those days, so I wanted to leave a little space for them here too.", alt: 'A moment with friends' }
     ] as const
   },
   vi: {
     title: 'Ngoài Học thuật',
     photoSoon: 'Ảnh sắp được cập nhật',
     parts: [
-      { key: 'photography', name: 'Nhiếp ảnh', body: 'Chụp ảnh cho tôi lý do để chậm lại và để ý những chi tiết mà bình thường mình dễ bỏ lỡ.', alt: 'Một bức ảnh tôi chụp' },
-      { key: 'music', name: 'Âm nhạc', body: 'Âm nhạc là nơi tôi tạm rời khỏi khuôn khổ và học theo một nhịp khác.', alt: 'Biểu diễn piano tại cuộc thi âm nhạc quốc tế Zhongsin' },
-      { key: 'life', name: 'Ngoài giờ học', body: 'Tôi trân trọng những khoảnh khắc nhỏ ngoài trường học không kém gì những dấu mốc bên trong nó.', alt: 'Một khoảnh khắc cùng bạn bè' }
+      { key: 'photography', name: 'Nhiếp ảnh', body: "Mình thích chụp lại những thứ bình thường có khi đi qua chẳng để ý. Cầm máy lên, tự nhiên mình có lý do để dừng lại nhìn kỹ hơn một chút.", alt: "Một bức ảnh mình chụp" },
+      { key: 'music', name: 'Âm nhạc', body: "Mình còn dành thời gian cho âm nhạc nữa. Ngồi chơi đàn, tập theo nhịp của mình là một cảm giác khá khác với lúc học bài, và mình thích có khoảng thời gian đó trong tuần.", alt: 'Biểu diễn piano tại cuộc thi âm nhạc quốc tế Zhongsin' },
+      { key: 'life', name: 'Ngoài giờ học', body: "Còn đây là những ngày rất bình thường với bạn bè. Có nhiều kỷ niệm mình thích chỉ đơn giản như vậy, nên mình cũng muốn dành một góc trong này cho chúng.", alt: 'Một khoảnh khắc cùng bạn bè' }
     ] as const
   }
 };

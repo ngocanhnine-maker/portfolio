@@ -204,3 +204,6 @@
 
 /* Section anchors land below the fixed 3.5rem top bar */
 #portfolio-main-content section[id] { scroll-margin-top: 3.5rem; }
+@media (min-width: 1024px) {
+  #portfolio-main-content section[id] { scroll-margin-top: 3rem; }
+}

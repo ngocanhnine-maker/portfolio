@@ -12,37 +12,37 @@ const CONTENT = {
     title: 'Finance in Practice',
     badge: 'WICO 2026 · Gold Medal',
     imageAlt: 'The WICO 2026 team on stage with their Gold Medals in Seoul',
-    problemHeading: 'The Problem',
+    problemHeading: "Looking at the numbers",
     problem:
-      'The SMEs in our case study showed sharp drops in revenue and heavy reliance on debt. No single ratio could explain how risky they were, so we had to look at the wider picture: profitability, debt, revenue and the ability to repay.',
-    approachHeading: 'The Approach',
+      "For WICO, my team looked at the credit risk of small and medium-sized businesses in Vietnam. The reports showed falling revenue and high debt. To understand what that meant, we had to look at profit, borrowing and the ability to repay together.",
+    approachHeading: "What we put together",
     approach:
-      'With my team, I built a credit assessment framework that combined financial analysis with the 5Cs of credit, a scorecard, and machine learning models such as Random Forest and XGBoost. The aim was to judge risk from many factors instead of one number.',
+      "We brought financial analysis, the 5Cs of credit, a scorecard, and Random Forest and XGBoost models into one assessment framework. The idea was to consider several sides of a business before arriving at a risk score.",
     stats: [
       { value: '228.7%', label: 'Debt / Equity', source: 'Central Pharma JSC 3' },
       { value: '−75%', label: 'Revenue, 2020 → 2021', source: 'Vinaceglass JSC' }
     ],
     readPaper: 'Read the WICO research paper',
     paperTitle: 'AI-Powered Credit Risk Assessment for Vietnamese SMEs',
-    outro: 'The next question was not how to analyse the numbers, but how to make them easier to work with.'
+    outro: "Working with these reports also made me notice how much time went into getting the numbers ready to use."
   },
   vi: {
     title: 'Tài chính trong Thực tiễn',
     badge: 'WICO 2026 · Huy chương Vàng',
     imageAlt: 'Đội WICO 2026 trên sân khấu với Huy chương Vàng tại Seoul',
-    problemHeading: 'Vấn đề',
+    problemHeading: "Bắt đầu từ số liệu",
     problem:
-      'Các doanh nghiệp trong case study đối mặt với mức giảm doanh thu đáng kể và đòn bẩy tài chính cao. Một tỷ lệ riêng lẻ không đủ để giải thích mức độ rủi ro, nên cần xem xét bức tranh rộng hơn về khả năng sinh lời, nợ, doanh thu và khả năng trả nợ.',
-    approachHeading: 'Cách tiếp cận',
+      "Với WICO, nhóm mình tìm hiểu rủi ro tín dụng của các doanh nghiệp vừa và nhỏ ở Việt Nam. Đọc báo cáo, nhóm gặp những trường hợp doanh thu giảm, nợ lại cao. Muốn hiểu rõ hơn, bọn mình phải xem cả lợi nhuận, khoản vay và khả năng trả nợ.",
+    approachHeading: "Cách nhóm mình làm",
     approach:
-      'Tôi cùng team xây dựng một khung đánh giá tín dụng kết hợp phân tích tài chính với 5C, scorecard và các mô hình machine learning như Random Forest và XGBoost. Mục tiêu là đánh giá rủi ro dựa trên nhiều yếu tố thay vì chỉ dựa vào một chỉ số.',
+      "Nhóm mình kết hợp phân tích tài chính, mô hình 5C, bảng chấm điểm và hai mô hình học máy Random Forest, XGBoost trong một khung đánh giá. Bọn mình muốn xem doanh nghiệp từ nhiều phía trước khi đưa ra điểm rủi ro.",
     stats: [
       { value: '228.7%', label: 'Nợ / Vốn chủ sở hữu', source: 'Dược Trung ương 3' },
       { value: '−75%', label: 'Doanh thu, 2020 → 2021', source: 'Vinaceglass' }
     ],
     readPaper: 'Đọc bài nghiên cứu WICO',
     paperTitle: 'Ứng dụng AI đánh giá rủi ro tín dụng cho SME Việt Nam',
-    outro: 'Câu hỏi tiếp theo không còn là phân tích những con số thế nào, mà là làm sao để chúng dễ làm việc hơn.'
+    outro: "Làm với những báo cáo này, mình còn để ý một việc: chỉ riêng lấy số liệu ra để dùng cũng đã mất khá nhiều thời gian."
   }
 };
 

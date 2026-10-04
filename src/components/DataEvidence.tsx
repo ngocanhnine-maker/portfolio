@@ -13,13 +13,13 @@ const CONTENT = {
     paperName: 'Green Credit & Bank Performance',
     imageAlt: 'First page of the paper "Green Credit and Bank Financial Performance", Journal of Management Research, 2026',
     caption: 'Journal of Management Research · Vol. 18, No. 2 · 2026',
-    questionHeading: 'The Question',
-    question: 'Can green lending improve bank performance?',
-    studyHeading: 'The Study',
+    questionHeading: "What I wanted to find out",
+    question: "Do banks that lend more to green projects also perform better financially? This was the question I explored in my paper.",
+    studyHeading: "The data I worked with",
     study: ['8 Vietnamese banks', '2022–2024', '24 observations', 'Pooled OLS'],
-    findingHeading: 'The Finding',
+    findingHeading: "What the results showed",
     finding:
-      'Green Credit Ratio showed a positive and statistically significant relationship with ROA, while the absolute volume of green credit was not statistically significant.',
+      "In the data I studied, a higher share of green credit was linked to a higher ROA, and the relationship was statistically significant. The total amount of green credit didn’t show the same result. The distinction mattered when I wrote up the findings.",
     readPaper: 'Read the paper',
     viewerTitle: 'Green Credit and Bank Financial Performance'
   },
@@ -28,13 +28,13 @@ const CONTENT = {
     paperName: 'Tín dụng xanh & Hiệu quả ngân hàng',
     imageAlt: 'Trang đầu bài báo "Green Credit and Bank Financial Performance", Journal of Management Research, 2026',
     caption: 'Journal of Management Research · Tập 18, Số 2 · 2026',
-    questionHeading: 'Câu hỏi',
-    question: 'Tín dụng xanh có giúp cải thiện hiệu quả hoạt động của ngân hàng?',
-    studyHeading: 'Nghiên cứu',
+    questionHeading: "Điều mình muốn tìm hiểu",
+    question: "Ngân hàng cho vay nhiều hơn vào các dự án xanh thì có hoạt động hiệu quả hơn không? Mình chọn tìm hiểu câu hỏi này trong bài nghiên cứu.",
+    studyHeading: "Dữ liệu mình dùng",
     study: ['8 ngân hàng Việt Nam', '2022–2024', '24 quan sát', 'Pooled OLS'],
-    findingHeading: 'Kết quả',
+    findingHeading: "Kết quả mình tìm được",
     finding:
-      'Tỷ lệ tín dụng xanh có quan hệ dương và có ý nghĩa thống kê với ROA, trong khi quy mô tuyệt đối của tín dụng xanh không có ý nghĩa thống kê.',
+      "Trong dữ liệu mình phân tích, tỷ lệ tín dụng xanh cao hơn đi cùng ROA cao hơn, với mối liên hệ có ý nghĩa thống kê. Tổng lượng tín dụng xanh thì chưa cho thấy kết quả tương tự. Vì vậy, khi viết kết luận, mình cần phân biệt rõ hai cách đo này.",
     readPaper: 'Đọc bài báo',
     viewerTitle: 'Green Credit and Bank Financial Performance'
   }
