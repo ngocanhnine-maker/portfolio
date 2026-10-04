@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 840" width="1200" height="840" style="background:#FFFDF8;font-family:'Times New Roman',Georgia,serif;">
+  <defs>
+    <linearGradient id="goldBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFDE59"/>
+      <stop offset="25%" stop-color="#D4AF37"/>
+      <stop offset="50%" stop-color="#F3E5AB"/>
+      <stop offset="75%" stop-color="#AA771C"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </linearGradient>
+    <linearGradient id="redFlag" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D92015"/>
+      <stop offset="100%" stop-color="#B8140B"/>
+    </linearGradient>
+    <radialGradient id="sealRedGradient" cx="45%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#EA2B1F"/>
+      <stop offset="100%" stop-color="#9E120A"/>
+    </radialGradient>
+    <filter id="subtleShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Paper Base with subtle warm antique tone -->
+  <rect x="0" y="0" width="1200" height="840" fill="#FFFDF8"/>
+
+  <!-- Ornate Key-Fret Greek/Vietnamese Certificate Outer Border -->
+  <g fill="#1A1A1A">
+    <!-- Outer rectangle lines -->
+    <rect x="25" y="25" width="1150" height="790" fill="none" stroke="#1A1A1A" stroke-width="4"/>
+    <rect x="35" y="35" width="1130" height="770" fill="none" stroke="url(#goldBorder)" stroke-width="6"/>
+    <rect x="47" y="47" width="1106" height="746" fill="none" stroke="#1A1A1A" stroke-width="2"/>
+    
+    <!-- Intricate Greek-key geometric fret border strip -->
+    <rect x="58" y="58" width="1084" height="724" fill="none" stroke="#1A1A1A" stroke-width="12" stroke-dasharray="24 12"/>
+    <rect x="68" y="68" width="1064" height="704" fill="none" stroke="#D4AF37" stroke-width="2"/>
+  </g>
+
+  <!-- Ornate Corner Floral & Scroll Accents -->
+  <g fill="#D4AF37" stroke="#111" stroke-width="1">
+    <!-- Top-left -->
+    <path d="M75,75 Q130,85 110,140 Q90,95 75,75 Z"/>
+    <circle cx="88" cy="88" r="7" fill="#D92015"/>
+    <!-- Top-right -->
+    <path d="M1125,75 Q1070,85 1090,140 Q1110,95 1125,75 Z"/>
+    <circle cx="1112" cy="88" r="7" fill="#D92015"/>
+    <!-- Bottom-left -->
+    <path d="M75,765 Q130,755 110,700 Q90,745 75,765 Z"/>
+    <circle cx="88" cy="752" r="7" fill="#D92015"/>
+    <!-- Bottom-right -->
+    <path d="M1125,765 Q1070,755 1090,700 Q1110,745 1125,765 Z"/>
+    <circle cx="1112" cy="752" r="7" fill="#D92015"/>
+  </g>
+
+  <!-- Dong Son Drum Sunburst Watermark Center (Trống Đồng Đông Sơn) -->
+  <g transform="translate(600, 435)" stroke="#D4AF37" stroke-width="1.8" fill="none" opacity="0.32">
+    <circle r="260"/>
+    <circle r="235" stroke-dasharray="4 4"/>
+    <circle r="210"/>
+    <circle r="185"/>
+    <circle r="150" stroke-dasharray="8 6"/>
+    <circle r="110"/>
+    <circle r="70"/>
+    <!-- 14-pointed Sunburst Star -->
+    <g fill="#D4AF37" fill-opacity="0.25">
+      <polygon points="0,-70 8,-25 35,-60 20,-15 65,-35 28,-2 70,0 28,2 65,35 20,15 35,60 8,25 0,70 -8,25 -35,60 -20,15 -65,35 -28,2 -70,0 -28,-2 -65,-35 -20,-15 -35,-60 -8,-25"/>
+    </g>
+  </g>
+
+  <!-- Top Center: National Crest & Vietnamese Flags (Quốc Kỳ & Biểu tượng GDĐT) -->
+  <g transform="translate(600, 140)" filter="url(#subtleShadow)">
+    <!-- Crossed Red Flags with Gold Fringes -->
+    <path d="M0,35 Q-90,-10 -150,-45 Q-110,15 0,35 Z" fill="url(#redFlag)" stroke="#7A0A04" stroke-width="1.5"/>
+    <path d="M0,35 Q90,-10 150,-45 Q110,15 0,35 Z" fill="url(#redFlag)" stroke="#7A0A04" stroke-width="1.5"/>
+    <!-- Gold Flagpoles -->
+    <line x1="-165" y1="-55" x2="60" y2="55" stroke="#D4AF37" stroke-width="4" stroke-linecap="round"/>
+    <line x1="165" y1="-55" x2="-60" y2="55" stroke="#D4AF37" stroke-width="4" stroke-linecap="round"/>
+    <!-- Center National Emblem Disc -->
+    <circle cx="0" cy="18" r="42" fill="url(#redFlag)" stroke="#D4AF37" stroke-width="3.5"/>
+    <circle cx="0" cy="18" r="37" fill="none" stroke="#FFE066" stroke-width="1.5"/>
+    <!-- Gold Rice Ears (Bông lúa vàng) -->
+    <path d="M-34,32 C-45,15 -38,-5 -22,-16" fill="none" stroke="#FFE066" stroke-width="3" stroke-linecap="round"/>
+    <path d="M34,32 C45,15 38,-5 22,-16" fill="none" stroke="#FFE066" stroke-width="3" stroke-linecap="round"/>
+    <!-- Center Five-pointed Gold Star -->
+    <g transform="translate(0, 14) scale(0.9)">
+      <polygon points="0,-22 6,-6 23,-6 9,4 14,20 0,10 -14,20 -9,4 -23,-6 -6,-6" fill="#FFDE59" stroke="#B8860B" stroke-width="0.8"/>
+    </g>
+    <!-- Text badge inside crest -->
+    <text x="0" y="32" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="bold" fill="#FFDE59" letter-spacing="1">GD ĐT</text>
+  </g>
+
+  <!-- Official National Header -->
+  <g text-anchor="middle" transform="translate(600, 240)">
+    <text x="0" y="0" font-family="'Times New Roman',serif" font-size="20" font-weight="bold" fill="#1A1A1A" letter-spacing="1">
+      CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+    </text>
+    <text x="0" y="26" font-family="'Times New Roman',serif" font-size="18" font-style="italic" font-weight="bold" fill="#222">
+      Độc lập - Tự do - Hạnh phúc
+    </text>
+    <line x1="-130" y1="36" x2="130" y2="36" stroke="#222" stroke-width="1.5"/>
+  </g>
+
+  <!-- Awarding Authority -->
+  <g text-anchor="middle" transform="translate(600, 318)">
+    <text x="0" y="0" font-family="'Times New Roman',serif" font-size="22" font-weight="bold" fill="#1A1A1A" letter-spacing="0.5">
+      VIỆN TRƯỞNG VIỆN KHOA HỌC GIÁO DỤC VIỆT NAM
+    </text>
+    <text x="0" y="32" font-family="'Times New Roman',serif" font-size="20" font-weight="bold" fill="#1A1A1A" letter-spacing="4">
+      TẶNG
+    </text>
+  </g>
+
+  <!-- Main Certificate Title: GIẤY KHEN -->
+  <g text-anchor="middle" transform="translate(600, 420)">
+    <text x="0" y="0" font-family="'Times New Roman',serif" font-size="60" font-weight="bold" fill="#111" letter-spacing="6">
+      GIẤY KHEN
+    </text>
+  </g>
+
+  <!-- Recipient Name -->
+  <g text-anchor="middle" transform="translate(600, 490)">
+    <text x="0" y="0" font-family="'Times New Roman',serif" font-size="34" font-weight="bold" fill="#111" letter-spacing="2">
+      TRẦN NGỌC ANH
+    </text>
+  </g>
+
+  <!-- Class & School Affiliation -->
+  <g text-anchor="middle" transform="translate(600, 532)">
+    <text x="0" y="0" font-family="'Times New Roman',serif" font-size="21" font-style="italic" fill="#222">
+      Lớp 11 HOÁ 1 – Trường THPT chuyên Hà Nội Amsterdam
+    </text>
+  </g>
+
+  <!-- Award Citation -->
+  <g text-anchor="middle" transform="translate(600, 574)">
+    <text x="0" y="0" font-family="'Times New Roman',serif" font-size="22" font-weight="bold" fill="#111">
+      Đã đạt Giải Nhất – Cấp THPT Kỳ thi Olympic Kinh tế Việt Nam - VEO 2026
+    </text>
+    <text x="0" y="28" font-family="'Times New Roman',serif" font-size="19" font-style="italic" fill="#222">
+      (Vietnam Economics Olympiad)
+    </text>
+  </g>
+
+  <!-- Decision Number (Bottom Left) -->
+  <g transform="translate(180, 725)">
+    <text x="0" y="0" font-family="'Times New Roman',serif" font-size="17" font-style="italic" fill="#222">
+      Quyết định số: 330/QĐ-VKHGDVN
+    </text>
+  </g>
+
+  <!-- Date, Signature & Official Red Stamp (Bottom Right) -->
+  <g transform="translate(870, 645)" text-anchor="middle">
+    <text x="0" y="0" font-family="'Times New Roman',serif" font-size="18" font-style="italic" fill="#222">
+      Hà Nội, ngày 29 tháng 06 năm 2026
+    </text>
+    <text x="0" y="26" font-family="'Times New Roman',serif" font-size="20" font-weight="bold" fill="#111" letter-spacing="1">
+      VIỆN TRƯỞNG
+    </text>
+
+    <!-- Official Red Stamp (Dấu tròn đỏ Viện Khoa học Giáo dục Việt Nam) -->
+    <g transform="translate(-45, 55)" opacity="0.9">
+      <circle cx="0" cy="0" r="48" fill="none" stroke="#D92015" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="43" fill="none" stroke="#D92015" stroke-width="1"/>
+      <path id="stampUpperCurve" d="M-36,5 A36,36 0 1,1 36,5" fill="none"/>
+      <text font-family="Arial,sans-serif" font-size="6.8" font-weight="bold" fill="#D92015">
+        <textPath href="#stampUpperCurve" startOffset="50%" text-anchor="middle">
+          BỘ GIÁO DỤC VÀ ĐÀO TẠO
+        </textPath>
+      </text>
+      <!-- Center text inside red seal -->
+      <text x="0" y="-8" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="bold" fill="#D92015">
+        VIỆN
+      </text>
+      <text x="0" y="2" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="bold" fill="#D92015">
+        KHOA HỌC
+      </text>
+      <text x="0" y="12" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="bold" fill="#D92015">
+        GIÁO DỤC
+      </text>
+      <text x="0" y="22" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="bold" fill="#D92015">
+        VIỆT NAM
+      </text>
+      <polygon points="0,-18 2.5,-13 8,-13 4,-9 5.5,-4 0,-7 -5.5,-4 -4,-9 -8,-13 -2.5,-13" fill="#D92015"/>
+    </g>
+
+    <!-- Signature of Director Lê Anh Vinh -->
+    <g transform="translate(0, 68)">
+      <path d="M-35,15 Q-15,-20 5,0 Q15,-15 35,5 Q10,10 -20,18" fill="none" stroke="#001858" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M-10,-5 Q20,25 45,-8" fill="none" stroke="#001858" stroke-width="2" stroke-linecap="round"/>
+      <text x="0" y="42" font-family="'Times New Roman',serif" font-size="22" font-weight="bold" fill="#111">
+        Lê Anh Vinh
+      </text>
+    </g>
+  </g>
+</svg>
