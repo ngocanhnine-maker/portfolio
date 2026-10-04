@@ -5,7 +5,7 @@ import { seeded } from './ScrapbookBackdrop';
 
 const CONTENT = {
   en: {
-    title: 'Where I Started',
+    title: 'Foundations',
     intro:
       'Before finance and technology, I spent much of my time learning through Chemistry and Mathematics. These subjects taught me to work carefully, test assumptions, and stay with difficult problems until they became clearer.',
     cards: [
@@ -25,7 +25,7 @@ const CONTENT = {
     outro: 'Over time, I became more interested in questions that did not end with one correct answer.'
   },
   vi: {
-    title: 'Nơi tôi bắt đầu',
+    title: 'Nền tảng',
     intro:
       'Trước tài chính và công nghệ, phần lớn thời gian của tôi dành cho Hóa học và Toán học. Hai môn ấy dạy tôi làm việc cẩn thận, kiểm chứng giả định, và kiên nhẫn với những bài toán khó cho đến khi chúng sáng rõ hơn.',
     cards: [
@@ -163,7 +163,7 @@ export const WhereIStarted: React.FC = () => {
           </div>
 
           <header className="relative text-center max-w-[72ch] mx-auto">
-            <h2 className="m-0 font-serif italic font-semibold text-[#2E1A16] leading-none tracking-[-0.01em] text-[clamp(2.2rem,4vw,4rem)]">
+            <h2 className="m-0 font-serif italic font-semibold text-[#2E1A16] leading-none tracking-[-0.01em] text-[clamp(2.1rem,3.8vw,3.8rem)]">
               {c.title}
             </h2>
             <p className="mt-4 m-0 text-[clamp(0.92rem,1.05vw,1.05rem)] leading-[1.7] text-[#3D2A24]/85">{c.intro}</p>

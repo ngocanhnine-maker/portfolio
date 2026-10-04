@@ -9,7 +9,7 @@ const PREVIEW = '/papers/green-credit-title.jpg';
 
 const CONTENT = {
   en: {
-    title: 'When Data Became Evidence',
+    title: 'Research',
     paperName: 'Green Credit & Bank Performance',
     imageAlt: 'First page of the paper "Green Credit and Bank Financial Performance", Journal of Management Research, 2026',
     caption: 'Journal of Management Research · Vol. 18, No. 2 · 2026',
@@ -24,7 +24,7 @@ const CONTENT = {
     viewerTitle: 'Green Credit and Bank Financial Performance'
   },
   vi: {
-    title: 'Khi dữ liệu thành bằng chứng',
+    title: 'Nghiên cứu',
     paperName: 'Tín dụng xanh & Hiệu quả ngân hàng',
     imageAlt: 'Trang đầu bài báo "Green Credit and Bank Financial Performance", Journal of Management Research, 2026',
     caption: 'Journal of Management Research · Tập 18, Số 2 · 2026',
@@ -128,7 +128,7 @@ export const DataEvidence: React.FC = () => {
           {/* Torn title banner */}
           <div className="relative mx-auto w-full max-w-[760px] [filter:drop-shadow(0_3px_4px_rgba(60,40,20,0.2))]">
             <div className="bg-[#E8D4AE] px-6 pt-[clamp(18px,2.4vw,34px)] pb-[clamp(30px,3.6vw,52px)] text-center" style={{ clipPath: bannerClip }}>
-              <h2 className="m-0 font-serif italic font-semibold text-[#2E1A16] leading-[1.05] tracking-[-0.01em] text-[clamp(1.9rem,3.6vw,3.6rem)]">
+              <h2 className="m-0 font-serif italic font-semibold text-[#2E1A16] leading-[1.05] tracking-[-0.01em] text-[clamp(2.1rem,3.8vw,3.8rem)]">
                 {c.title}
               </h2>
             </div>

@@ -7,7 +7,7 @@ const LEFT_IMAGE = '/certificates/veo-2026.jpg';
 
 const CONTENT = {
   en: {
-    title: 'When Economics Entered the Picture',
+    title: 'Discovering Economics',
     imageAlt: 'Certificate: First Prize, Vietnam Economics Olympiad 2026',
     caption: 'Vietnam Economics Olympiad · 2026',
     shiftHeading: 'The Shift',
@@ -20,7 +20,7 @@ const CONTENT = {
     outro: 'That was when numbers stopped feeling like answers and started becoming evidence.'
   },
   vi: {
-    title: 'Khi Kinh tế bước vào',
+    title: 'Khám phá Kinh tế',
     imageAlt: 'Giấy khen: Giải Nhất Olympic Kinh tế Việt Nam 2026',
     caption: 'Olympic Kinh tế Việt Nam · 2026',
     shiftHeading: 'Bước chuyển',
@@ -103,7 +103,7 @@ export const EconomicsEntered: React.FC = () => {
           {/* Torn title banner */}
           <div className="relative mx-auto w-full max-w-[880px] [filter:drop-shadow(0_3px_4px_rgba(60,40,20,0.2))]">
             <div className="bg-[#E8D4AE] px-6 pt-[clamp(18px,2.4vw,34px)] pb-[clamp(30px,3.6vw,52px)] text-center" style={{ clipPath: bannerClip }}>
-              <h2 className="m-0 font-serif italic font-semibold text-[#2E1A16] leading-[1.05] tracking-[-0.01em] text-[clamp(1.9rem,3.6vw,3.6rem)]">
+              <h2 className="m-0 font-serif italic font-semibold text-[#2E1A16] leading-[1.05] tracking-[-0.01em] text-[clamp(2.1rem,3.8vw,3.8rem)]">
                 {c.title}
               </h2>
             </div>

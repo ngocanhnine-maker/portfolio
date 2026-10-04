@@ -9,14 +9,14 @@ type Row = { label: string; title: string; detail: string; onOpen?: () => void }
 
 const LABELS = {
   en: {
-    title: 'Academic Snapshot',
+    title: 'Academic Record',
     education: 'Education',
     tests: 'Standardized Tests',
     performance: 'Academic Performance',
     gpa: 'GPA'
   },
   vi: {
-    title: 'Tóm tắt Học thuật',
+    title: 'Hồ sơ Học tập',
     education: 'Học vấn',
     tests: 'Chứng chỉ Chuẩn hóa',
     performance: 'Kết quả Học tập',
@@ -166,7 +166,7 @@ export const AcademicSnapshot: React.FC = () => {
             ))}
           </div>
 
-          <h2 className={`${scriptHeading} text-center text-[clamp(2.2rem,4.4vw,4.4rem)] mb-8 lg:mb-10`}>{l.title}</h2>
+          <h2 className={`${scriptHeading} text-center text-[clamp(2.1rem,3.8vw,3.8rem)] mb-8 lg:mb-10`}>{l.title}</h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[6%]">
             <Timeline heading={l.education} rows={educationRows} />

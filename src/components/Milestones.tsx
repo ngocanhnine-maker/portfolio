@@ -6,7 +6,7 @@ type Card = { image: string; position: string; alt: string; name: string; result
 
 const CONTENT: Record<'en' | 'vi', { title: string; cards: Card[] }> = {
   en: {
-    title: 'Milestones Along the Way',
+    title: 'Milestones',
     cards: [
       {
         image: '/certificates/veo-2026.jpg',
@@ -43,7 +43,7 @@ const CONTENT: Record<'en' | 'vi', { title: string; cards: Card[] }> = {
     ]
   },
   vi: {
-    title: 'Những dấu mốc trên đường đi',
+    title: 'Dấu mốc',
     cards: [
       {
         image: '/certificates/veo-2026.jpg',
@@ -130,7 +130,7 @@ export const Milestones: React.FC = () => {
             ))}
           </div>
 
-          <h2 className="m-0 text-center font-serif italic font-semibold text-[#2E1A16] leading-none tracking-[-0.01em] text-[clamp(2.1rem,4vw,4rem)]">
+          <h2 className="m-0 text-center font-serif italic font-semibold text-[#2E1A16] leading-none tracking-[-0.01em] text-[clamp(2.1rem,3.8vw,3.8rem)]">
             {c.title}
           </h2>
 

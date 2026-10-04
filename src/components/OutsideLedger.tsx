@@ -12,7 +12,7 @@ const PHOTOS = {
 
 const CONTENT = {
   en: {
-    title: 'Outside the Ledger',
+    title: 'Beyond Academics',
     photoSoon: 'Photo coming soon',
     parts: [
       { key: 'photography', name: 'Photography', body: 'Photography gives me a reason to slow down and notice details I might otherwise miss.', alt: 'A photo I took' },
@@ -21,7 +21,7 @@ const CONTENT = {
     ] as const
   },
   vi: {
-    title: 'Ngoài trang sổ cái',
+    title: 'Ngoài Học thuật',
     photoSoon: 'Ảnh sắp được cập nhật',
     parts: [
       { key: 'photography', name: 'Nhiếp ảnh', body: 'Chụp ảnh cho tôi lý do để chậm lại và để ý những chi tiết mà bình thường mình dễ bỏ lỡ.', alt: 'Một bức ảnh tôi chụp' },
@@ -122,7 +122,7 @@ export const OutsideLedger: React.FC = () => {
             <span className="absolute -top-[clamp(8px,1vw,16px)] left-1/2 -translate-x-1/2 rotate-[2deg] w-[34%] h-[clamp(24px,2.6vw,40px)] bg-[#B8946A] z-10" aria-hidden="true" />
             <div className="[filter:drop-shadow(0_3px_4px_rgba(60,40,20,0.2))]">
               <div className="bg-[#E8D4AE] px-6 pt-[clamp(20px,2.4vw,34px)] pb-[clamp(26px,3vw,44px)] text-center" style={{ clipPath: bannerClip }}>
-                <h2 className="m-0 font-serif italic font-semibold text-[#2E1A16] leading-[1.05] tracking-[-0.01em] text-[clamp(1.9rem,3.6vw,3.6rem)]">
+                <h2 className="m-0 font-serif italic font-semibold text-[#2E1A16] leading-[1.05] tracking-[-0.01em] text-[clamp(2.1rem,3.8vw,3.8rem)]">
                   {c.title}
                 </h2>
               </div>

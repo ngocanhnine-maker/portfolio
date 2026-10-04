@@ -14,7 +14,7 @@ const INTERNSHIP_PDF = '/certificates/gtel-internship-certificate.pdf';
 
 const CONTENT = {
   en: {
-    title: 'Beyond the Numbers',
+    title: 'Leadership & Experience',
     leadership: 'Leadership',
     leadershipBody:
       'Most of my leadership has been about the work in between: splitting a project into parts people could own, listening when the team disagreed, and pulling different views into one direction we could all commit to.',
@@ -31,7 +31,7 @@ const CONTENT = {
     viewerTitle: 'GTEL Internship Confirmation'
   },
   vi: {
-    title: 'Ngoài những con số',
+    title: 'Lãnh đạo & Trải nghiệm',
     leadership: 'Lãnh đạo',
     leadershipBody:
       'Phần lớn việc lãnh đạo của tôi nằm ở những việc ở giữa: chia dự án thành các phần mà mỗi người có thể đảm nhận, lắng nghe khi nhóm bất đồng, và gom những góc nhìn khác nhau về một hướng mà cả nhóm cùng theo.',
@@ -116,7 +116,7 @@ export const BeyondNumbers: React.FC = () => {
             <path d="M14 72 V20 a8 8 0 0 1 16 0 V80 a12 12 0 0 1 -24 0 V30" fill="none" stroke="#3A2620" strokeWidth="4" strokeLinecap="round" />
           </svg>
 
-          <h2 className="m-0 text-center font-serif italic font-semibold text-[#2E1A16] leading-none tracking-[-0.01em] text-[clamp(2.1rem,3.4vw,3.4rem)]">
+          <h2 className="m-0 text-center font-serif italic font-semibold text-[#2E1A16] leading-none tracking-[-0.01em] text-[clamp(2.1rem,3.8vw,3.8rem)]">
             {c.title}
           </h2>
 

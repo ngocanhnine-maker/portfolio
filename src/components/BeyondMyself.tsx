@@ -6,7 +6,7 @@ type Card = { image: string; position: string; alt: string; name: string; role: 
 
 const CONTENT: Record<'en' | 'vi', { title: string; cards: Card[] }> = {
   en: {
-    title: 'Beyond Myself',
+    title: 'Community',
     cards: [
       {
         image: '/gallery/peace-village/peace-village-2.jpg',
@@ -35,7 +35,7 @@ const CONTENT: Record<'en' | 'vi', { title: string; cards: Card[] }> = {
     ]
   },
   vi: {
-    title: 'Vượt ra ngoài bản thân',
+    title: 'Cộng đồng',
     cards: [
       {
         image: '/gallery/peace-village/peace-village-2.jpg',
@@ -114,7 +114,7 @@ export const BeyondMyself: React.FC = () => {
             ))}
           </div>
 
-          <h2 className="m-0 text-center font-serif italic font-semibold text-[#2E1A16] leading-none tracking-[-0.01em] text-[clamp(2.1rem,4vw,4rem)]">
+          <h2 className="m-0 text-center font-serif italic font-semibold text-[#2E1A16] leading-none tracking-[-0.01em] text-[clamp(2.1rem,3.8vw,3.8rem)]">
             {c.title}
           </h2>
 

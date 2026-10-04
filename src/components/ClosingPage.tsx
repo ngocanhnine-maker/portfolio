@@ -12,7 +12,7 @@ const LINKEDIN_URL = /linkedin\.com\/in\//.test(PERSONAL_INFO.linkedin) ? PERSON
 
 const CONTENT = {
   en: {
-    title: 'Still Turning the Page',
+    title: 'Closing Note',
     body:
       'This journal captures the questions, projects, and turns that have shaped how I think so far. I’m still exploring where finance, data, and technology can take me next — and what I might build along the way.',
     signature: 'Tran Ngoc Anh · 2026',
@@ -20,7 +20,7 @@ const CONTENT = {
     photoAlt: 'Tran Ngoc Anh'
   },
   vi: {
-    title: 'Vẫn đang lật trang',
+    title: 'Lời kết',
     body:
       'Cuốn nhật ký này ghi lại những câu hỏi, dự án và bước rẽ đã định hình cách tôi suy nghĩ đến nay. Tôi vẫn đang tìm xem tài chính, dữ liệu và công nghệ có thể đưa mình đi đâu tiếp — và mình có thể xây dựng điều gì trên đường đi.',
     signature: 'Trần Ngọc Anh · 2026',
@@ -98,7 +98,7 @@ export const ClosingPage: React.FC = () => {
 
               {/* Closing note */}
               <div className="min-w-0 text-center md:text-left">
-                <h2 className="m-0 font-serif italic font-semibold text-[#2E1A16] leading-[1.02] tracking-[-0.01em] text-[clamp(2.2rem,4.2vw,4.2rem)]">
+                <h2 className="m-0 font-serif italic font-semibold text-[#2E1A16] leading-[1.02] tracking-[-0.01em] text-[clamp(2.1rem,3.8vw,3.8rem)]">
                   {c.title}
                 </h2>
                 <p className="mt-[clamp(14px,1.8vw,24px)] m-0 mx-auto md:mx-0 max-w-[46ch] text-[clamp(0.95rem,1.1vw,1.1rem)] leading-[1.8] text-[#3D2A24]/90">

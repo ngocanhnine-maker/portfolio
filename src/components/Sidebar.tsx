@@ -55,27 +55,31 @@ const TOOLTIP_BELOW =
 const SHORT_LABELS: Record<'en' | 'vi', Partial<Record<PageId, string>>> = {
   en: {
     about: 'About',
-    started: 'Origins',
+    snapshot: 'Record',
+    started: 'Foundations',
     economics: 'Economics',
-    wico: 'WICO',
+    wico: 'Finance',
     finad: 'FinAD',
     'green-credit': 'Research',
     milestones: 'Milestones',
     beyond: 'Leadership',
     community: 'Community',
-    outside: 'Life'
+    outside: 'Beyond',
+    closing: 'Closing'
   },
   vi: {
     about: 'Giới thiệu',
-    started: 'Khởi đầu',
+    snapshot: 'Học tập',
+    started: 'Nền tảng',
     economics: 'Kinh tế',
-    wico: 'WICO',
+    wico: 'Tài chính',
     finad: 'FinAD',
     'green-credit': 'Nghiên cứu',
     milestones: 'Dấu mốc',
     beyond: 'Lãnh đạo',
     community: 'Cộng đồng',
-    outside: 'Đời sống'
+    outside: 'Đời sống',
+    closing: 'Lời kết'
   }
 };
 
@@ -101,19 +105,20 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const hasCv = Boolean(PERSONAL_INFO.cvUrl.trim());
 
   // Main numbered portfolio flow in exact requested order: About -> Honors & Awards -> Education -> Projects -> Research -> Leadership -> Activities -> Interests
-  // Journal chapters, in page order. Academic Snapshot sits under About;
-  // the closing page sits under Outside the Ledger.
+  // Journal chapters, in page order.
   const numberedNavItems: NavItemDef[] = [
     { id: 'about', number: '01', labelKey: 'about', icon: User },
-    { id: 'started', number: '02', labelKey: 'started', icon: FlaskConical },
-    { id: 'economics', number: '03', labelKey: 'economics', icon: TrendingUp },
-    { id: 'wico', number: '04', labelKey: 'wico', icon: Award },
-    { id: 'finad', number: '05', labelKey: 'finad', icon: Layers },
-    { id: 'green-credit', number: '06', labelKey: 'greenCredit', icon: BookOpen },
-    { id: 'milestones', number: '07', labelKey: 'milestones', icon: GraduationCap },
-    { id: 'beyond', number: '08', labelKey: 'beyond', icon: Users },
-    { id: 'community', number: '09', labelKey: 'community', icon: HeartHandshake },
-    { id: 'outside', number: '10', labelKey: 'outside', icon: Compass },
+    { id: 'snapshot', number: '02', labelKey: 'record', icon: GraduationCap },
+    { id: 'started', number: '03', labelKey: 'started', icon: FlaskConical },
+    { id: 'economics', number: '04', labelKey: 'economics', icon: TrendingUp },
+    { id: 'wico', number: '05', labelKey: 'wico', icon: Award },
+    { id: 'finad', number: '06', labelKey: 'finad', icon: Layers },
+    { id: 'green-credit', number: '07', labelKey: 'greenCredit', icon: BookOpen },
+    { id: 'milestones', number: '08', labelKey: 'milestones', icon: GraduationCap },
+    { id: 'beyond', number: '09', labelKey: 'beyond', icon: Users },
+    { id: 'community', number: '10', labelKey: 'community', icon: HeartHandshake },
+    { id: 'outside', number: '11', labelKey: 'outside', icon: Compass },
+    { id: 'closing', number: '12', labelKey: 'closing', icon: BookOpen },
   ];
 
   const handleNavClick = (id: PageId) => {
@@ -307,7 +312,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         {/* Identity */}
         <button
           onClick={onBackToLanding}
-          className="group shrink-0 self-center text-left cursor-pointer mr-6 xl:mr-10"
+          className="group shrink-0 self-center text-left cursor-pointer mr-3 xl:mr-6"
           id="sidebar-brand-btn"
           title={isVi ? 'Quay lại màn hình mở đầu' : 'Return to Intro'}
           aria-label={isVi ? 'Trần Ngọc Anh - Quay lại giới thiệu' : 'Tran Ngoc Anh - Return to Intro'}
@@ -335,14 +340,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 title={label}
                 aria-label={`${item.number} · ${label}`}
                 aria-current={isActive ? 'page' : undefined}
-                className={`relative flex items-baseline gap-1.5 px-[clamp(6px,0.75vw,14px)] pt-[19px] cursor-pointer whitespace-nowrap rounded-b-[4px] text-[12.5px] xl:text-[13px] transition-colors duration-200 ${
+                className={`relative flex items-baseline gap-1.5 px-[clamp(4px,0.55vw,12px)] pt-[19px] cursor-pointer whitespace-nowrap rounded-b-[4px] text-[12px] min-[1400px]:text-[13px] transition-colors duration-200 ${
                   isActive
                     ? 'self-start h-[calc(100%+6px)] bg-[#EFE6D2] text-[#2A2620] font-semibold shadow-[2px_2px_0_rgba(0,0,0,0.35)]'
                     : 'h-full text-[#F2EBDD]/60 hover:text-[#F2EBDD]'
                 }`}
               >
                 {isActive && <span className="absolute top-0 left-1.5 right-1.5 h-[2px] bg-[#8E3A44]" aria-hidden="true" />}
-                <span className={`hidden min-[1500px]:inline font-serif italic text-[12px] ${isActive ? 'text-[#8E3A44]' : 'text-[#D9C9A3]/45'}`}>
+                <span className={`hidden min-[1800px]:inline font-serif italic text-[12px] ${isActive ? 'text-[#8E3A44]' : 'text-[#D9C9A3]/45'}`}>
                   {item.number}
                 </span>
                 <span className="relative">

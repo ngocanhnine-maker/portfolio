@@ -67,7 +67,7 @@ export default function App() {
     // [section element id, nav tab it lights up]
     const sections: [string, PageId][] = [
       ['about', 'about'],
-      ['snapshot', 'about'],
+      ['snapshot', 'snapshot'],
       ['started', 'started'],
       ['economics', 'economics'],
       ['wico', 'wico'],
@@ -77,7 +77,7 @@ export default function App() {
       ['beyond', 'beyond'],
       ['community', 'community'],
       ['outside', 'outside'],
-      ['closing', 'outside']
+      ['closing', 'closing']
     ];
     
     const handleScroll = () => {

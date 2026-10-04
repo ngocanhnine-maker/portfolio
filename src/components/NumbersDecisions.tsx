@@ -9,7 +9,7 @@ const PAPER_URL = '/papers/wico-research-paper.pdf';
 // Figures come from the WICO paper's SME table (Section II): two different firms.
 const CONTENT = {
   en: {
-    title: 'When Numbers Became Decisions',
+    title: 'Finance in Practice',
     badge: 'WICO 2026 · Gold Medal',
     imageAlt: 'The WICO 2026 team on stage with their Gold Medals in Seoul',
     problemHeading: 'The Problem',
@@ -27,7 +27,7 @@ const CONTENT = {
     outro: 'The next question was not how to analyse the numbers, but how to make them easier to work with.'
   },
   vi: {
-    title: 'Khi những con số thành quyết định',
+    title: 'Tài chính trong Thực tiễn',
     badge: 'WICO 2026 · Huy chương Vàng',
     imageAlt: 'Đội WICO 2026 trên sân khấu với Huy chương Vàng tại Seoul',
     problemHeading: 'Vấn đề',
@@ -128,7 +128,7 @@ export const NumbersDecisions: React.FC = () => {
 
             <div className="[filter:drop-shadow(0_4px_8px_rgba(60,40,20,0.22))]">
               <div className="bg-[#F4F0E6] px-[7%] py-[clamp(26px,3vw,44px)]" style={{ clipPath: cardClip }}>
-                <h2 className="m-0 font-serif italic font-semibold text-[#2E1A16] leading-[1.05] tracking-[-0.01em] text-[clamp(1.9rem,2.8vw,2.9rem)]">
+                <h2 className="m-0 font-serif italic font-semibold text-[#2E1A16] leading-[1.05] tracking-[-0.01em] text-[clamp(2.1rem,3.8vw,3.8rem)]">
                   {c.title}
                 </h2>
                 <p className="mt-3 m-0 text-[11px] sm:text-xs uppercase tracking-[0.18em] font-medium text-[#8E3A44]">{c.badge}</p>

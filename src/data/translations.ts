@@ -18,6 +18,8 @@ export interface TranslationDictionary {
     intro: string;
     active: string;
     email: string;
+    record: string;
+    closing: string;
     started: string;
     economics: string;
     wico: string;
@@ -243,15 +245,17 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       intro: 'Intro',
       active: 'Active',
       email: 'Email',
-      started: 'Where I Started',
-      economics: 'Economics',
-      wico: 'WICO',
-      finad: 'FinAD',
-      greenCredit: 'Green Credit',
+      record: 'Academic Record',
+      closing: 'Closing Note',
+      started: 'Foundations',
+      economics: 'Discovering Economics',
+      wico: 'Finance in Practice',
+      finad: 'Building FinAD',
+      greenCredit: 'Research',
       milestones: 'Milestones',
-      beyond: 'Beyond the Numbers',
+      beyond: 'Leadership & Experience',
       community: 'Community',
-      outside: 'Outside the Ledger'
+      outside: 'Beyond Academics'
     },
     landing: {
       enter: 'Turn the Page',
@@ -466,15 +470,17 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       intro: 'Mở đầu',
       active: 'Đang xem',
       email: 'Email',
-      started: 'Nơi bắt đầu',
-      economics: 'Kinh tế',
-      wico: 'WICO',
-      finad: 'FinAD',
-      greenCredit: 'Tín dụng xanh',
+      record: 'Hồ sơ Học tập',
+      closing: 'Lời kết',
+      started: 'Nền tảng',
+      economics: 'Khám phá Kinh tế',
+      wico: 'Tài chính trong Thực tiễn',
+      finad: 'Xây dựng FinAD',
+      greenCredit: 'Nghiên cứu',
       milestones: 'Dấu mốc',
-      beyond: 'Ngoài con số',
+      beyond: 'Lãnh đạo & Trải nghiệm',
       community: 'Cộng đồng',
-      outside: 'Ngoài sổ cái'
+      outside: 'Ngoài Học thuật'
     },
     landing: {
       enter: 'Khám phá Portfolio',

@@ -9,7 +9,7 @@ const THUMBNAIL = '/projects/finad-home.jpg';
 
 const CONTENT = {
   en: {
-    title: 'From Ledgers to Lines',
+    title: 'Building FinAD',
     subtitle: 'FinAD — Financial Analysis from PDF to Insight',
     intro:
       'FinAD started from a practical problem: reading and pulling figures out of financial-report PDFs takes hours, and typing them in by hand invites mistakes. I built it to turn Vietnamese financial statements into structured data, calculate the key ratios, and make trends easier to see.',
@@ -29,7 +29,7 @@ const CONTENT = {
       'What began as a workaround for messy financial reports became my first attempt at building a tool around a problem I kept encountering.'
   },
   vi: {
-    title: 'Từ sổ cái đến từng dòng',
+    title: 'Xây dựng FinAD',
     subtitle: 'FinAD — Phân tích tài chính từ PDF đến nhận định',
     intro:
       'FinAD bắt đầu từ một vấn đề rất thực tế: việc đọc và trích xuất dữ liệu từ báo cáo tài chính PDF mất nhiều thời gian và dễ sai khi nhập thủ công. Tôi xây dựng FinAD để chuyển báo cáo tài chính Việt Nam thành dữ liệu có cấu trúc, tính toán các chỉ số chính và giúp người dùng nhìn thấy xu hướng rõ hơn.',
@@ -111,7 +111,7 @@ export const FinADShowcase: React.FC = () => {
             />
             <div className="[filter:drop-shadow(0_3px_4px_rgba(60,40,20,0.2))]">
               <div className="bg-[#E8D4AE] px-6 pt-[clamp(22px,2.6vw,38px)] pb-[clamp(26px,3vw,44px)] text-center" style={{ clipPath: bannerClip }}>
-                <h2 className="m-0 font-serif italic font-semibold text-[#2E1A16] leading-[1.05] tracking-[-0.01em] text-[clamp(1.9rem,3.4vw,3.4rem)]">
+                <h2 className="m-0 font-serif italic font-semibold text-[#2E1A16] leading-[1.05] tracking-[-0.01em] text-[clamp(2.1rem,3.8vw,3.8rem)]">
                   {c.title}
                 </h2>
                 <p className="mt-2 m-0 text-[11px] sm:text-xs uppercase tracking-[0.18em] font-medium text-[#3D2A24]/80">{c.subtitle}</p>
